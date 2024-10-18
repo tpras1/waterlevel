@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script> <script type="text/javascript"></script>
+  <title>Document</title>
+</head>
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <center><h2>TANK LEVEL MONITOR & CONTROL</h2></center>
+  <br>
+  <br>
+  <br>
+  <br>
+<div id="container"> 
+    <div id="beaker">00.00%</div>
+       <div id="liquid">    </div> 
+       <div id="lid"> </div>             
+           <div class="MIN">      
+      <input type="range"  id="MIN" min="0" max="90" value="0" oninput="MIN_display.value = MIN.value" onchange= "sendRanges()">
+                <P>MIN</P>
+                <output id="MIN_display"></output>
+    </div>
+                           
+                 <div class="MAX">
+           <input type="range" id="MAX" min="0" max="90" value="0" oninput="MAX_display.value = MAX.value" onchange= "sendRanges()"> 
+                 <P>MAX</P>
+                 
+                 <output id="MAX_display"></output>
+                 </div>
+
+                 <div class="vl1"></div>
+                 <div class="vl6"></div>
+                 <div class="hl1"></div>
+                 <div class="hl2"></div>
+                 <div class="vl2"></div>
+                 <div class="vl3"></div>
+                 <div class="hl3"></div>
+                 <div class="hl7"></div>
+                 <div class="vl4"></div>
+                 <div class="hl4">
+                 
+                      <div class="switch">
+                           <p1> <b>PUMP SW </b></p1>
+                           </div>
+                           <div class="toggleWrapper">
+                <input type="checkbox" name="toggle1" class="mobileToggle" id="toggle1" onclick="toggleMotor()">
+                <label for="toggle1"></label>
+                            </div>    
+                              
+                       <div class="tank_h">
+                 <input type="number" id="tank_height" value="20" max="110" onchange= "sendHeight()">
+                
+                 </div>  
+                     <div class="inline2" id="drystatus"></div>
+                     <div class="inline" id="status"></div>
+                     <div class="inline1"> <b>TANK HT </b></div>
+                     </div>
+               <div class="vl5"></div>
+                 <div class="hl5"></div>
+                 <div class="hl6">IOT based water level controller based on ESP8266 controller and HRC04 untrsonic sensor.Designed and developed by Prasanth.T for Pavithram residence 
+                 
+                 </div>
+  </div> 
+                 
+                <div class="container1">
+                <div class="motor">
+                  <div class="rotor"></div>
+                     <div class="spindle"></div>
+              
+              </div> </div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
