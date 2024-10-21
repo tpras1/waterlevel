@@ -1,22 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css"> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script> <script type="text/javascript"></script>
-  <title>Document</title>
-</head>
-<body>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 1" />
+    <title>IOT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalnia:wght@700&display=swap" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script> <script type="text/javascript"></script>
+  </head>
+  <body>
+  <!-- <div class="main-container"> -->
+    <div id="app-content">
+    <div id="landing" class="section active">
+    <div id ="home" class="home">
+        <div class="flex-column">
+          <div class="rectangle" onclick="showSection('portfolio')">
+          </div>
+          <div class="frame-1">
+            <span class="dash-board"
+              >D<br />A<br />S<br />H<br /><br />B<br />O<br />A<br />R<br />d</span
+            >
+          </div>
+          <div class="rectangle-2" onclick="showSection('monitor')"></div>
+          <span class="project-brief"
+            >P<br />R<br />O<br />J<br />E<br />C<br />T<br /><br />B<br />R<br />I<br />E<br />F</span>
+        </div>
+        <div class="flex-column-3">
+          <button class="group">
+            <span class="login">Login</span>
+            <div class="rectangle-4"></div>
+          </button>
+          <div class="duck-icon"><div class="vector"></div></div>
+          <div class="image"></div>
+          <div class="image-5"></div>
+          <span class="make-future">LET ‘S MAKE FUTURE </span>
+          <div class="smart-home">
+            <span class="smart-home-6">SMART HOME<br /></span
+            ><span class="line-break"><br /></span>
+          </div>
+          <div class="ellipse"></div>
+          <span class="tk">TK</span>
+          <div class="group-7">
+            <div class="vector-8"></div>
+            <span class="phone-number"> +91 9972802150</span>
+          </div>
+          <div class="group-9">
+            <span class="email-address">tpras1@gmail.com<br /></span>
+          </div>
+          <div class="mail"></div>
+        </div>
+      </div>
+      </div>
 
+
+      <!--  making content hidden -->
+
+      <div id="portfolio" class="section">
+      <div class="dashboard">
+        <div class="flex-column-fa">
+          <div class="rectangle-a" onclick="showSection('landing')"></div>
+          <div class="image-b"></div>
+          <div class="rectangle-c" ></div>
+          <span class="home-d">H<br />O<br />M<br />E<br /></span>
+          <div class="image-e"></div>
+          <div class="rectangle-f" onclick="showSection('monitor')"></div>
+          <span class="projet-brief"
+            >P<br />R<br />O<br />J<br />E<br />T<br /><br />B<br />R<br />I<br />E<br />F</span
+          >
+        </div>
+        <span class="text"> </span>
+        <div class="group-10">
+          <span class="we-enable">WE ENABLE</span
+          ><span class="automation-of-homes"
+            >AUTOMATION OF HOMES<br />
+            <br /> </span
+          ><span class="minimum-investment-and-time"
+            >With minimum investment and time . Almost nil recurring expense and
+            without cloud integration.Used highly customisable controller like
+            Eexpressif chip ESP32 .End user control is achieved through any web
+            browser . MQTT protocol used for controlling the devices .Free
+            subscription of MQTT brokers with option of changing the broker
+            .Minimum requirement is stable internet connection .</span
+          >
+        </div>
+      </div>
+      </div>
+
+      <div id="monitor" class="section">
+      <div class="projectbrief">
+        <div class="home-11">
+          <div class="flex-column-d">
+            <div class="rectangle-12" onclick="showSection('portfolio')"></div>
+            <div class="frame-13">
+              <span class="dash-board-14"
+                >D<br />A<br />S<br />H<br /><br />B<br />O<br />A<br />R<br />d</span
+              >
+            </div>
+            <div class="rectangle-15" onclick="showSection('landing')"></div>
+            <span class="home-16">H<br />O<br />M<br />E<br /></span>
+          </div>
+
+<div>
+  <br>
+  <br>
+  <br>
   <center><h2>TANK LEVEL MONITOR & CONTROL</h2></center>
   <br>
   <br>
@@ -28,13 +116,14 @@
        <div id="lid"> </div>             
            <div class="MIN">      
       <input type="range"  id="MIN" min="0" max="90" value="0" oninput="MIN_display.value = MIN.value" onchange= "sendRanges()">
-                <P>MIN</P>
+                <P><br>MIN</P>
                 <output id="MIN_display"></output>
     </div>
                            
                  <div class="MAX">
            <input type="range" id="MAX" min="0" max="90" value="0" oninput="MAX_display.value = MAX.value" onchange= "sendRanges()"> 
-                 <P>MAX</P>
+
+                 <P><br>MAX</P>
                  
                  <output id="MAX_display"></output>
                  </div>
@@ -79,8 +168,14 @@
                      <div class="spindle"></div>
               
               </div> </div>
+</div>
 
-
-<script src="script.js"></script>
-</body>
+        </div>
+      </div>
+      </div>
+      </div>
+      <script src="script.js"></script>
+    <!--</div> -->
+    <!-- Generated by Codia AI - https://codia.ai/ -->
+  </body>
 </html>

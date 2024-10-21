@@ -1,185 +1,19 @@
-/*document.addEventListener("DOMContentLoaded", function() {
-    setInterval(get_motor_status, 2000);
-    setInterval(dry_run_status, 2000);
-    setInterval(get_MIN-MAX_height, 2000);
-});
-
-function get_motor_status() {
-    var someUrl = "/motor_status";
-    fetch(someUrl)``
-        .then(response => response.text())
-        .then(function(response) {
-            var statusElement = document.getElementById("status");
-            var toggle1Element = document.getElementById("toggle1");
-            var rotorElement = document.querySelector('.rotor');
-            if (response === "on") {
-                statusElement.innerHTML = "Water Pump ON";
-                toggle1Element.checked = true;
-                  rotorElement.style.animationPlayState = 'running';
-            } else {
-                statusElement.innerHTML = "Water Pump OFF";
-                toggle1Element.checked = false;
-                rotorElement.style.animationPlayState = 'paused';
+function showSection(sectionId) 
+        {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
             }
-        });
+            document.getElementById(sectionId).classList.add('active');
+        }
+function removesection()
+{
+  var sections = document.getElementsByClassName('section');
+  for (var i = 0; i < sections.length; i++) {
+      sections[i].classList.remove('active');
+}
 }
 
-function dry_run_status() {
-    var someUrl = "/dryRun_status";
-    fetch(someUrl)
-        .then(response => response.text())
-        .then(function(response) {
-            var drystatusElement = document.getElementById("drystatus");
-
-            switch (response) {
-                case "DR":
-                    drystatusElement.innerHTML = "Pump Dry Run Detected";
-                    break;
-                case "NDR":
-                    drystatusElement.innerHTML = "Pumping water";
-                    break;
-                case "NDROFF":
-                    drystatusElement.innerHTML = "Pump OFF Due to Dry Run";
-                    break;
-                case "PUMPOFF":
-                    drystatusElement.innerHTML = "Pump OFF";
-                    break;
-                case "TNKFULL":
-                    drystatusElement.innerHTML = "Pump OFF Due to Tank Full";
-                    break;
-                default:
-                    drystatusElement.innerHTML = "Unknown Status";
-                    break;
-            }
-        });
-}
-function updateHeight(liters) 
-              {
-            var height = liters/1.4 ; // Adjust the multiplier based on your requirement
-            var liquidlevel =liters.toFixed(0);
-            document.getElementById("liquid").style.height = height + "%"; // Assuming you have an element with id="container" to set the height
-           document.getElementById("beaker").innerHTML= liquidlevel ;
-            
-        }
-
-        function fetchData() 
-        {      
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() 
-            {
-                if (this.readyState == 4 && this.status == 200) 
-                {
-                    var liters = parseFloat(this.responseText);
-                    updateHeight(liters);
-                }
-            };
-            xhttp.open("GET", "/level", true);
-            xhttp.send();
-        }
-
-        // Fetch the data initially and then update every 5 seconds (adjust as per your needs)
-        fetchData();
-        setInterval(fetchData, 5000);
-              
-
-function getDataFromServer() {
-      // Send a GET request to the ESP8266 server
-      fetch('/displayRange')
-        .then(response => response.text())
-        .then(data => {
-          // Split the received data into MIN and MAX values
-          const [MIND, MAXD] = data.split(',');
-
-          // Update the output elements with the received values
-         // document.getElementById('MIN').innerText = MIND;
-          //document.getElementById('MAX').innerText = MAXD;
-
-          document.getElementById("MIN_display").innerHTML = MIND;
-          document.getElementById("MAX_display").innerHTML = MAXD;
-          document.getElementById("MIN").value = MIND;
-          document.getElementById("MAX").value = MAXD;
-          
-        })
-        .catch(error => {
-          console.error('Error fetching data:', error);
-        });
-    }
-  getDataFromServer();
-  setInterval(getDataFromServer, 5000);
-
-function tnkht(ht) {
- var tankheight = ht ; // Adjust the multiplier based on your requirement
-           document.getElementById("tank_height").value=tankheight  ;
-            
-        }
-        function get_tank_height() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var ht = parseFloat(this.responseText);
-                    tnkht(ht);
-                }
-            };
-            xhttp.open("GET", "/displayheight", true);
-            xhttp.send();
-        }
-
-        // Fetch the data initially and then update every 5 seconds (adjust as per your needs 
-    
-  get_tank_height();
-  setInterval(get_tank_height, 5000);*/
-
-                                                         
-/*            function sendRanges() 
-            
-            {
-            var minRange = document.getElementById("MIN").value;
-            var maxRange = document.getElementById("MAX").value;
-
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "/configRange?min=" + minRange + "&max=" + maxRange, true);
-            xhttp.send();
-        }
-        function sendHeight() {
-            var TANK_H = document.getElementById("tank_height").value;
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("GET", "/heightconfig?tnkheight=" + TANK_H ,true);
-            xhttp.send();
-          }
-*/
-
-          //var rotorElement = document.querySelector('.rotor')
-//var motorRunning = false;
-
-/*function toggleMotor() {
- // motorRunning = !motorRunning;
-  //if (motorRunning) {
-    //rotorElement.style.animationPlayState = 'running';
-  //} else {
-   // rotorElement.style.animationPlayState = 'paused';
-  //}
-  var xhr = new XMLHttpRequest(); 
-  xhr.open('GET', '/toggle', true); 
-  xhr.send();
-
-} */
-
-
-// json from ESP
-//
-// /motor_status  : "on"  : water pump on  else water pump off
-// /dryRun_status : "DR" , "NDR","NDR OFF","PUMPOFF","TNKFULL"
-// /displayRange  : "MIND" ,"MAXD"  minimum max range
-// /level :
-// /tank_h :
-
-// json to ESP 
-//
-// /connfigRange ; minRange maxRange
-// /heightconfig : TANK_H
-// /toggle : switch
-
-// topic TANKTK
 
 function onMessageReceived(topic, message) 
 {
@@ -404,11 +238,3 @@ function toggleMotor()
       //document.getElementById("response").innerHTML = "MQTT connection error: " + err;
     });
 }
-
-
-
-
-
-
-
-
