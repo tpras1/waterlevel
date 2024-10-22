@@ -457,10 +457,10 @@ button {
   position: absolute;
   /*width: 637px;
   height: 601px;*/
-  width: 551.073px;
-  height: 506.487px;
-  top: 100px;
-  left: 10px;
+  width: 451.073px;
+  height: 406.487px;
+  top: 20px;
+  left: -500px;
 
   /*top: 7px;
   left: 0px;*/
@@ -469,6 +469,27 @@ button {
   background-size: cover;
   z-index: 30;
 }
+.image-esp {
+  position: absolute;
+  /*width: 637px;
+  height: 601px;*/
+  width: 451.073px;
+  height: 406.487px;
+  top: 300px;
+  left: 150px;
+
+  /*top: 7px;
+  left: 0px;*/
+  background: url(./assets/images/esp.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 30;
+}
+
+
+
+
+
 .rectangle-c {
   position: absolute;
   width: 110px;
