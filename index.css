@@ -47,10 +47,13 @@ button {
   display:flex;
   position: relative;
   width: 1440px;
+  height: 1046px;
+  margin: 56px 0 0 100px;
 
+
+  /*width: 1440px;
   height: 1024px;
- 
-  margin: 100px 0 0 100px;
+  margin: 100px 0 0 100px;*/
   background: #ffffff;
   overflow: hidden;
   border-radius: 25px;
