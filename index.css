@@ -4,6 +4,11 @@
     "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
     "Source Han Sans CN", sans-serif;
 }
+html
+{
+
+  zoom:80%;
+}
 
 .main-container {
   overflow: hidden;
