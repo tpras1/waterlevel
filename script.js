@@ -1,11 +1,17 @@
 function showSection(sectionId) 
         {
+if (sessionStorage.getItem('loggedIn'))
+
+
+        {
             var sections = document.getElementsByClassName('section');
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.remove('active');
             }
             document.getElementById(sectionId).classList.add('active');
         }
+
+      }
 function removesection()
 {
   var sections = document.getElementsByClassName('section');
@@ -237,4 +243,91 @@ function toggleMotor()
       console.log('Connection error:', err);
       //document.getElementById("response").innerHTML = "MQTT connection error: " + err;
     });
+}
+
+
+
+  function login() {
+    // Hard-coded credentials
+    const correctUsername = "admin";
+    const correctPassword = "tpras123";
+
+    // Get values from input fields
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    // Check if credentials are correct
+    if (username === correctUsername && password === correctPassword) 
+      {
+        document.getElementById("errorMessage").textContent = "Login Successfull";
+        sessionStorage.setItem('loggedIn', true);
+        // Show app content and hide login
+        const element = document.getElementById('loginContainer');
+        element.style.display = 'none';
+        const element1 = document.getElementById('logintab');
+        element1.style.display = 'none';
+        const element2 = document.getElementById('logouttab');
+        element2.style.display = 'block';
+       
+       // document.getElementById('home').classList.add('active');
+        //document.getElementById('app-content').classList.remove('hidden')
+
+
+        // Perform login action here (e.g., redirect to another page)
+    } 
+    
+    
+    
+    else {
+        document.getElementById("errorMessage").textContent = "Invalid username or password";
+    }
+}
+
+
+
+
+
+  /*const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  // Simple hardcoded login logic
+  if (username === 'admin' && password === 'password123') {
+    // Store login status
+    sessionStorage.setItem('loggedIn', true);
+    // Show app content and hide login
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('home').classList.add('active');
+    document.getElementById('app-content').classList.remove('hidden');
+
+    
+  } else {
+    alert('Invalid credentials. Please try again.');
+  } */
+
+function logout() {
+  // Clear login status and redirect to login screen
+  sessionStorage.removeItem('loggedIn');
+  const element3 = document.getElementById('logintab');
+  element3.style.display = 'block';
+  //document.getElementById('login-screen').classList.remove('hidden');
+ // document.getElementById('app-content').classList.add('hidden');
+  /*removesection();*/
+  document.getElementById("username").value="";
+  document.getElementById("password").value="";
+  showLogin();
+  document.getElementById("errorMessage").textContent = "logged out , login to access Dashboard";
+}
+
+
+window.onload = function() {
+  if (sessionStorage.getItem('loggedIn'))  
+    
+    {
+    document.getElementById('login-screen').classList.add('hidden');
+   // document.getElementById('app-content').classList.remove('hidden');
+  }
+};
+
+function showLogin() {
+  document.getElementById("loginContainer").style.display = "block";
 }
