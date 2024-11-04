@@ -1893,13 +1893,13 @@ Width: 340px;
 height:180px;
 background-color:rgb(255, 255, 255);
 /*background-color: rgb(116, 112, 112);*/
-border-color: rgb(110, 107, 107);
-border-width: 1px;
+border-color: rgb(209, 202, 202);
+border-width: .5px;
 border-style: solid;
 /*background-color: #e4e6ea;*/
 text-align:center; 
-box-shadow: 0 1px 15px 0 grey;
-border-radius: 15px;
+box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+border-radius: 10px;
 }
 .Dsw1{
 Display :flex;
