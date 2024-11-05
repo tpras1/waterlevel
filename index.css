@@ -1907,46 +1907,89 @@ flex-direction: column;
 align-items: center;
 float:left;
 margin-left:20px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+
+}
+#swimg1
+{
+
 box-shadow: 0 1px 15px 0 grey;
 
 }
+
 .Dsw2{
   Display :flex;
   flex-direction: column;
   align-items: center;
   float:left;
-  box-shadow: 0 1px 15px 0 grey;
+  /*box-shadow: 0 1px 15px 0 grey;*/
 }
+#swimg2
+{
+
+box-shadow: 0 1px 15px 0 grey;
+
+}
+
+
+
 .Dsw3{
   Display :flex;
 flex-direction: column;
 align-items: center;
 float:left;
-box-shadow: 0 1px 15px 0 grey;
+/*box-shadow: 0 1px 15px 0 grey;*/
   }
+
+  #swimg3
+  {
+  
+  box-shadow: 0 1px 15px 0 grey;
+  
+  }
+
   .Dsw4{
     Display :flex;
 flex-direction: column;
 align-items: center;
 float:left;
 margin-right: 5px;
-box-shadow: 0 1px 15px 0 grey;
+/*box-shadow: 0 1px 15px 0 grey;*/
   }
+  #swimg4
+  {
+  
+  box-shadow: 0 1px 15px 0 grey;
+  
+  }
+
   .Dsw5{
     Display :flex;
   flex-direction: column;
   align-items: center;
   float:left;
-  box-shadow: 0 1px 15px 0 grey;
+  margin-right:4px;
+  /*box-shadow: 0 1px 15px 0 grey;*/
     }
+
+    #swimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    }
+
     .Dsw6{
       Display :flex;
   flex-direction: column;
   align-items: center;
   float:left;
-  box-shadow: 0 1px 15px 0 grey;
+  /*box-shadow: 0 1px 15px 0 grey;*/
     } 
-
+    #swimg6
+    {
+    
+    box-shadow: 0 1px 15px 0 grey;
+    
+    }
 
 /*.dl
 {
@@ -1965,12 +2008,12 @@ box-shadow: 0 1px 15px 0 grey;
   border-radius: 5px;
 } */
 
-    .Dl1{
+.Dl1{
       Display :flex;
       flex-direction: column;
       align-items: center;
       float:left;
-    margin-left:25px;
+    /*margin-left:5px;*/
     margin-top:10px;
 
       }
@@ -1979,7 +2022,7 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-        margin-left:30px;
+        /*margin-left:30px;*/
         margin-top:10px;
       }
       .Dl3{
@@ -1987,7 +2030,7 @@ box-shadow: 0 1px 15px 0 grey;
       flex-direction: column;
       align-items: center;
       float:left;
-      margin-left:30px;
+      /*margin-left:30px;*/
       margin-top:10px;
         }
         .Dl4{
@@ -1995,7 +2038,7 @@ box-shadow: 0 1px 15px 0 grey;
       flex-direction: column;
       align-items: center;
       float:left;
-      margin-left: 25px;
+      /*margin-left: 25px;*/
       margin-top:10px;
         }
         .TV1{
@@ -2003,7 +2046,7 @@ box-shadow: 0 1px 15px 0 grey;
       flex-direction: column;
       align-items: center;
       float:left;
-      margin-left:20px;
+      /*margin-left:20px;*/
       margin-top:10px;
         }
         .SND{
@@ -2011,7 +2054,7 @@ box-shadow: 0 1px 15px 0 grey;
       flex-direction: column;
       align-items: center;
       float:left;
-      margin-left:10px;
+      /*margin-left:10px;*/
       margin-top:10px;
         }
 
@@ -2024,38 +2067,49 @@ box-shadow: 0 1px 15px 0 grey;
     font-family:Arial, Helvetica, sans-serif;
     Width: 340px;
     height:180px;
-    background-color:white;
+    background-color:rgb(255, 255, 255);
     /*background-color: rgb(116, 112, 112);*/
-    border-color: rgb(110, 107, 107);
-    border-width: 1px;
+    border-color: rgb(209, 202, 202);
+    border-width: .5px;
     border-style: solid;
     /*background-color: #e4e6ea;*/
     text-align:center; 
-    box-shadow: 0 1px 15px 0 grey;
-    border-radius: 15px;
+    box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+    border-radius: 10px;
   }
   .sosw1{
-  Display :flex;
-  flex-direction: column;
-  align-items: center;
-  float:left;
-  margin-left:20px;
+    Display :flex;
+    flex-direction: column;
+    align-items: center;
+    float:left;
+    margin-left:20px;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+  }
+  #soswimg1
+  {
   box-shadow: 0 1px 15px 0 grey;
-
   }
   .sosw2{
     Display :flex;
     flex-direction: column;
     align-items: center;
     float:left;
-    box-shadow: 0 1px 15px 0 grey;
+   /* box-shadow: 0 1px 15px 0 grey;*/
+  }
+  #soswimg2
+  {
+  box-shadow: 0 1px 15px 0 grey;
   }
   .sosw3{
     Display :flex;
   flex-direction: column;
   align-items: center;
   float:left;
-  box-shadow: 0 1px 15px 0 grey;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    #soswimg3
+    {
+    box-shadow: 0 1px 15px 0 grey;
     }
     .sosw4{
       Display :flex;
@@ -2063,23 +2117,35 @@ box-shadow: 0 1px 15px 0 grey;
   align-items: center;
   float:left;
   margin-right: 5px;
-  box-shadow: 0 1px 15px 0 grey;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    #soswimg4
+    {
+    box-shadow: 0 1px 15px 0 grey;
     }
     .sosw5{
       Display :flex;
     flex-direction: column;
     align-items: center;
     float:left;
-    box-shadow: 0 1px 15px 0 grey;
+    /*box-shadow: 0 1px 15px 0 grey;*/
       }
+      #soswimg5
+      {
+      box-shadow: 0 1px 15px 0 grey;
+      }
+
       .sosw6{
         Display :flex;
     flex-direction: column;
     align-items: center;
     float:left;
-    box-shadow: 0 1px 15px 0 grey;
+    /*box-shadow: 0 1px 15px 0 grey;*/
       } 
-
+      #soswimg6
+      {
+      box-shadow: 0 1px 15px 0 grey;
+      }
 
 
       
@@ -2088,15 +2154,17 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-      margin-left:25px;
+      /*margin-left:5px;*/
       margin-top:15px;
+      
+      /*margin-top:15px;*/
         }
         .SOl2{
           Display :flex;
           flex-direction: column;
           align-items: center;
           float:left;
-          margin-left:25px;
+         
           margin-top:15px;
         }
         .SOl3{
@@ -2104,7 +2172,7 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-        margin-left:15px;
+        
         margin-top:15px;
           }
           .SOl4{
@@ -2112,7 +2180,7 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-        margin-left:25px;
+       
         margin-top:15px;
           }
           .SOl5{
@@ -2120,7 +2188,7 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-        margin-left:20px;
+       
         margin-top:15px;
           }
           .SOl6{
@@ -2128,7 +2196,7 @@ box-shadow: 0 1px 15px 0 grey;
         flex-direction: column;
         align-items: center;
         float:left;
-        margin-left:25px;
+       
         margin-top:15px;
           }
 
@@ -2141,10 +2209,8 @@ box-shadow: 0 1px 15px 0 grey;
             font-family:Arial, Helvetica, sans-serif;
             Width: 250px;
             height:180px;
-            background-color:white;
-            /*background-color: rgb(116, 112, 112);*/
-            border-color: rgb(110, 107, 107);
-            border-width: 1px;
+            border-color: rgb(209, 202, 202);
+            border-width: .5px;
             border-style: solid;
             /*background-color: #e4e6ea;*/
             text-align:center; 
@@ -2157,30 +2223,50 @@ box-shadow: 0 1px 15px 0 grey;
           align-items: center;
           float:left;
           margin-left:20px;
+         
+          }
+          #entrswimg1
+          {
           box-shadow: 0 1px 15px 0 grey;
           }
+
           .entrsw2{
             Display :flex;
             flex-direction: column;
             align-items: center;
             float:left;
-            box-shadow: 0 1px 15px 0 grey;
+
           }
+          #entrswimg2
+          {
+          box-shadow: 0 1px 15px 0 grey;
+          }
+
           .entrsw3{
             Display :flex;
           flex-direction: column;
           align-items: center;
           float:left;
-          box-shadow: 0 1px 15px 0 grey;
+      
             }
+            #entrswimg3
+            {
+            box-shadow: 0 1px 15px 0 grey;
+            }
+
             .entrsw4{
               Display :flex;
           flex-direction: column;
           align-items: center;
           float:left;
           margin-right: 5px;
-          box-shadow: 0 1px 15px 0 grey;
+       
             }
+            #entrswimg4
+            {
+            box-shadow: 0 1px 15px 0 grey;
+            }
+
             .entrsw5{
               Display :flex;
       
@@ -2204,7 +2290,7 @@ box-shadow: 0 1px 15px 0 grey;
                 flex-direction: column;
                 align-items: center;
                 float:left;
-              margin-left:25px;
+             
               margin-top:10px;
                 }
                 .entrl2{
@@ -2212,7 +2298,7 @@ box-shadow: 0 1px 15px 0 grey;
                   flex-direction: column;
                   align-items: center;
                   float:left;
-                  margin-left:25px;
+                 
                   margin-top:10px;
                 }
                 .entrl3{
@@ -2220,7 +2306,7 @@ box-shadow: 0 1px 15px 0 grey;
                 flex-direction: column;
                 align-items: center;
                 float:left;
-                margin-left:15px;
+              
                 margin-top:10px;
                   }
                   .entrl4{
@@ -2228,7 +2314,7 @@ box-shadow: 0 1px 15px 0 grey;
                 flex-direction: column;
                 align-items: center;
                 float:left;
-                margin-left:20px;
+              
                 margin-top:10px;
                   }
  
@@ -2238,10 +2324,10 @@ box-shadow: 0 1px 15px 0 grey;
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:390px;
-                margin-left:800px;  
-                Width:580px;
-                height:300px;
+                top:565px;
+                margin-left:470px;  
+                Width:345px;
+                height:180px;
                 border-color: rgb(110, 107, 107);
                 border-width: 1px;
                 border-style: solid;
@@ -2249,20 +2335,21 @@ box-shadow: 0 1px 15px 0 grey;
                 text-align:center; 
                 box-shadow: 0 1px 15px 0 grey;
                 border-radius: 15px;
+                font-size: 8px;
               } 
               
               .breakerC {
                 display:inline-block;
                 cursor: pointer;
                 position: absolute;
-                margin-left: 20px;
-                margin-top:20px;
+                margin-left: 10px;
+                margin-top:10px;
                 display: grid;
-                width: 120px;
-                height:260px;
+                width: 70px;
+                height:160px;
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                border-radius: 8px;
+                border-radius: 9px;
                 place-items: center;
                 text-align: center;
                       }
@@ -2271,14 +2358,15 @@ box-shadow: 0 1px 15px 0 grey;
                 display:inline-block;
                 cursor: pointer;
                 position: absolute;
-                margin-left: 160px;
-                margin-top:20px;
+                margin-left: 95px;
+                margin-top:10px;
                 display: grid;
-                width: 120px;
-                height:260px;
+                width: 70px;
+                height:160px;
+                font-size: 8px;
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-                border-radius: 8px;
+                border-radius: 9px;
                 place-items: center;
                 text-align: center;
                       }
@@ -2286,41 +2374,43 @@ box-shadow: 0 1px 15px 0 grey;
                         display:inline-block;
                         cursor: pointer;
                         position: absolute;
-                        margin-left: 300px;
-                        margin-top:20px;
+                        margin-left: 178px;
+                        margin-top:10px;
                         display: grid;
-                        width: 120px;
-                        height:260px;
+                        width: 70px;
+                        height:160px;
                         background-color: rgb(116, 112, 112);
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                         border-radius: 8px;
                         place-items: center;
                         text-align: center;
+                        font-size: 8px;
                               }
                               .breakerL {
                                 display:inline-block;
                                 cursor: pointer;
                                 position: absolute;
-                                margin-left: 440px;
-                                margin-top:20px;
+                                margin-left: 262px;
+                                margin-top:10px;
                                 display: grid;
-                                width: 120px;
-                                height:260px;
+                                width: 70px;
+                                height:160px;
                                 background-color: rgb(116, 112, 112);
                                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                                 border-radius: 8px;
                                 place-items: center;
                                 text-align: center;
+                                font-size: 8px;
                                       }
               .louverM
               {
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:30px;
-                margin-left:1270px;  
-                Width:140px;
-                height:300px;
+                top:565px;
+                margin-left:370px;  
+                Width:90px;
+                height:180px;
                 border-color: rgb(110, 107, 107);
                 border-width: 1px;
                 border-style: solid;
@@ -2328,20 +2418,22 @@ box-shadow: 0 1px 15px 0 grey;
                 text-align:center; 
                 box-shadow: 0 1px 15px 0 grey;
                 border-radius: 15px;
+                font-size: 8px;
               } 
               .breakerM {
                 display:inline-block;
                 cursor: pointer;
                 position: absolute;
                 margin-left: 10px;
-                margin-top:20px;
+                margin-top:10px;
                 display: grid;
-                width: 120px;
-                height:260px;
+                width: 70px;
+                height:160px;
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
                 place-items: center;
                 text-align: center;
+                
                       }
 
