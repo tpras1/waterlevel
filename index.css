@@ -1148,7 +1148,7 @@ background: url(./assets/images/de81c4bb-5dd6-416e-8f62-9740c39144e9.png)
   height: 1032px;
   margin: 63px 0 0 0; */
   z-index: 55;
-
+color:gray;
   /*width: 1538px;*/
   width:1436px;
   height: 1032px;
@@ -1159,6 +1159,7 @@ background: url(./assets/images/de81c4bb-5dd6-416e-8f62-9740c39144e9.png)
   /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);*/
   box-shadow: 0 1px 15px 0 grey;
   border-radius: 24px 0 0 24px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .project-brief-171 {
   position: absolute;
@@ -1886,20 +1887,22 @@ z-index:18;
 {
 margin-top:100px;
 margin-left:100px;  
-color:grey;
+color:rgb(214, 212, 212);
 font-size: 10px;
 font-family:Arial, Helvetica, sans-serif;
 Width: 340px;
 height:180px;
-background-color:rgb(255, 255, 255);
-/*background-color: rgb(116, 112, 112);*/
-border-color: rgb(209, 202, 202);
+color:#74ffb5;
+/*background-color:rgb(255, 255, 255);*/
+background-color: rgb(115, 113, 113);
+border-color: rgb(250, 248, 248);
 border-width: .5px;
 border-style: solid;
 /*background-color: #e4e6ea;*/
 text-align:center; 
 box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
 border-radius: 10px;
+
 }
 .Dsw1{
 Display :flex;
@@ -2067,9 +2070,10 @@ margin-right: 5px;
     font-family:Arial, Helvetica, sans-serif;
     Width: 340px;
     height:180px;
-    background-color:rgb(255, 255, 255);
-    /*background-color: rgb(116, 112, 112);*/
-    border-color: rgb(209, 202, 202);
+    color:#74ffb5;
+    /*background-color:rgb(255, 255, 255);*/
+    background-color: rgb(115, 113, 113);
+    border-color: rgb(250, 248, 248);
     border-width: .5px;
     border-style: solid;
     /*background-color: #e4e6ea;*/
@@ -2209,13 +2213,16 @@ margin-right: 5px;
             font-family:Arial, Helvetica, sans-serif;
             Width: 250px;
             height:180px;
-            border-color: rgb(209, 202, 202);
+            color:#74ffb5;
+/*background-color:rgb(255, 255, 255);*/
+background-color: rgb(115, 113, 113);
+border-color: rgb(250, 248, 248);
             border-width: .5px;
             border-style: solid;
             /*background-color: #e4e6ea;*/
             text-align:center; 
             box-shadow: 0 1px 15px 0 grey;
-            border-radius: 15px;
+            border-radius: 9px;
           }
           .entrsw1{
           Display :flex;
@@ -2324,7 +2331,7 @@ margin-right: 5px;
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:565px;
+                top:159px;
                 margin-left:470px;  
                 Width:345px;
                 height:180px;
@@ -2335,7 +2342,8 @@ margin-right: 5px;
                 text-align:center; 
                 box-shadow: 0 1px 15px 0 grey;
                 border-radius: 15px;
-                font-size: 8px;
+                color:#6fffb2;
+                font-size: 12px;
               } 
               
               .breakerC {
@@ -2352,6 +2360,7 @@ margin-right: 5px;
                 border-radius: 9px;
                 place-items: center;
                 text-align: center;
+                
                       }
 
               .breakerF {
@@ -2363,7 +2372,7 @@ margin-right: 5px;
                 display: grid;
                 width: 70px;
                 height:160px;
-                font-size: 8px;
+          
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 9px;
@@ -2384,7 +2393,7 @@ margin-right: 5px;
                         border-radius: 8px;
                         place-items: center;
                         text-align: center;
-                        font-size: 8px;
+                        
                               }
                               .breakerL {
                                 display:inline-block;
@@ -2400,14 +2409,14 @@ margin-right: 5px;
                                 border-radius: 8px;
                                 place-items: center;
                                 text-align: center;
-                                font-size: 8px;
+                             
                                       }
               .louverM
               {
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:565px;
+                top:625px;
                 margin-left:370px;  
                 Width:90px;
                 height:180px;
@@ -2418,7 +2427,8 @@ margin-right: 5px;
                 text-align:center; 
                 box-shadow: 0 1px 15px 0 grey;
                 border-radius: 15px;
-                font-size: 8px;
+                color:#6fffb2;
+                font-size: 12px;
               } 
               .breakerM {
                 display:inline-block;
@@ -2436,4 +2446,57 @@ margin-right: 5px;
                 text-align: center;
                 
                       }
+                      .el_parameter
+                      {
+                        position:absolute;
+                        display:block;
+                        flex-direction: row;
+                        top:230px;
+                        margin-left:5px;  
+                        Width:345px;
+                        height:180px;
+                        border-color: rgb(110, 107, 107);
+                        border-width: 1px;
+                        border-style: solid;
+                        background-color: #e4e6ea;
+                        text-align:left; 
+                        box-shadow: 0 1px 15px 0 grey;
+                        border-radius: 15px;
+                        color:rgb(116, 112, 112);
+                        font-size: 12px;
+                      } 
+                      .meterV
+                      {
+                      position: absolute;
+                      display: grid;
+                      width: 150px;
+                      height:150px;
+                      background-color:#363737;
+                      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                      border-radius: 8px;
+                      place-items: center;
+                      text-align: center;
+                      top:410px;
+                      left:470px;
+                      font-size: 12px;
+                      color:#ffffff;
+                      }
+                      .meterA
+                      {
+                      position: absolute;
+                      display: grid;
+                      width: 150px;
+                      height:150px;
+                      background-color:#363737;
+                      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                      border-radius: 8px;
+                      place-items: center;
+                      text-align: center;
+                      top:410px;
+                      left:650px;
+                      font-size: 12px;
+                      color:#ffffff;
+                      }
+                      
+
 
