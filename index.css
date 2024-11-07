@@ -2497,6 +2497,30 @@ border-color: rgb(250, 248, 248);
                       font-size: 12px;
                       color:#ffffff;
                       }
-                      
-
+                    
+                      .pln
+                      {
+                        position:absolute;
+                        display:block;
+                        flex-direction: row;
+                        top:150px;
+                        margin-left:900px;  
+                        Width:405px;
+                        height:402px;
+                        border-color: rgb(110, 107, 107);
+                        border-width: 1px;
+                        border-style: solid;
+                        background-color: #f9fcff;
+                        text-align:center; 
+                        box-shadow: 0 1px 15px 0 grey;
+                        border-radius: 15px;
+                        color:#6fffb2;
+                        font-size: 12px;
+                      }
+                     #planimg
+                      {
+                        background: transparent;
+                        border-radius: 9px;
+                      }
+*/
 
