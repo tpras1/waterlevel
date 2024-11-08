@@ -802,13 +802,13 @@ button {
 
 
 }
-.rectangle-13:hover
+/*.rectangle-13:hover*
 {
 
-  /*box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);*/
- /* border:6px grey;*/
-  /*cursor:pointer;*/
-} 
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  border:6px grey;
+  /*cursor:pointer;
+}  */
 
 .project-brief {
   display: flex;
@@ -1079,12 +1079,12 @@ background: url(./assets/images/de81c4bb-5dd6-416e-8f62-9740c39144e9.png)
   border-radius: 0 0 35px 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-.rectangle-1d:hover
+/*.rectangle-1d:hover
 {
-  /*box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   border:6px grey;
-  cursor:pointer;*/
-}
+  cursor:pointer;
+} */
 
 
 .tank-monitor-1e {
@@ -1314,12 +1314,12 @@ background: url(./assets/images/de81c4bb-5dd6-416e-8f62-9740c39144e9.png)
   border-radius: 0 0 35px 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
-.rectangle-1f1:hover
+/*.rectangle-1f1:hover
 {
-  /*box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
   border:6px grey;
-  cursor:pointer;*/
-}
+  cursor:pointer;
+} */
 .switch-ctrl-201 {
   display: flex;
   align-items: flex-start;
@@ -2507,11 +2507,18 @@ border-color: rgb(250, 248, 248);
                         margin-left:900px;  
                         Width:405px;
                         height:402px;
+                        /*top:10px;
+                        margin-left:10px; 
+                        Width:1400px;
+                        height:1000px;*/
+
                         border-color: rgb(110, 107, 107);
                         border-width: 1px;
                         border-style: solid;
                         background-color: #f9fcff;
                         text-align:center; 
+                        justify-content: center;
+                        justify-items: center;
                         box-shadow: 0 1px 15px 0 grey;
                         border-radius: 15px;
                         color:#6fffb2;
@@ -2522,5 +2529,4 @@ border-color: rgb(250, 248, 248);
                         background: transparent;
                         border-radius: 9px;
                       }
-*/
 
