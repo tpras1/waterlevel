@@ -5,7 +5,8 @@ if (sessionStorage.getItem('loggedIn'))
 
         {
             var sections = document.getElementsByClassName('section');
-            for (var i = 0; i < sections.length; i++) {
+            for (var i = 0; i < sections.length; i++) 
+              {
                 sections[i].classList.remove('active');
             }
             document.getElementById(sectionId).classList.add('active');
@@ -15,10 +16,41 @@ if (sessionStorage.getItem('loggedIn'))
 function removesection()
 {
   var sections = document.getElementsByClassName('section');
+  for (var i = 0; i < sections.length; i++) 
+    {
+      sections[i].classList.remove('active');
+}
+}
+
+
+
+
+function showSwitch(switchID) 
+    
+
+        {
+            var sections = document.getElementsByClassName('Switch');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(switchID).classList.add('active');
+        }
+
+    
+function removesection()
+{
+  var sections = document.getElementsByClassName('section');
   for (var i = 0; i < sections.length; i++) {
       sections[i].classList.remove('active');
 }
 }
+
+
+
+
+
+
+
 
 
 function onMessageReceived(topic, message) 

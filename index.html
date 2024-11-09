@@ -213,7 +213,7 @@
   <div class="flex-row1">
    <center><H1> MONITOR AND CONTROL OF LIGHT ,LOUVERS & CURTAIN</H1></center>
 
-
+<div id = "Drawing-Room" class="Switch">
     <div id="dr_sw" class="DRSWITCH">
       <H2>Drawing room Switch Board</H2>
       <div class="Dsw1" onclick="toggleSwitch()">
@@ -267,7 +267,8 @@
           </div>
       </div> 
     </div>
-
+</div>
+<div id="SIT-OUT" class="Switch">
 <div id="so_sw" class="soswitch">
       <H2>SIT-OUT Switch Board</H2>
       <div class="sosw1" onclick="toggleSwitch()">        
@@ -311,11 +312,10 @@
       SOL6
       <img id="SOlimg6" src="./assets/images/light_on.png" alt="swon" width="15" height="25">
       </div> 
-  </div>
-
-
-    </div>
-
+        </div>
+        </div>
+</div>
+<div id="Entrance-Right" class="Switch">
     <div id="entr_sw" class="entrswitch">
     <H2>Entrance Right Switch Board</H2>
     <div class="entrsw1" onclick="toggleSwitch()">
@@ -349,10 +349,9 @@
       <img id="entrlimg4" src="./assets/images/light_off.png" alt="swon" width="15" height="25">
       </div> 
     </div>
-
   </div>
-
-
+</div>
+<div id="curtain" class="Switch">
 <div class="louverM"> 
   <div class="breakerM">MBD<br> Curtain
     <div id="startbtnM" onclick="">
@@ -363,7 +362,8 @@
     </div>
  </div>
 </div>
-
+</div>
+<div id="louvers" class="Switch">
   <div class="louver">
   <div class="breakerC">CourtYard<br> Louver
     <div id="startbtnC" onclick="">
@@ -400,9 +400,10 @@
       <div id="stopbtnL" onclick="">
       <center> <img id="stpimg" src="./assets/images/stp_u.png" alt="stop OFF" width="50" height="50"></center>
       </div>
-       
+</div>       
     </div>
     </div>
+
     <div class="meterV">VOLTAGE
       <canvas 
       id="vlt"
@@ -441,9 +442,17 @@
     </div>
 
 <div id="plan" class="pln">
-  <center> <img id="planimg" src="./assets/images/Electrical.png" alt="start OFF" width="405" height="402"></center>
+  <center> <img id="planimg" src="./assets/images/Electrical.png" alt="start OFF" width="780" height="700"></center>
+<div id="DR-Area" class="DR_Area" onclick="showSwitch('Drawing-Room')"></div>
+<div id="SO-Area" class="SO_Area" onclick="showSwitch('SIT-OUT')"></div>
+<div id="ENTR-Area" class="ENTR_Area" onclick="showSwitch('Entrance-Right')"></div>
+<div id="CENTRL-Courtyard-L" class="CENTRL_Courtyard" onclick="showSwitch('louvers')"></div>
+<div id="FRST-Floor-L" class="FRST_Floor_L" onclick="showSwitch('louvers')"></div>
+<div id="PORTICO-C" class="PORTICO_C" onclick="showSwitch('louvers')"></div>
+<div id="LIVING-C" class="LIVING_C" onclick="showSwitch('louvers')"></div>
+<div id="MBD-C" class="MBD_C" onclick="showSwitch('curtain')"></div>
 </div>
-
+.
 
 
         <div class="project-brief-171"></div>

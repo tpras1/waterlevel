@@ -1886,7 +1886,7 @@ z-index:18;
 .DRSWITCH
 {
 margin-top:100px;
-margin-left:100px;  
+margin-left:250px;  
 color:rgb(214, 212, 212);
 font-size: 10px;
 font-family:Arial, Helvetica, sans-serif;
@@ -2063,8 +2063,8 @@ margin-right: 5px;
 
     .soswitch
   {
-    margin-top:50px;
-    margin-left:100px;  
+    margin-top:100px;
+    margin-left:250px;   
     color:grey;
     font-size: 10px;
     font-family:Arial, Helvetica, sans-serif;
@@ -2206,8 +2206,8 @@ margin-right: 5px;
 
           .entrswitch
           {
-            margin-top:50px;
-            margin-left:100px;  
+            margin-top:100px;
+            margin-left:250px;  
             color:grey;
             font-size: 10px;
             font-family:Arial, Helvetica, sans-serif;
@@ -2331,8 +2331,8 @@ border-color: rgb(250, 248, 248);
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:159px;
-                margin-left:470px;  
+                margin-top:85px;
+                margin-left:250px;    
                 Width:345px;
                 height:180px;
                 border-color: rgb(110, 107, 107);
@@ -2342,7 +2342,7 @@ border-color: rgb(250, 248, 248);
                 text-align:center; 
                 box-shadow: 0 1px 15px 0 grey;
                 border-radius: 15px;
-                color:#6fffb2;
+                /*color:#6fffb2;*/
                 font-size: 12px;
               } 
               
@@ -2358,6 +2358,7 @@ border-color: rgb(250, 248, 248);
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 9px;
+                color:rgb(115, 250, 133);
                 place-items: center;
                 text-align: center;
                 
@@ -2375,6 +2376,7 @@ border-color: rgb(250, 248, 248);
           
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+                color:#8cd1ff;
                 border-radius: 9px;
                 place-items: center;
                 text-align: center;
@@ -2391,6 +2393,7 @@ border-color: rgb(250, 248, 248);
                         background-color: rgb(116, 112, 112);
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                         border-radius: 8px;
+                        color:rgb(255, 169, 245);
                         place-items: center;
                         text-align: center;
                         
@@ -2407,6 +2410,7 @@ border-color: rgb(250, 248, 248);
                                 background-color: rgb(116, 112, 112);
                                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                                 border-radius: 8px;
+                                color:rgb(255, 178, 140);
                                 place-items: center;
                                 text-align: center;
                              
@@ -2416,8 +2420,8 @@ border-color: rgb(250, 248, 248);
                 position:absolute;
                 display:block;
                 flex-direction: row;
-                top:625px;
-                margin-left:370px;  
+                margin-top:85px;
+                margin-left:250px;  
                 Width:90px;
                 height:180px;
                 border-color: rgb(110, 107, 107);
@@ -2442,6 +2446,7 @@ border-color: rgb(250, 248, 248);
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
+                color:rgb(255, 239, 131);
                 place-items: center;
                 text-align: center;
                 
@@ -2477,7 +2482,7 @@ border-color: rgb(250, 248, 248);
                       place-items: center;
                       text-align: center;
                       top:410px;
-                      left:470px;
+                      left:250px;
                       font-size: 12px;
                       color:#ffffff;
                       }
@@ -2493,7 +2498,7 @@ border-color: rgb(250, 248, 248);
                       place-items: center;
                       text-align: center;
                       top:410px;
-                      left:650px;
+                      left: 420px;
                       font-size: 12px;
                       color:#ffffff;
                       }
@@ -2504,9 +2509,9 @@ border-color: rgb(250, 248, 248);
                         display:block;
                         flex-direction: row;
                         top:150px;
-                        margin-left:900px;  
-                        Width:405px;
-                        height:402px;
+                        margin-left:600px;  
+                        Width:780px;
+                        height:700px;
                         /*top:10px;
                         margin-left:10px; 
                         Width:1400px;
@@ -2530,3 +2535,144 @@ border-color: rgb(250, 248, 248);
                         border-radius: 9px;
                       }
 
+
+
+.Switch
+{
+   display: none;
+}
+.Switch.active
+{
+    display:block;
+
+}
+
+
+.DR_Area
+{
+  position:absolute;
+top:335px;
+margin-left:437px;
+background-color: red;
+height: 148px;
+width:150px;
+z-index: 100;
+opacity:0.4;
+}
+.DR_Area:hover
+{
+
+ cursor: pointer; 
+}
+.SO_Area
+{
+  position:absolute;
+top:495px;
+margin-left:380px;
+background-color: rgb(0, 255, 183);
+height: 123px;
+width:210px;
+z-index: 100;
+opacity:0.4;
+}
+.SO_Area:hover
+{
+
+ cursor: pointer; 
+}
+.ENTR_Area
+{
+  position:absolute;
+top:450px;
+margin-left:380px;
+background-color: rgb(162, 0, 255);
+height: 40px;
+width:49px;
+z-index:75;
+opacity:0.4;
+}
+.ENTR_Area:hover
+{
+
+ cursor: pointer; 
+}
+.CENTRL_Courtyard
+{
+  position:absolute;
+top:220px;
+margin-left:280px;
+background-color: rgb(115, 250, 133);
+height: 65px;
+width:100px;
+z-index:75;
+opacity:0.4;
+}
+.CENTRL_Courtyard:hover
+{
+
+ cursor: pointer; 
+}
+.FRST_Floor_L
+{
+  position:absolute;
+top:600px;
+margin-left:150px;
+background-color:#1aa3ff;
+height: 30px;
+width:225px;
+z-index:75;
+opacity:0.4;
+}
+.FRST_Floor_L:hover
+{
+
+ cursor: pointer; 
+}
+.PORTICO_C
+{
+  position:absolute;
+top:310px;
+margin-left:150px;
+background-color: rgb(250, 4, 221);
+height: 138px;
+width:15px;
+z-index:75;
+opacity:0.4;
+}
+.PORTICO_C:hover
+{
+
+ cursor: pointer; 
+}
+.LIVING_C
+{
+  position:absolute;
+top:65px;
+margin-left:280px;
+background-color: rgb(196, 65, 0);
+height: 145px;
+width:15px;
+z-index:75;
+opacity:0.7;
+}
+.LIVING_C:hover
+{
+
+ cursor: pointer; 
+}
+.MBD_C
+{
+  position:absolute;
+top:230px;
+margin-left:670px;
+background-color: rgb(159, 138, 3);
+height: 35px;
+width:36px;
+z-index:75;
+opacity:0.4;
+}
+.MBD_C:hover
+{
+
+ cursor: pointer; 
+}
