@@ -359,7 +359,52 @@ window.onload = function() {
    // document.getElementById('app-content').classList.remove('hidden');
   }
 };
-
+let isOn = false;
 function showLogin() {
   document.getElementById("loginContainer").style.display = "block";
 }
+
+        function toggleSwitch(IDS) 
+        {
+          const SwitchImage = document.getElementById(IDS);
+          if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
+          {
+          
+          if (isOn) 
+    
+            {
+              SwitchImage.src = "./assets/images/sw_off.png";
+              SwitchImage.alt = "Switch OFF";
+              /*publishV_OFF();*/
+          } 
+          else 
+          {
+              SwitchImage.src = "./assets/images/sw_on.png";
+              SwitchImage.alt = "Switch  ON";
+              /*publishV_ON();*/
+          }
+          isOn = !isOn;
+        }
+        if (SwitchImage == swimg6 || SwitchImage == swimg5)
+        {
+          if (isOn) 
+    
+            {
+              SwitchImage.src = "./assets/images/sw_15A_off.png";
+              SwitchImage.alt = "Switch OFF";
+              /*publishV_OFF();*/
+          } 
+          else 
+          {
+              SwitchImage.src = "./assets/images/sw_15A_on.png";
+              SwitchImage.alt = "Switch  ON";
+              /*publishV_ON();*/
+          }
+          isOn = !isOn;
+        }
+
+
+
+
+      }
+    

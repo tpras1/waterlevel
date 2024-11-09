@@ -1915,8 +1915,13 @@ margin-left:20px;
 }
 #swimg1
 {
-
+  z-index:75;
 box-shadow: 0 1px 15px 0 grey;
+
+}
+.Dsw1:hover
+{
+cursor: pointer;
 
 }
 
@@ -1925,15 +1930,20 @@ box-shadow: 0 1px 15px 0 grey;
   flex-direction: column;
   align-items: center;
   float:left;
+  
   /*box-shadow: 0 1px 15px 0 grey;*/
 }
 #swimg2
 {
 
 box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.Dsw2:hover
+{
+cursor: pointer;
 
 }
-
 
 
 .Dsw3{
@@ -1941,14 +1951,22 @@ box-shadow: 0 1px 15px 0 grey;
 flex-direction: column;
 align-items: center;
 float:left;
+z-index: 101;
 /*box-shadow: 0 1px 15px 0 grey;*/
   }
+  .Dsw3:hover
+  {
+  cursor: pointer;
+  
+  }
+
+  
 
   #swimg3
   {
   
   box-shadow: 0 1px 15px 0 grey;
-  
+  z-index:75;
   }
 
   .Dsw4{
@@ -1957,13 +1975,20 @@ flex-direction: column;
 align-items: center;
 float:left;
 margin-right: 5px;
+z-index: 101;
 /*box-shadow: 0 1px 15px 0 grey;*/
   }
+  .Dsw4:hover
+  {
+  cursor: pointer;
+  
+  }
+
   #swimg4
   {
   
   box-shadow: 0 1px 15px 0 grey;
-  
+  z-index:75;
   }
 
   .Dsw5{
@@ -1972,12 +1997,20 @@ margin-right: 5px;
   align-items: center;
   float:left;
   margin-right:4px;
+  z-index: 101;
   /*box-shadow: 0 1px 15px 0 grey;*/
     }
+    .Dsw5:hover
+    {
+    cursor: pointer;
+    
+    }
+
 
     #swimg5
     {
     box-shadow: 0 1px 15px 0 grey;
+    z-index: 75;
     }
 
     .Dsw6{
@@ -1985,13 +2018,20 @@ margin-right: 5px;
   flex-direction: column;
   align-items: center;
   float:left;
+ 
   /*box-shadow: 0 1px 15px 0 grey;*/
     } 
+    .Dsw6:hover
+    {
+    cursor: pointer;
+    
+    }
+
     #swimg6
     {
     
     box-shadow: 0 1px 15px 0 grey;
-    
+    z-index:75;
     }
 
 /*.dl
@@ -2089,9 +2129,16 @@ margin-right: 5px;
     margin-left:20px;
  /* box-shadow: 0 1px 15px 0 grey;*/
   }
+  .sosw1:hover
+    {
+    cursor: pointer;
+    }
+
+
   #soswimg1
   {
   box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
   }
   .sosw2{
     Display :flex;
@@ -2100,9 +2147,14 @@ margin-right: 5px;
     float:left;
    /* box-shadow: 0 1px 15px 0 grey;*/
   }
+  .sosw2:hover
+  {
+  cursor: pointer;
+  }
   #soswimg2
   {
   box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
   }
   .sosw3{
     Display :flex;
@@ -2111,9 +2163,15 @@ margin-right: 5px;
   float:left;
   /*box-shadow: 0 1px 15px 0 grey;*/
     }
+    .sosw3:hover
+    {
+    cursor: pointer;
+    }
+
     #soswimg3
     {
     box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
     }
     .sosw4{
       Display :flex;
@@ -2123,9 +2181,14 @@ margin-right: 5px;
   margin-right: 5px;
   /*box-shadow: 0 1px 15px 0 grey;*/
     }
+    .sosw4:hover
+    {
+    cursor: pointer;
+    }
     #soswimg4
     {
     box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
     }
     .sosw5{
       Display :flex;
@@ -2134,9 +2197,14 @@ margin-right: 5px;
     float:left;
     /*box-shadow: 0 1px 15px 0 grey;*/
       }
+      .sosw5:hover
+      {
+      cursor: pointer;
+      }
       #soswimg5
       {
       box-shadow: 0 1px 15px 0 grey;
+      z-index:75;
       }
 
       .sosw6{
@@ -2146,9 +2214,16 @@ margin-right: 5px;
     float:left;
     /*box-shadow: 0 1px 15px 0 grey;*/
       } 
+      .sosw6:hover
+      {
+      cursor: pointer;
+      }
+
+
       #soswimg6
       {
       box-shadow: 0 1px 15px 0 grey;
+      z-index:75;
       }
 
 
@@ -2232,9 +2307,15 @@ border-color: rgb(250, 248, 248);
           margin-left:20px;
          
           }
+          .entrsw1:hover
+          {
+          cursor: pointer;
+          }
+
           #entrswimg1
           {
           box-shadow: 0 1px 15px 0 grey;
+          z-index:75;
           }
 
           .entrsw2{
@@ -2244,9 +2325,16 @@ border-color: rgb(250, 248, 248);
             float:left;
 
           }
+          .entrsw2:hover
+          {
+          cursor: pointer;
+          }
+
+
           #entrswimg2
           {
           box-shadow: 0 1px 15px 0 grey;
+          z-index:75;
           }
 
           .entrsw3{
@@ -2256,9 +2344,15 @@ border-color: rgb(250, 248, 248);
           float:left;
       
             }
+            .entrsw3:hover
+            {
+            cursor: pointer;
+            }
+
             #entrswimg3
             {
             box-shadow: 0 1px 15px 0 grey;
+            z-index:75;
             }
 
             .entrsw4{
@@ -2269,9 +2363,15 @@ border-color: rgb(250, 248, 248);
           margin-right: 5px;
        
             }
+            .entrsw4:hover
+            {
+            cursor: pointer;
+            }
+
             #entrswimg4
             {
             box-shadow: 0 1px 15px 0 grey;
+            z-index:75;
             }
 
             .entrsw5{
@@ -2670,6 +2770,7 @@ height: 35px;
 width:36px;
 z-index:75;
 opacity:0.4;
+z-index:76;
 }
 .MBD_C:hover
 {
