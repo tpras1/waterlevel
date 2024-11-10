@@ -2434,7 +2434,7 @@ border-color: rgb(250, 248, 248);
                 margin-top:85px;
                 margin-left:250px;    
                 Width:345px;
-                height:180px;
+                height:220px;
                 border-color: rgb(110, 107, 107);
                 border-width: 1px;
                 border-style: solid;
@@ -2454,7 +2454,7 @@ border-color: rgb(250, 248, 248);
                 margin-top:10px;
                 display: grid;
                 width: 70px;
-                height:160px;
+                height:200px;
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 9px;
@@ -2472,7 +2472,7 @@ border-color: rgb(250, 248, 248);
                 margin-top:10px;
                 display: grid;
                 width: 70px;
-                height:160px;
+                height:200px;
           
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
@@ -2489,7 +2489,7 @@ border-color: rgb(250, 248, 248);
                         margin-top:10px;
                         display: grid;
                         width: 70px;
-                        height:160px;
+                        height:200px;
                         background-color: rgb(116, 112, 112);
                         box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                         border-radius: 8px;
@@ -2506,7 +2506,7 @@ border-color: rgb(250, 248, 248);
                                 margin-top:10px;
                                 display: grid;
                                 width: 70px;
-                                height:160px;
+                                height:200px;
                                 background-color: rgb(116, 112, 112);
                                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                                 border-radius: 8px;
@@ -2523,7 +2523,7 @@ border-color: rgb(250, 248, 248);
                 margin-top:85px;
                 margin-left:250px;  
                 Width:90px;
-                height:180px;
+                height:220px;
                 border-color: rgb(110, 107, 107);
                 border-width: 1px;
                 border-style: solid;
@@ -2542,7 +2542,7 @@ border-color: rgb(250, 248, 248);
                 margin-top:10px;
                 display: grid;
                 width: 70px;
-                height:160px;
+                height:200px;
                 background-color: rgb(116, 112, 112);
                 box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
                 border-radius: 8px;
@@ -2551,6 +2551,151 @@ border-color: rgb(250, 248, 248);
                 text-align: center;
                 
                       }
+                      #openbtnM
+                      {
+                        z-index:75;
+
+                      }
+                      #openbtnM:hover
+                      {
+                        cursor:pointer;
+                      }
+                      #stopbtnM
+                      {
+                        z-index:75;
+
+                      }
+                      #stopbtnM:hover
+                      {
+                        cursor:pointer;
+                      }
+                      #closebtnM
+                      {
+                        z-index:75;
+
+                      }
+                      #closebtnM:hover
+                      {
+                        cursor:pointer;
+                      }
+    
+                    #openbtnC 
+                    {
+                      z-index:75;
+
+                    }
+                    #openbtnC:hover
+                    {
+                      cursor:pointer;
+                    }
+                    #stopbtnC
+                    {
+                      z-index:75;
+
+                    }
+                    #stopbtnC:hover
+                    {
+                      cursor:pointer;
+                    }
+                    #closebtnC
+                    {
+                      z-index:75;
+
+                    }
+                    #closebtnC:hover
+                    {
+                      cursor:pointer;
+                    }
+
+
+            
+                  #openbtnF
+                  {
+                    z-index:75;
+
+                  }
+                  #openbtnF:hover
+                  {
+                    cursor:pointer;
+                  }
+                  #stopbtnF
+                  {
+                    z-index:75;
+
+                  }
+                  #stopbtnF:hover
+                  {
+                    cursor:pointer;
+                  }
+                  #closebtnF
+                  {
+                    z-index:75;
+
+                  }
+                  #closebtnF:hover
+                  {
+                    cursor:pointer;
+                  }
+
+                #openbtnD
+                {
+                  z-index:75;
+
+                }
+                #openbtnD:hover
+                {
+                  cursor:pointer;
+                }
+                #stopbtnD
+                {
+                  z-index:75;
+
+                }
+                #stopbtnD:hover
+                {
+                  cursor:pointer;
+                }
+                #closebtnD
+                {
+                  z-index:75;
+
+                }
+                #closebtnD:hover
+                {
+                  cursor:pointer;
+                }                 
+
+                #openbtnL
+                {
+                  z-index:75;
+
+                }
+                #openbtnL:hover
+                {
+                  cursor:pointer;
+                }
+                #stopbtnL
+                {
+                  z-index:75;
+
+                }
+                #stopbtnL:hover
+                {
+                  cursor:pointer;
+                }
+                #closebtnL
+                {
+                  z-index:75;
+
+                }
+                #closebtnL:hover
+                {
+                  cursor:pointer;
+                }         
+
+
+
+
                       .el_parameter
                       {
                         position:absolute;

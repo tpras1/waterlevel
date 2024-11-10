@@ -402,9 +402,97 @@ function showLogin() {
           }
           isOn = !isOn;
         }
-
-
-
-
       }
     
+
+      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('openimgM', 'stpimgM','closeimgM'));
+      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('openimgM', 'stpimgM','closeimgM'));
+      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('openimgM', 'stpimgM','closeimgM'));
+      
+      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('openimgC', 'stpimgC','closeimgC'));
+      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC'));
+      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('openimgC', 'stpimgC','closeimgC'));
+      
+      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('openimgF', 'stpimgF','closeimgF'));
+      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('openimgF', 'stpimgF','closeimgF'));
+      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('openimgF', 'stpimgF','closeimgF'));
+
+      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('openimgD', 'stpimgD','closeimgD'));
+      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('openimgD', 'stpimgD','closeimgD'));
+      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('openimgD', 'stpimgD','closeimgD'));
+
+      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('openimgL', 'stpimgL','closeimgL'));
+      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('openimgL', 'stpimgL','closeimgL'));
+      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('openimgL', 'stpimgL','closeimgL')); 
+      
+      let isp = false;
+      
+      function toggleopen(OIMGID, SIMGID,CIMGID) {
+          const openImage = document.getElementById(OIMGID);
+          const stopImage = document.getElementById(SIMGID);
+          const closeImage = document.getElementById(CIMGID);
+
+          if (isp) {
+              // Start OFF state
+              //startImage.src = "./assets/images/strt_u.png";
+              //startImage.alt = "start OFF";
+              //stopImage.src = "./assets/images/stp.png";
+              //stopImage.alt = "stop ON";
+          } else {
+              // Start ON state
+              openImage.src = "./assets/images/open.png";
+              openImage.alt = "start ON";
+              stopImage.src = "./assets/images/stp_u.png";
+              stopImage.alt = "stop OFF";
+              closeImage.src = "./assets/images/close_u.png";
+
+          }
+          isp = !isp;
+      }
+      
+      function togglestp(OIMGID, SIMGID,CIMGID) {
+          const openImage = document.getElementById(OIMGID);
+          const stopImage = document.getElementById(SIMGID);
+          const closeImage = document.getElementById(CIMGID);
+      
+          if (isp) {
+              // Stop ON state
+              stopImage.src = "./assets/images/stp.png";
+              stopImage.alt = "stop ON";
+              openImage.src = "./assets/images/open_u.png";
+              openImage.alt = "start OFF";
+              closeImage.src = "./assets/images/close_u.png";
+
+          } else {
+              // Stop OFF state
+              //stopImage.src = "./assets/images/stp_u.png";
+              //stopImage.alt = "stop OFF";
+              //startImage.src = "./assets/images/strt.png";
+              //startImage.alt = "start ON";
+          }
+          isp = !isp;
+      }
+      
+
+      function toggleclose(OIMGID, SIMGID,CIMGID) {
+        const openImage = document.getElementById(OIMGID);
+        const stopImage = document.getElementById(SIMGID);
+        const closeImage = document.getElementById(CIMGID);
+    
+        if (isp) {
+            // Stop ON state
+            //stopImage.src = "./assets/images/stp.png";
+            //stopImage.alt = "stop ON";
+            //openImage.src = "./assets/images/open_u.png";
+            //openImage.alt = "start OFF";
+
+        } else {
+            // Stop OFF state
+            openImage.src = "./assets/images/open_u.png";
+            openImage.alt = "start ON";
+            stopImage.src = "./assets/images/stp_u.png";
+            stopImage.alt = "stop OFF";
+            closeImage.src = "./assets/images/close.png";
+        }
+        isp = !isp;
+    }
