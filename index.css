@@ -590,12 +590,14 @@ button {
 .image-esp8 {
   position: absolute;
   width: 600px;
-  height: 320px;
+  height: 600px;
   /*top: 95px;
   left: 763px;*/
-  top: 150px;
+  top: 0px;
   left:800px;
-  background:url(./assets/images/ESP8266.png)
+  background:url(./assets/images/smart_home_vect.png)
+
+  /*background:url(./assets/images/ESP8266.png)*/
   /*background: url(./assets/images/6e3d5194-9321-4861-a18e-cf7e5f7c4b56.png)*/
     no-repeat center;
   background-size: cover;
@@ -613,9 +615,9 @@ button {
   left: 763px;*/
   top: 500px;
   left:800px;
-  background:url(./assets/images/ESP32.png)
+  /*background:url(./assets/images/ESP32.png)*/
   /*background: url(./assets/images/6e3d5194-9321-4861-a18e-cf7e5f7c4b56.png)*/
-    no-repeat center;
+   /* no-repeat center;*/
   background-size: cover;
   z-index: 25;
   
@@ -625,13 +627,13 @@ button {
   position: absolute;
   /*width: 551.073px;
   height: 506.487px;*/
-  width:500px;
-  height:450px;
+  width:200px;
+  height:200px;
   /*top: 95px;
   left: 763px;*/
-  top: 0px;
-  left:150px;
-  background:url(./assets/images/SMART_HOME.png)
+  top: 180px;
+  left:350px;
+  background:url(./assets/images/iot.png)
   /*background: url(./assets/images/6e3d5194-9321-4861-a18e-cf7e5f7c4b56.png)*/
     no-repeat center;
   background-size: cover;
@@ -2921,4 +2923,23 @@ z-index:76;
 {
 
  cursor: pointer; 
+}
+.swdetail
+{
+  position:absolute;
+  display:grid;
+  /*flex-direction: row;*/
+  top:570px;
+  left:250px;    
+  Width:320px;
+  height:260px;
+  border-color: rgb(110, 107, 107);
+  border-width: 1px;
+  border-style: solid;
+  background-color: #ffffff;
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 grey;
+  border-radius: 10px;
+  /*color:#6fffb2;*/
+  font-size: 12px;
 }
