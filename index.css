@@ -6,7 +6,7 @@
 }
 html
 {
-
+background-color: #90afa1;
   zoom:60%;
 }
 
@@ -609,15 +609,15 @@ button {
 
 .image-esp {
   position: absolute;
-  width: 460px;
-  height: 420px;
+  width: 600px;
+  height: 110px;
   /*top: 95px;
   left: 763px;*/
-  top: 500px;
-  left:800px;
-  /*background:url(./assets/images/ESP32.png)*/
+  top: 750px;
+  left:750px;
+  background:url(./assets/images/ESP32-mqtt.png)
   /*background: url(./assets/images/6e3d5194-9321-4861-a18e-cf7e5f7c4b56.png)*/
-   /* no-repeat center;*/
+  no-repeat center;
   background-size: cover;
   z-index: 25;
   
@@ -933,7 +933,7 @@ button {
   height: 1032px;
   margin: 63px 0 0 0; */
   z-index: 55;
-
+background-color: #ffffff;
   /*width: 1538px;*/
   width:1436px;
   height: 1032px;
@@ -1151,6 +1151,7 @@ background: url(./assets/images/de81c4bb-5dd6-416e-8f62-9740c39144e9.png)
   margin: 63px 0 0 0; */
   z-index: 55;
 color:gray;
+background-color: #ffffff;
   /*width: 1538px;*/
   width:1436px;
   height: 1032px;
@@ -1159,7 +1160,7 @@ color:gray;
   border-width: 1px;
   border-color: gray;
   /*box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.3);*/
-  box-shadow: 0 1px 15px 0 grey;
+  box-shadow: 0 1px 15px 0 rgb(68, 66, 66);
   border-radius: 24px 0 0 24px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
