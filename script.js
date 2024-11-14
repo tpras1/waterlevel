@@ -48,11 +48,6 @@ function removesection()
 
 
 
-
-
-
-
-
 function onMessageReceived(topic, message) 
 {
   console.log(`Message received on topic '${topic}': ${message.toString()}`);
@@ -364,7 +359,10 @@ function showLogin() {
   document.getElementById("loginContainer").style.display = "block";
 }
 
-        function toggleSwitch(IDS) 
+        
+
+
+function toggleSwitch(IDS,SW) 
         {
           const SwitchImage = document.getElementById(IDS);
           if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
@@ -375,12 +373,14 @@ function showLogin() {
             {
               SwitchImage.src = "./assets/images/sw_off.png";
               SwitchImage.alt = "Switch OFF";
-              /*publishV_OFF();*/
+              publish_sw_stat(SW,"OFF");
+              /*publishV_OFF()*/
           } 
           else 
           {
               SwitchImage.src = "./assets/images/sw_on.png";
               SwitchImage.alt = "Switch  ON";
+              publish_sw_stat(SW,"ON");
               /*publishV_ON();*/
           }
           isOn = !isOn;
@@ -392,12 +392,14 @@ function showLogin() {
             {
               SwitchImage.src = "./assets/images/sw_15A_off.png";
               SwitchImage.alt = "Switch OFF";
+              publish_sw_stat(SW,"OFF");
               /*publishV_OFF();*/
           } 
           else 
           {
               SwitchImage.src = "./assets/images/sw_15A_on.png";
               SwitchImage.alt = "Switch  ON";
+              publish_sw_stat(SW,"ON");
               /*publishV_ON();*/
           }
           isOn = !isOn;
@@ -496,3 +498,75 @@ function showLogin() {
         }
         isp = !isp;
     }
+
+
+
+
+    function publish_sw_stat(SWID,STAT)
+{
+  
+    /*const checkbox = document.getElementById('toggle1');*/
+    /*const toggle = STAT*/
+  
+    // Prepare the JSON data
+    var data = {
+SW:SWID+STAT
+    };
+
+    // Connect to the MQTT broker
+    const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
+
+    client.on('connect', function () {
+      console.log('Connected to MQTT broker');
+      client.publish('SWPAV', JSON.stringify(data), function (err) {
+        if (err) {
+          //document.getElementById("response").innerHTML = "Error publishing: " + err;
+        } else {
+          //document.getElementById("response").innerHTML = "Communication & Register Data published successfully! -Through VFDSETT";
+         // document.getElementById("msg").innerHTML = "submitted JSON thorugh topicVFDSETT :     " + JSON.stringify(data);
+          client.end();
+        }
+      });
+    });
+
+    // Handle connection errors
+    client.on('error', function (err) {
+      console.log('Connection error:', err);
+      //document.getElementById("response").innerHTML = "MQTT connection error: " + err;
+    });
+}
+function publish_louver(LID,LSTAT)
+{
+  
+    /*const checkbox = document.getElementById('toggle1');*/
+    /*const toggle = STAT*/
+  
+    // Prepare the JSON data
+    var data = {
+      LID
+//LOUVER:LID+LSTAT 
+    };
+
+    // Connect to the MQTT broker
+    const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
+
+    client.on('connect', function () {
+      console.log('Connected to MQTT broker');
+      client.publish('SWPAV', JSON.stringify(data), function (err) {
+        if (err) {
+          //document.getElementById("response").innerHTML = "Error publishing: " + err;
+        } else {
+          //document.getElementById("response").innerHTML = "Communication & Register Data published successfully! -Through VFDSETT";
+         // document.getElementById("msg").innerHTML = "submitted JSON thorugh topicVFDSETT :     " + JSON.stringify(data);
+          client.end();
+        }
+      });
+    });
+
+    // Handle connection errors
+    client.on('error', function (err) {
+      console.log('Connection error:', err);
+      //document.getElementById("response").innerHTML = "MQTT connection error: " + err;
+    });
+}
+
