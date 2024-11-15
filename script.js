@@ -407,29 +407,29 @@ function toggleSwitch(IDS,SW)
       }
     
 
-      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('openimgM', 'stpimgM','closeimgM'));
-      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('openimgM', 'stpimgM','closeimgM'));
-      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('openimgM', 'stpimgM','closeimgM'));
+      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('openimgM', 'stpimgM','closeimgM','MBDRM'));
+      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('openimgM', 'stpimgM','closeimgM','MBDRM'));
+      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('openimgM', 'stpimgM','closeimgM','MBDRM'));
       
-      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('openimgC', 'stpimgC','closeimgC'));
-      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC'));
-      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('openimgC', 'stpimgC','closeimgC'));
+      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('openimgC', 'stpimgC','closeimgC','CRTYRD'));
+      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC','CRTRD'));
+      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('openimgC', 'stpimgC','closeimgC','CRTYRD'));
       
-      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('openimgF', 'stpimgF','closeimgF'));
-      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('openimgF', 'stpimgF','closeimgF'));
-      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('openimgF', 'stpimgF','closeimgF'));
+      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('openimgF', 'stpimgF','closeimgF','FFLR'));
+      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('openimgF', 'stpimgF','closeimgF','FFLR'));
+      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('openimgF', 'stpimgF','closeimgF','FFLR'));
 
-      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('openimgD', 'stpimgD','closeimgD'));
-      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('openimgD', 'stpimgD','closeimgD'));
-      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('openimgD', 'stpimgD','closeimgD'));
+      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('openimgD', 'stpimgD','closeimgD','PRTCO'));
+      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('openimgD', 'stpimgD','closeimgD','PRTCO'));
+      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('openimgD', 'stpimgD','closeimgD','PRTCO'));
 
-      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('openimgL', 'stpimgL','closeimgL'));
-      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('openimgL', 'stpimgL','closeimgL'));
-      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('openimgL', 'stpimgL','closeimgL')); 
+      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('openimgL', 'stpimgL','closeimgL','LRM'));
+      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('openimgL', 'stpimgL','closeimgL','LRM'));
+      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('openimgL', 'stpimgL','closeimgL','LRM')); 
       
       let isp = false;
       
-      function toggleopen(OIMGID, SIMGID,CIMGID) {
+      function toggleopen(OIMGID, SIMGID,CIMGID,AREA) {
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
@@ -443,6 +443,7 @@ function toggleSwitch(IDS,SW)
           } else {
               // Start ON state
               openImage.src = "./assets/images/open.png";
+              publish_louver(AREA,'OPN');
               openImage.alt = "start ON";
               stopImage.src = "./assets/images/stp_u.png";
               stopImage.alt = "stop OFF";
@@ -452,7 +453,7 @@ function toggleSwitch(IDS,SW)
           isp = !isp;
       }
       
-      function togglestp(OIMGID, SIMGID,CIMGID) {
+      function togglestp(OIMGID, SIMGID,CIMGID,AREA) {
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
@@ -460,6 +461,7 @@ function toggleSwitch(IDS,SW)
           if (isp) {
               // Stop ON state
               stopImage.src = "./assets/images/stp.png";
+              publish_louver(AREA,'STP');
               stopImage.alt = "stop ON";
               openImage.src = "./assets/images/open_u.png";
               openImage.alt = "start OFF";
@@ -476,7 +478,7 @@ function toggleSwitch(IDS,SW)
       }
       
 
-      function toggleclose(OIMGID, SIMGID,CIMGID) {
+      function toggleclose(OIMGID, SIMGID,CIMGID,AREA) {
         const openImage = document.getElementById(OIMGID);
         const stopImage = document.getElementById(SIMGID);
         const closeImage = document.getElementById(CIMGID);
@@ -491,6 +493,7 @@ function toggleSwitch(IDS,SW)
         } else {
             // Stop OFF state
             openImage.src = "./assets/images/open_u.png";
+            publish_louver(AREA,'CLS');
             openImage.alt = "start ON";
             stopImage.src = "./assets/images/stp_u.png";
             stopImage.alt = "stop OFF";
@@ -510,7 +513,8 @@ function toggleSwitch(IDS,SW)
   
     // Prepare the JSON data
     var data = {
-SW:SWID+STAT
+ SWID: SWID , 
+ STAT: STAT
     };
 
     // Connect to the MQTT broker
@@ -523,7 +527,7 @@ SW:SWID+STAT
           //document.getElementById("response").innerHTML = "Error publishing: " + err;
         } else {
           //document.getElementById("response").innerHTML = "Communication & Register Data published successfully! -Through VFDSETT";
-         // document.getElementById("msg").innerHTML = "submitted JSON thorugh topicVFDSETT :     " + JSON.stringify(data);
+         document.getElementById("mqtt-topic").innerHTML = "Topic: SWPAV  Message:" + JSON.stringify(data);
           client.end();
         }
       });
@@ -543,7 +547,8 @@ function publish_louver(LID,LSTAT)
   
     // Prepare the JSON data
     var data = {
-      LID
+      LID : LID ,
+      STAT : LSTAT
 //LOUVER:LID+LSTAT 
     };
 
@@ -554,10 +559,10 @@ function publish_louver(LID,LSTAT)
       console.log('Connected to MQTT broker');
       client.publish('SWPAV', JSON.stringify(data), function (err) {
         if (err) {
-          //document.getElementById("response").innerHTML = "Error publishing: " + err;
+          document.getElementById("mqtt-topic").innerHTML = "Error publishing: " + err;
         } else {
           //document.getElementById("response").innerHTML = "Communication & Register Data published successfully! -Through VFDSETT";
-         // document.getElementById("msg").innerHTML = "submitted JSON thorugh topicVFDSETT :     " + JSON.stringify(data);
+         document.getElementById("mqtt-topic").innerHTML = "Topic: SWPAV  Message:" + JSON.stringify(data);
           client.end();
         }
       });
