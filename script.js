@@ -613,6 +613,19 @@ function fetchSWSTAT()
         }
     });
 
+   /*for (const key in data) {
+      if (key.startsWith("LT")) {
+          const shouldExit = lghtindctr(client, key, data[key]);
+          if (shouldExit) {
+              console.log("Condition met. Exiting and closing MQTT connection.");
+              client.end();
+              return; // Exit `fetchSWSTAT`
+          }
+      }
+  }
+    }); */
+
+
     // Handle connection errors
     client.on('error', function (err) {
       console.error("Connection error:", err);
@@ -621,11 +634,12 @@ function fetchSWSTAT()
     // Handle client disconnect
     client.on('close', function () {
       console.log("Disconnected from MQTT broker");
+      document.getElementById("mqtt-topic").innerHTML = "Diconnected MQTT";
     });
 
 }
   // Call fetchmq to start the MQTT client
-fetchSWSTAT();
+
 
 
 //function lghtindctr(SWID,STAT)
@@ -639,9 +653,9 @@ function lghtindctr(IDS,STAT)
           const LTIMG = document.getElementById(IDS);
           const LTIMGP = document.getElementById(IDS + "P" );
           //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
-          document.getElementById("mqtt-topic").innerHTML =SWID +":"+STAT;
+          document.getElementById("mqtt-topic").innerHTML = IDS +":"+STAT;
           
-          if (STAT=="ON") 
+          if (STAT === "ON") 
     
             {
               LTIMG.src = "./assets/images/light_on.png";
@@ -649,11 +663,11 @@ function lghtindctr(IDS,STAT)
               LTIMGP.src= "./assets/images/light_on_w.png";
              
           } 
-        if (STAT=="OFF")
+        if (STAT === "OFF")
           {
               LTIMG.src = "./assets/images/light_off.png";
               LTIMG.alt = "LTOFF";
               LTIMGP.src= "./assets/images/light_off_b.png";
           }
-         
         }
+  fetchSWSTAT() ;
