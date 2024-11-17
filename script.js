@@ -639,7 +639,7 @@ function lghtindctr(IDS,STAT)
           const LTIMG = document.getElementById(IDS);
           const LTIMGP = document.getElementById(IDS + "P" );
           //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
-          
+          document.getElementById("mqtt-topic").innerHTML =SWID +":"+STAT;
           
           if (STAT=="ON") 
     
