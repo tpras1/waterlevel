@@ -133,12 +133,23 @@ function onMessageReceived(topic, message)
           //document.getElementById("mqttport").value = jsonData.mqttporte;
 
   }
+
+
+
    catch (e) 
   {
       console.error("Error parsing JSON message:", e);
       //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
   }
 }
+          if(topic=== "SWSTATPAV")
+          {
+
+            document.getElementById("mqtt-topic").innerHTML ="SWSTATPAV RECD"
+
+          }
+
+
 }
 // Callback function after a successful subscription
 function onSubscriptionSuccess(err) 
@@ -574,78 +585,7 @@ function publish_louver(LID,LSTAT)
 }
 
 
-function fetchSWSTAT() 
-{
-    // Connect to the MQTT broker
-    const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
 
-    // Define the onConnect callback
-    client.on('connect', function () {
-      console.log("Connected to MQTT broker");
-      client.subscribe('SWSTATPAV', function (err) {
-        if (!err) {
-          console.log("Subscribed to topic: SWSTATPAV");
-        } else {
-          console.error("Failed to subscribe:", err);
-        }
-      });
-    });
-
-    // Handle incoming messages
-    client.on('message', function (topic, message) {
-      console.log("Message received:", message.toString());
-
-      // Parse the JSON message
-      const data = JSON.parse(message.toString());
-      document.getElementById("mqtt-topic").innerHTML = "Topic:"+topic+data;
-
-      // Update the gauges with the respective data
-      document.getElementById('AMP').setAttribute('data-value', data.pcur);
-    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
-    document.getElementById('vlt').setAttribute('data-value', data.pvlt);
-    //document.getElementById("dash").innerHTML = "VFD Output Voltage = "+data.volt;
-    for (const key in data) 
-      {
-        if (key.startsWith("LT")) 
-          {
-           lghtindctr(key, data[key]);
-          }
-        }
-    });
-
-   /*for (const key in data) {
-      if (key.startsWith("LT")) {
-          const shouldExit = lghtindctr(client, key, data[key]);
-          if (shouldExit) {
-              console.log("Condition met. Exiting and closing MQTT connection.");
-              client.end();
-              return; // Exit `fetchSWSTAT`
-          }
-      }
-  }
-    }); */
-
-
-    // Handle connection errors
-    client.on('error', function (err) {
-      console.error("Connection error:", err);
-    });
-
-    // Handle client disconnect
-    client.on('close', function () {
-      console.log("Disconnected from MQTT broker");
-      document.getElementById("mqtt-topic").innerHTML = "Diconnected MQTT";
-    });
-
-}
-  // Call fetchmq to start the MQTT client
-
-
-
-//function lghtindctr(SWID,STAT)
-//{
-//  document.getElementById("mqtt-topic").innerHTML =SWID +":"+STAT;
-//} 
 
 
 function lghtindctr(IDS,STAT) 
@@ -669,5 +609,75 @@ function lghtindctr(IDS,STAT)
               LTIMG.alt = "LTOFF";
               LTIMGP.src= "./assets/images/light_off_b.png";
           }
+          
         }
-  fetchSWSTAT() ;
+ /* fetchSWSTAT() ;*/
+
+
+
+
+ function onMessageReceived1(topic, message) 
+{
+  console.log(`Message received on topic '${topic}': ${message.toString()}`);
+  // document.getElementById("msg").innerHTML = "Message received on topic:     " + topic + message.toString();
+
+  // Convert the MQTT message to a string and try to parse it as JSON
+  if (topic === "SWSTATPAV")
+  {
+    /*document.getElementById("msg").innerHTML= "TOPIC EPROMDATA "; */
+    try { 
+      var data = JSON.parse(message.toString());
+
+      document.getElementById("mqtt-topic").innerHTML = "Topic:"+topic+data;
+
+      // Update the gauges with the respective data
+      document.getElementById('AMP').setAttribute('data-value', data.pcur);
+    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
+    document.getElementById('vlt').setAttribute('data-value', data.pvlt);
+    //document.getElementById("dash").innerHTML = "VFD Output Voltage = "+data.volt;
+    for (const key in data) 
+      {
+        if (key.startsWith("LT")) 
+          {
+           lghtindctr(key, data[key]);
+          }
+        }
+  
+
+  }
+
+   catch (e) 
+  {
+      console.error("Error parsing JSON message:", e);
+      //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+  }
+}
+
+
+}
+// Callback function after a successful subscription
+function onSubscriptionSuccess(err) 
+{
+  if (!err) 
+    {
+      console.log("Successfully subscribed to topic");
+  } 
+  else 
+  {
+      console.error("Error subscribing to topic:", err);
+  }
+}
+
+// Connect to the MQTT broker
+const client1 = mqtt.connect('wss://test.mosquitto.org:8081/mtqt');  // Replace with your broker URL
+
+// When the client connects to the broker
+client1.on('connect', function () {
+  console.log("Connected to broker");
+
+  // Subscribe to the topic with a callback for the subscription
+  client1.subscribe('SWSTATPAV', onSubscriptionSuccess);
+});
+
+// When a message is received
+client1.on('message', onMessageReceived1);
