@@ -412,7 +412,7 @@ function toggleSwitch(IDS,SW)
       document.getElementById('closebtnM').addEventListener('click', () => toggleclose('openimgM', 'stpimgM','closeimgM','MBDRM'));
       
       document.getElementById('openbtnC').addEventListener('click', () => toggleopen('openimgC', 'stpimgC','closeimgC','CRTYRD'));
-      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC','CRTRD'));
+      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC','CRTYRD'));
       document.getElementById('closebtnC').addEventListener('click', () => toggleclose('openimgC', 'stpimgC','closeimgC','CRTYRD'));
       
       document.getElementById('openbtnF').addEventListener('click', () => toggleopen('openimgF', 'stpimgF','closeimgF','FFLR'));
@@ -512,11 +512,9 @@ function toggleSwitch(IDS,SW)
     /*const toggle = STAT*/
   
     // Prepare the JSON data
-    var data = {
- SWID: SWID , 
- STAT: STAT
-    };
-
+    var data = {}
+      data[SWID]= STAT;      
+    
     // Connect to the MQTT broker
     const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
 
@@ -546,11 +544,11 @@ function publish_louver(LID,LSTAT)
     /*const toggle = STAT*/
   
     // Prepare the JSON data
-    var data = {
-      LID : LID ,
-      STAT : LSTAT
+    var data = {}
+      data[LID] = LSTAT ;
+    
 //LOUVER:LID+LSTAT 
-    };
+
 
     // Connect to the MQTT broker
     const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
@@ -575,3 +573,87 @@ function publish_louver(LID,LSTAT)
     });
 }
 
+
+function fetchSWSTAT() 
+{
+    // Connect to the MQTT broker
+    const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
+
+    // Define the onConnect callback
+    client.on('connect', function () {
+      console.log("Connected to MQTT broker");
+      client.subscribe('SWSTATPAV', function (err) {
+        if (!err) {
+          console.log("Subscribed to topic: SWSTATPAV");
+        } else {
+          console.error("Failed to subscribe:", err);
+        }
+      });
+    });
+
+    // Handle incoming messages
+    client.on('message', function (topic, message) {
+      console.log("Message received:", message.toString());
+
+      // Parse the JSON message
+      const data = JSON.parse(message.toString());
+      document.getElementById("mqtt-topic").innerHTML = "Topic:"+topic+data;
+
+      // Update the gauges with the respective data
+      document.getElementById('AMP').setAttribute('data-value', data.pcur);
+    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
+    document.getElementById('vlt').setAttribute('data-value', data.pvlt);
+    //document.getElementById("dash").innerHTML = "VFD Output Voltage = "+data.volt;
+    for (const key in data) 
+      {
+        if (key.startsWith("LT")) 
+          {
+           lghtindctr(key, data[key]);
+          }
+        }
+    });
+
+    // Handle connection errors
+    client.on('error', function (err) {
+      console.error("Connection error:", err);
+    });
+
+    // Handle client disconnect
+    client.on('close', function () {
+      console.log("Disconnected from MQTT broker");
+    });
+
+}
+  // Call fetchmq to start the MQTT client
+fetchSWSTAT();
+
+
+//function lghtindctr(SWID,STAT)
+//{
+//  document.getElementById("mqtt-topic").innerHTML =SWID +":"+STAT;
+//} 
+
+
+function lghtindctr(IDS,STAT) 
+        {
+          const LTIMG = document.getElementById(IDS);
+          const LTIMGP = document.getElementById(IDS + "P" );
+          //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
+          
+          
+          if (STAT=="ON") 
+    
+            {
+              LTIMG.src = "./assets/images/light_on.png";
+              LTIMG.alt = "LTON";
+              LTIMGP.src= "./assets/images/light_on_w.png";
+             
+          } 
+        if (STAT=="OFF")
+          {
+              LTIMG.src = "./assets/images/light_off.png";
+              LTIMG.alt = "LTOFF";
+              LTIMGP.src= "./assets/images/light_off_b.png";
+          }
+         
+        }
