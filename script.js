@@ -593,21 +593,22 @@ function lghtindctr(IDS,STAT)
           const LTIMG = document.getElementById(IDS);
           const LTIMGP = document.getElementById(IDS + "P" );
           //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
-          document.getElementById("mqtt-topic").innerHTML = IDS +":"+STAT;
+         document.getElementById("mqtt-topic").innerHTML = IDS +":"+STAT;
           
-          if (STAT === "ON") 
+          if (STAT =="on") 
     
             {
               LTIMG.src = "./assets/images/light_on.png";
-              LTIMG.alt = "LTON";
-              LTIMGP.src= "./assets/images/light_on_w.png";
+              
+              LTIMG.alt = "lton";
+             // LTIMGP.src= "./assets/images/light_on_w.png";
              
           } 
-        if (STAT === "OFF")
+        if (STAT =="off")
           {
               LTIMG.src = "./assets/images/light_off.png";
-              LTIMG.alt = "LTOFF";
-              LTIMGP.src= "./assets/images/light_off_b.png";
+              LTIMG.alt = "ltoff";
+             // LTIMGP.src= "./assets/images/light_off_b.png";
           }
           
         }
@@ -626,23 +627,52 @@ function lghtindctr(IDS,STAT)
   {
     /*document.getElementById("msg").innerHTML= "TOPIC EPROMDATA "; */
     try { 
-      var data = JSON.parse(message.toString());
+      var data1 = JSON.parse(message.toString());
 
-      document.getElementById("mqtt-topic").innerHTML = "Topic:"+topic+data;
+     // document.getElementById("mqtt-topic").innerHTML = `Topic: ${topic} ${JSON.stringify(data1)}`;
 
       // Update the gauges with the respective data
-      document.getElementById('AMP').setAttribute('data-value', data.pcur);
+      document.getElementById('AMP').setAttribute('data-value', data1.pcur);
     //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
-    document.getElementById('vlt').setAttribute('data-value', data.pvlt);
+    document.getElementById('vlt').setAttribute('data-value', data1.pvlt);
     //document.getElementById("dash").innerHTML = "VFD Output Voltage = "+data.volt;
-    for (const key in data) 
+    //document.getElementById("mqtt-topic").innerHTML = (`key: ${key} with value: ${data1[key]}`);
+
+   /* Object.keys(data1).forEach((key) => {
+      console.log(`Processing Key: ${key}, Value: ${data1[key]}`);
+      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${data1[key]}<br>`;
+    
+      if (key.startsWith("LT")) {
+        lghtindctr(key, data1[key]);
+      }
+    }); */
+
+   Object.entries(data1).forEach(([key, value]) => {
+      console.log(`Processing Key: ${key}, Value: ${value}`);
+      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+    
+      if (key.startsWith("lt")) {
+        lghtindctr(key, value);
+      }
+      
+    });
+
+
+
+
+
+    /*for (const key in data1) */
+    /*for (const key in data1) 
       {
-        if (key.startsWith("LT")) 
+        //document.getElementById("mqtt-topic").innerHTML = (`key: ${key} with value: ${data1[key]}`);
+        if (key.startsWith("lt")) 
           {
-           lghtindctr(key, data[key]);
+           lghtindctr(key, data1[key]);
           }
-        }
-  
+        }*/
+      //document.getElementById('AMP').setAttribute('data-value', data1.pcur);
+    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
+    //document.getElementById('vlt').setAttribute('data-value', data1.pvlt);
 
   }
 
