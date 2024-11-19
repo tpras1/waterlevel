@@ -1917,7 +1917,7 @@ margin-left:20px;
 /*box-shadow: 0 1px 15px 0 grey;*/
 
 }
-#swimg1
+.swimg1
 {
   z-index:75;
 box-shadow: 0 1px 15px 0 grey;
@@ -1937,7 +1937,7 @@ cursor: pointer;
   
   /*box-shadow: 0 1px 15px 0 grey;*/
 }
-#swimg2
+.swimg2
 {
 
 box-shadow: 0 1px 15px 0 grey;
@@ -1966,7 +1966,7 @@ z-index: 101;
 
   
 
-  #swimg3
+  .swimg3
   {
   
   box-shadow: 0 1px 15px 0 grey;
@@ -1988,7 +1988,7 @@ z-index: 101;
   
   }
 
-  #swimg4
+  .swimg4
   {
   
   box-shadow: 0 1px 15px 0 grey;
@@ -2011,7 +2011,7 @@ z-index: 101;
     }
 
 
-    #swimg5
+    .swimg5
     {
     box-shadow: 0 1px 15px 0 grey;
     z-index: 75;
@@ -2031,7 +2031,7 @@ z-index: 101;
     
     }
 
-    #swimg6
+    .swimg6
     {
     
     box-shadow: 0 1px 15px 0 grey;
@@ -2139,7 +2139,7 @@ z-index: 101;
     }
 
 
-  #soswimg1
+  .soswimg1
   {
   box-shadow: 0 1px 15px 0 grey;
   z-index:75;
@@ -2155,7 +2155,7 @@ z-index: 101;
   {
   cursor: pointer;
   }
-  #soswimg2
+  .soswimg2
   {
   box-shadow: 0 1px 15px 0 grey;
   z-index:75;
@@ -2172,7 +2172,7 @@ z-index: 101;
     cursor: pointer;
     }
 
-    #soswimg3
+    .soswimg3
     {
     box-shadow: 0 1px 15px 0 grey;
     z-index:75;
@@ -2189,7 +2189,7 @@ z-index: 101;
     {
     cursor: pointer;
     }
-    #soswimg4
+    .soswimg4
     {
     box-shadow: 0 1px 15px 0 grey;
     z-index:75;
@@ -2205,7 +2205,7 @@ z-index: 101;
       {
       cursor: pointer;
       }
-      #soswimg5
+      .soswimg5
       {
       box-shadow: 0 1px 15px 0 grey;
       z-index:75;
@@ -2224,7 +2224,7 @@ z-index: 101;
       }
 
 
-      #soswimg6
+      .soswimg6
       {
       box-shadow: 0 1px 15px 0 grey;
       z-index:75;
@@ -2316,7 +2316,7 @@ border-color: rgb(250, 248, 248);
           cursor: pointer;
           }
 
-          #entrswimg1
+          .entrswimg1
           {
           box-shadow: 0 1px 15px 0 grey;
           z-index:75;
@@ -2335,7 +2335,7 @@ border-color: rgb(250, 248, 248);
           }
 
 
-          #entrswimg2
+          .entrswimg2
           {
           box-shadow: 0 1px 15px 0 grey;
           z-index:75;
@@ -2353,7 +2353,7 @@ border-color: rgb(250, 248, 248);
             cursor: pointer;
             }
 
-            #entrswimg3
+            .entrswimg3
             {
             box-shadow: 0 1px 15px 0 grey;
             z-index:75;
@@ -2372,7 +2372,7 @@ border-color: rgb(250, 248, 248);
             cursor: pointer;
             }
 
-            #entrswimg4
+            .entrswimg4
             {
             box-shadow: 0 1px 15px 0 grey;
             z-index:75;

@@ -376,7 +376,7 @@ function showLogin() {
 function toggleSwitch(IDS,SW) 
         {
           const SwitchImage = document.getElementById(IDS);
-          if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
+          if (SwitchImage !== tv1s && SwitchImage !== snd1s)
           {
           
           if (isOn) 
@@ -396,7 +396,7 @@ function toggleSwitch(IDS,SW)
           }
           isOn = !isOn;
         }
-        if (SwitchImage == swimg6 || SwitchImage == swimg5)
+        if (SwitchImage == tv1s || SwitchImage == snd1s)
         {
           if (isOn) 
     
@@ -592,6 +592,7 @@ function lghtindctr(IDS,STAT)
         {
           const LTIMG = document.getElementById(IDS);
           const LTIMGP = document.getElementById(IDS + "P" );
+          const swimg = document.getElementById(IDS + "s" );
           //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
          document.getElementById("mqtt-topic").innerHTML = IDS +":"+STAT;
           
@@ -599,7 +600,7 @@ function lghtindctr(IDS,STAT)
     
             {
               LTIMG.src = "./assets/images/light_on.png";
-              
+              swimg.src = "./assets/images/sw_on.png";
               LTIMG.alt = "lton";
              // LTIMGP.src= "./assets/images/light_on_w.png";
              
@@ -608,6 +609,7 @@ function lghtindctr(IDS,STAT)
           {
               LTIMG.src = "./assets/images/light_off.png";
               LTIMG.alt = "ltoff";
+              swimg.src = "./assets/images/sw_off.png";
              // LTIMGP.src= "./assets/images/light_off_b.png";
           }
           
