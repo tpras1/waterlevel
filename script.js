@@ -418,25 +418,25 @@ function toggleSwitch(IDS,SW)
       }
     
 
-      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('openimgM', 'stpimgM','closeimgM','MBDRM'));
-      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('openimgM', 'stpimgM','closeimgM','MBDRM'));
-      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('openimgM', 'stpimgM','closeimgM','MBDRM'));
+      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
+      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
+      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
       
-      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('openimgC', 'stpimgC','closeimgC','CRTYRD'));
-      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('openimgC', 'stpimgC','closeimgC','CRTYRD'));
-      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('openimgC', 'stpimgC','closeimgC','CRTYRD'));
+      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
+      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
+      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
       
-      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('openimgF', 'stpimgF','closeimgF','FFLR'));
-      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('openimgF', 'stpimgF','closeimgF','FFLR'));
-      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('openimgF', 'stpimgF','closeimgF','FFLR'));
+      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
+      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
+      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
 
-      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('openimgD', 'stpimgD','closeimgD','PRTCO'));
-      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('openimgD', 'stpimgD','closeimgD','PRTCO'));
-      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('openimgD', 'stpimgD','closeimgD','PRTCO'));
+      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
+      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
+      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
 
-      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('openimgL', 'stpimgL','closeimgL','LRM'));
-      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('openimgL', 'stpimgL','closeimgL','LRM'));
-      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('openimgL', 'stpimgL','closeimgL','LRM')); 
+      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm'));
+      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm'));
+      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm')); 
       
       let isp = false;
       
@@ -617,6 +617,33 @@ function lghtindctr(IDS,STAT)
  /* fetchSWSTAT() ;*/
 
 
+              function lvrstat(ids, stat) 
+              {
+                const lvrimgo= document.getElementById(ids + "o"); 
+                const lvrimgc= document.getElementById(ids + "c");
+                const lvrimgs= document.getElementById(ids + "s");
+
+            if(stat=="opn")
+                {
+
+                  lvrimgo.src= "./assets/images/open.png";
+                  lvrimgc.src=  "./assets/images/close_u.png";
+                  lvrimgs.src=  "./assets/images/stp_u.png";
+                }
+            if(stat=="cls")
+                  {
+                    lvrimgo.src= "./assets/images/open_u.png";
+                    lvrimgc.src=  "./assets/images/close.png";
+                    lvrimgs.src=  "./assets/images/stp_u.png"; 
+                  }
+            if(stat=="stp")
+                  {
+                    lvrimgo.src= "./assets/images/open_u.png";
+                    lvrimgc.src=  "./assets/images/close_u.png";
+                    lvrimgs.src=  "./assets/images/stp.png"; 
+                  }
+
+                }
 
 
  function onMessageReceived1(topic, message) 
@@ -653,9 +680,14 @@ function lghtindctr(IDS,STAT)
       console.log(`Processing Key: ${key}, Value: ${value}`);
       document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
     
-      if (key.startsWith("lt")) {
+      if (key.startsWith("lt")) 
+        {
         lghtindctr(key, value);
-      }
+        }
+                  if (key.startsWith("lvr")) 
+                      {
+                            lvrstat(key, value);
+                      }
       
     });
 
