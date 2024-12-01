@@ -418,6 +418,31 @@
     </div>
     </div>
 
+
+    <div id="setting" class="Switch">
+      <div class="settopic">
+        <form id="topicsetting">
+          <center><h2> MQTT TOPIC SETTING</h2></center>
+        <input type="text" class="setinginp" id="drsw" name="userInput" placeholder="Enter DR SW mqtt-topic" required> 
+        <input type="text"  class="setinginp"  id="sosw" name="userInput" placeholder="Enter SO SW mqtt-topic" required> 
+        <input type="text" class="setinginp" id="entrsw" name="userInput" placeholder="Enter ENTR SW mqtt-topic" required> 
+        <input type="text"  class="setinginp"  id="ffsw" name="userInput" placeholder="Enter FF Louver mqtt-topic" required> 
+        <input type="text" class="setinginp" id="dngsw" name="userInput" placeholder="Enter DNG Curtain mqtt-topic" required> 
+        <input type="text"  class="setinginp"  id="cysw" name="userInput" placeholder="Enter CourtYard mqtt-topic" required> 
+        <input type="text" class="setinginp" id="lrsw" name="userInput" placeholder="Enter LVNG Curtain  mqtt-topic" required> 
+        <input type="text"  class="setinginp"  id="mrsw" name="userInput" placeholder="Enter MBDR Curtain mqtt-topic" required>
+        <button class ="topicsave"type="submit">Save</button>
+        
+      </form>
+      <button id= "loadtopic" class ="topicload">Load</button>
+      </div>
+
+    </div>
+
+
+
+
+
     <div class="meterV">VOLTAGE
       <canvas 
       id="vlt"
@@ -457,9 +482,21 @@
 
 <div id="plan" class="pln">
 
-  <center> <img id="planimg" src="./assets/images/Electrical.png" alt="start OFF" width="780" height="700"></center>
+  <center> <img id="planimg" src="./assets/images/Electrical.png" alt="start OFF" width="850" height="800"></center>
+  <div id="setng" class="setng">
+<img class="setngimg"src="./assets/images/icons8-settings-48.png" width ="60" height="60" onclick="showSwitch('setting')">
+  </div>
+  <div id="attn_DR" class="attention"></div>
+  <div id="attn_SO" class="attention"></div>
+  <div id="attn_ENTR" class="attention"></div>
+  <div id="attn_CC"class="attention"></div>
+  <div id="attn_FF"class="attention"></div>
+  <div id="attn_PC"class="attention"></div>
+  <div id="attn_LR"class="attention"></div>
+  <div id="attn_MBD"class="attention"></div>
 <div id="DR-Area" class="DR_Area" onclick="showSwitch('Drawing-Room')">
-  <div class="DL1"> 
+
+  <!--<div class="DL1"> 
     <img id="LTD1P" class="LTD1P" src="./assets/images/light_off_b.png" alt="swoff" width="15" height="25">
   </div>
   <div class="DL1"> 
@@ -467,20 +504,33 @@
   </div>
   <div class="DL1"> 
     <img id="LTD3P" class="LTD3P" src="./assets/images/light_off_b.png" alt="swoff" width="15" height="25">
-  </div>
+  </div> --->
+</div>
+<div id="SO-Area" class="SO_Area" onclick="showSwitch('SIT-OUT')">
+  
+</div>
+<div id="ENTR-Area" class="ENTR_Area" onclick="showSwitch('Entrance-Right')">
+  
+</div>
+<div id="CENTRL-Courtyard-L" class="CENTRL_Courtyard" onclick="showSwitch('louvers')">
+ 
+</div>
+<div id="FRST-Floor-L" class="FRST_Floor_L" onclick="showSwitch('louvers')">
+  
+</div>
+<div id="PORTICO-C" class="PORTICO_C" onclick="showSwitch('louvers')">
+  
+</div>
+<div id="LIVING-C" class="LIVING_C" onclick="showSwitch('louvers')">
+  
+</div>
+<div id="MBD-C" class="MBD_C" onclick="showSwitch('curtain')">
 
 </div>
-<div id="SO-Area" class="SO_Area" onclick="showSwitch('SIT-OUT')"></div>
-<div id="ENTR-Area" class="ENTR_Area" onclick="showSwitch('Entrance-Right')"></div>
-<div id="CENTRL-Courtyard-L" class="CENTRL_Courtyard" onclick="showSwitch('louvers')"></div>
-<div id="FRST-Floor-L" class="FRST_Floor_L" onclick="showSwitch('louvers')"></div>
-<div id="PORTICO-C" class="PORTICO_C" onclick="showSwitch('louvers')"></div>
-<div id="LIVING-C" class="LIVING_C" onclick="showSwitch('louvers')"></div>
-<div id="MBD-C" class="MBD_C" onclick="showSwitch('curtain')"></div>
 </div>
 
 <div id="swdtls" class="swdetail">
-  <center> <img id="planimg" src="./assets/images/SWITCH COLORS.png" alt="start OFF" width="280" height="200"></center>
+<center> <img id="planimg" src="./assets/images/iot colors_new.png" alt="start OFF" width="280" height="225"></center>
 <div class="mq-head"> <center><h3> MQTT JSON</h3></center></div>
   <div id="mqtt-topic" class="mq-stat"> 
 </div>
