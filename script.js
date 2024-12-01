@@ -297,15 +297,8 @@ function login()
         element1.style.display = 'none';
         const element2 = document.getElementById('logouttab');
         element2.style.display = 'block';
-       
-       // document.getElementById('home').classList.add('active');
-        //document.getElementById('app-content').classList.remove('hidden')
 
-
-        // Perform login action here (e.g., redirect to another page)
     } 
-    
-    
     
     else {
         document.getElementById("errorMessage").textContent = "Invalid username or password";
@@ -313,25 +306,6 @@ function login()
   }
 
 
-
-
-
-  /*const username = document.getElementById('username').value;
-  const password = document.getElementById('password').value;
-
-  // Simple hardcoded login logic
-  if (username === 'admin' && password === 'password123') {
-    // Store login status
-    sessionStorage.setItem('loggedIn', true);
-    // Show app content and hide login
-    document.getElementById('login-screen').classList.add('hidden');
-    document.getElementById('home').classList.add('active');
-    document.getElementById('app-content').classList.remove('hidden');
-
-    
-  } else {
-    alert('Invalid credentials. Please try again.');
-  } */
 
 function logout() 
   {
@@ -525,10 +499,7 @@ function toggleclose(OIMGID, SIMGID,CIMGID,AREA)
 
 function publish_sw_stat(swtopic,SWID,STAT)
     {
-  
-    /*const checkbox = document.getElementById('toggle1');*/
-    /*const toggle = STAT*/
-  
+ 
     // Prepare the JSON data
     var data = {}
       data[SWID]= STAT;      
@@ -605,7 +576,7 @@ function lghtindctr(IDS,STAT)
           //if (SwitchImage !== swimg6 && SwitchImage !== swimg5)
          document.getElementById("mqtt-topic").innerHTML = IDS +":"+STAT;
           
-          if (STAT =="on") 
+          if (STAT =="ON") 
     
             {
               LTIMG.src = "./assets/images/light_on.png";
@@ -614,7 +585,7 @@ function lghtindctr(IDS,STAT)
              // LTIMGP.src= "./assets/images/light_on_w.png";
              
           } 
-        if (STAT =="off")
+        if (STAT =="OFF")
           {
               LTIMG.src = "./assets/images/light_off.png";
               LTIMG.alt = "ltoff";
@@ -755,82 +726,179 @@ function show_lrswbrd(lvrid)
 
 
 
+      let cdrtopic = localStorage.getItem('drsws');
+      let sdrtopic = cdrtopic.replace("command", "status");
+      let csotopic = localStorage.getItem('sosws');
+      let ssotopic = csotopic.replace("command", "status");
+      let centrtopic = localStorage.getItem('entrsws');
+      let sentrtopic = centrtopic.replace("command", "status");
+      let cfftopic = localStorage.getItem('ffsws');
+      let sfftopic = cfftopic.replace("command", "status");
+      let cdngtopic = localStorage.getItem('dngsws');
+      let sdngtopic = cdngtopic.replace("command", "status");
+      let ccytopic  = localStorage.getItem('cysws');
+      let scytopic = ccytopic.replace("command", "status");
+      let clrtopic = localStorage.getItem('lrsws');
+      let slrtopic = clrtopic.replace("command", "status");
+      let cmrtopic  = localStorage.getItem('mrsws');
+      let smrtopic = cmrtopic.replace("command", "status");
+
+
 function onMessageReceived1(topic, message) 
     {
   console.log(`Message received on topic '${topic}': ${message.toString()}`);
-  // document.getElementById("msg").innerHTML = "Message received on topic:     " + topic + message.toString();
 
-  // Convert the MQTT message to a string and try to parse it as JSON
   if (topic === "SWSTATPAV")
-  {
-    /*document.getElementById("msg").innerHTML= "TOPIC EPROMDATA "; */
-    try { 
-      var data1 = JSON.parse(message.toString());
-
-     // document.getElementById("mqtt-topic").innerHTML = `Topic: ${topic} ${JSON.stringify(data1)}`;
-
-      // Update the gauges with the respective data
-      document.getElementById('AMP').setAttribute('data-value', data1.pcur);
-    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
-    document.getElementById('vlt').setAttribute('data-value', data1.pvlt);
-    //document.getElementById("dash").innerHTML = "VFD Output Voltage = "+data.volt;
-    //document.getElementById("mqtt-topic").innerHTML = (`key: ${key} with value: ${data1[key]}`);
-
-   /* Object.keys(data1).forEach((key) => {
-      console.log(`Processing Key: ${key}, Value: ${data1[key]}`);
-      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${data1[key]}<br>`;
-    
-      if (key.startsWith("LT")) {
-        lghtindctr(key, data1[key]);
-      }
-    }); */
-
-   Object.entries(data1).forEach(([key, value]) => {
-      console.log(`Processing Key: ${key}, Value: ${value}`);
-      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
-    
-      if (key.startsWith("lt")) 
-        {
-        show_ltswbrd(key); 
-        lghtindctr(key, value);
-        }
-      if (key.startsWith("lvr")) 
-        {
-          show_lrswbrd(key);
-          lvrstat(key, value);
-              
-        }
-      
-    });
-
-
-
-
-
-    /*for (const key in data1) */
-    /*for (const key in data1) 
-      {
-        //document.getElementById("mqtt-topic").innerHTML = (`key: ${key} with value: ${data1[key]}`);
-        if (key.startsWith("lt")) 
           {
-           lghtindctr(key, data1[key]);
+          
+            try 
+          
+                { 
+                      var data1 = JSON.parse(message.toString());
+                      document.getElementById('AMP').setAttribute('data-value', data1.pcur);
+                    document.getElementById('vlt').setAttrhibute('data-value', data1.pvlt);
+
+                  Object.entries(data1).forEach(([key, value]) => {
+                      console.log(`Processing Key: ${key}, Value: ${value}`);
+                      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                    
+                      if (key.startsWith("lt")) 
+                        {
+                        show_ltswbrd(key); 
+                        lghtindctr(key, value);
+                        }
+
+                      if (key.startsWith("lvr")) 
+                        {
+                          show_lrswbrd(key);
+                          lvrstat(key, value);     
+                        }     
+                    });
+                  }
+        catch (e) 
+                    {
+                        console.error("Error parsing JSON message:", e);
+                        //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                    }
           }
-        }*/
-      //document.getElementById('AMP').setAttribute('data-value', data1.pcur);
-    //document.getElementById("dash").innerHTML = "O/P Current = "+data.cur
-    //document.getElementById('vlt').setAttribute('data-value', data1.pvlt);
 
-  }
+  if (topic === sdrtopic )
+          {
+              try
+                  {
+                    var data1 = JSON.parse(message.toString());   
+                    Object.entries(data1).forEach(([key, value]) => {
+                      console.log(`Processing Key: ${key}, Value: ${value}`);
+                      document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
 
-   catch (e) 
-  {
-      console.error("Error parsing JSON message:", e);
-      //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
-  }
-  }
+                              const drs = parseInt(key.slice(-1), 10);
+                              const drp = drs + 1;
+                               const keym = "ltd"+ drp; 
+                                show_ltswbrd(keym); 
+                                lghtindctr(keym, value);
+                    });
+                  }
+                  catch (e) 
+                  {
+                      console.error("Error parsing JSON message:", e);
+                      //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                  }     
+          }
+
+  if (topic === ssotopic )
+
+          {
+              try
+                    {
+                      var data1 = JSON.parse(message.toString());   
+                      Object.entries(data1).forEach(([key, value]) => {
+                        console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                        document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                                const dso = parseInt(key.slice(-1), 10);
+                              
+                                const pso = dso + 1;
+                                const keym = "ltso"+ pso; 
+                                  show_ltswbrd(keym); 
+                                  lghtindctr(keym, value);
+                      });
+                    }
+              catch (e) 
+                    {
+                        console.error("Error parsing JSON message:", e);
+                        //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                    }     
 
 
-  }
+          }
+  if (topic === sentrtopic )
+
+    {
+        try
+              {
+                var data1 = JSON.parse(message.toString());   
+                Object.entries(data1).forEach(([key, value]) => {
+                  console.log(`Processing Key: ${key}, Value: ${value}`);
+                  document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                          const nent = parseInt(key.slice(-1), 10);
+                          const pent = nent + 1 ;
+                          const keym = "ltentr"+ pent; 
+                            show_ltswbrd(keym); 
+                            lghtindctr(keym, value);
+                });
+              }
+        catch (e) 
+              {
+                  console.error("Error parsing JSON message:", e);
+                  //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+              }     
+    }
+  if (topic === sfftopic )
+
+      {
+          try
+                {
+                  var data1 = JSON.parse(message.toString());   
+                  Object.entries(data1).forEach(([key, value]) => {
+                    console.log(`Processing Key: ${key}, Value: ${value}`);
+                    document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                           
+                    if (key === "switch0" && value=="ON")
+                                {
+                            const keym = "lvrffr" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"opn");
+                              }
+
+                    if (key === "switch1" && value=="ON")
+                                {
+                            const keym = "lvrffr" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"stp");
+                              }
+                    if (key === "switch2" && value=="ON")
+                                {
+                            const keym = "lvrffr" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"stp");
+                              }         
+                            
+                  });
+
+                }
+                catch (e) 
+                {
+                    console.error("Error parsing JSON message:", e);
+                    //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                } 
+  
+    }
+
+ }
+
+
 
 // Callback function after a successful subscription
 function onSubscriptionSuccess(err) 
@@ -846,14 +914,22 @@ function onSubscriptionSuccess(err)
         }
 
 // Connect to the MQTT broker
-      const client1 = mqtt.connect('wss://test.mosquitto.org:8081/mtqt');  // Replace with your broker URL
+      const client1 = mqtt.connect('wss://broker.hivemq.com:8884/mqtt');  // Replace with your broker URL
 
 // When the client connects to the broker
 client1.on('connect', function () {
         console.log("Connected to broker");
-
+        document.getElementById("mqtt-topic").innerHTML = "connected to broker for suscrbtion"
   // Subscribe to the topic with a callback for the subscription
-        client1.subscribe('SWSTATPAV', onSubscriptionSuccess);
+
+        client1.subscribe( sdrtopic , onSubscriptionSuccess);
+        client1.subscribe( ssotopic , onSubscriptionSuccess);
+        client1.subscribe( sentrtopic , onSubscriptionSuccess);
+        client1.subscribe( sfftopic , onSubscriptionSuccess);
+        client1.subscribe( sdngtopic , onSubscriptionSuccess);
+        client1.subscribe( scytopic , onSubscriptionSuccess);
+        client1.subscribe( slrtopic , onSubscriptionSuccess);
+        client1.subscribe( smrtopic , onSubscriptionSuccess);
       });
 
 // When a message is received
