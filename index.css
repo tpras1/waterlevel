@@ -2955,7 +2955,7 @@ z-index:76;
 .swdetail
 {
   position:absolute;
-  display:grid;
+  /*display:grid;*/
   /*flex-direction: row;*/
   top:590px;
   left:160px;    
@@ -3197,8 +3197,23 @@ text-align: center;
     margin-top:8px;
     box-shadow: 0 0 30px rgb(102, 100, 100);
   }
-  .attn
+  .attnp
   {
-font-size: 20px;
+font-size: 12px;
+
+
+  }
+  .attnimg
+  {
+    position:relative;
+    top:12px;
+    background-color: #ec9187;
+  }
+  .attnimg1
+  {
+    position:relative;
+    top:20px;
+  
+    background-color: #4ee9b3
 
   }
