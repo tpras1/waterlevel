@@ -1890,7 +1890,7 @@ z-index:18;
 .DRSWITCH
 {
 margin-top:100px;
-margin-left:175px;  
+margin-left:160px;  
 color:rgb(214, 212, 212);
 font-size: 10px;
 font-family:Arial, Helvetica, sans-serif;
@@ -2108,7 +2108,7 @@ z-index: 101;
     .soswitch
   {
     margin-top:100px;
-    margin-left:175px;   
+    margin-left:160px;   
     color:grey;
     font-size: 10px;
     font-family:Arial, Helvetica, sans-serif;
@@ -2286,7 +2286,7 @@ z-index: 101;
           .entrswitch
           {
             margin-top:100px;
-            margin-left:175px;  
+            margin-left:210px;  
             color:grey;
             font-size: 10px;
             font-family:Arial, Helvetica, sans-serif;
@@ -2436,7 +2436,7 @@ border-color: rgb(250, 248, 248);
                 display:block;
                 flex-direction: row;
                 margin-top:85px;
-                margin-left:175px;    
+                margin-left:160px;    
                 Width:345px;
                 height:220px;
                 border-color: rgb(110, 107, 107);
@@ -2525,7 +2525,7 @@ border-color: rgb(250, 248, 248);
                 display:block;
                 flex-direction: row;
                 margin-top:85px;
-                margin-left:175px;  
+                margin-left:160px;  
                 Width:90px;
                 height:220px;
                 border-color: rgb(110, 107, 107);
@@ -2958,16 +2958,23 @@ z-index:76;
   display:grid;
   /*flex-direction: row;*/
   top:590px;
-  left:175px;    
-  Width:320px;
+  left:160px;    
+  Width:345px;
   height:370px;
-  border-color: rgb(110, 107, 107);
+  /*border-color: rgb(110, 107, 107);
   border-width: 1px;
   border-style: solid;
   background-color: #ffffff;
   text-align:center; 
   box-shadow: 0 1px 15px 0 grey;
-  border-radius: 10px;
+  border-radius: 10px;*/
+  border-color: rgb(110, 107, 107);
+  border-width: 1px;
+  border-style: solid;
+  background-color: #e4e6ea;
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 grey;
+  border-radius: 15px;
   /*color:#6fffb2;*/
   font-size: 12px;
 }
@@ -3188,4 +3195,9 @@ text-align: center;
     cursor:pointer;
     margin-top:8px;
     box-shadow: 0 0 30px rgb(102, 100, 100);
+  }
+  .attn
+  {
+font-size: 20px;
+
   }
