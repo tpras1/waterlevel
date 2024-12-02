@@ -279,7 +279,7 @@ function login()
   {
     // Hard-coded credentials
     const correctUsername = "admin";
-    const correctPassword = "tpras123";
+    const correctPassword = "tpras2875";
 
     // Get values from input fields
     const username = document.getElementById("username").value;
