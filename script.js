@@ -919,7 +919,7 @@ function onSubscriptionSuccess(err)
 // When the client connects to the broker
 client1.on('connect', function () {
         console.log("Connected to broker");
-        document.getElementById("mqtt-topic").innerHTML = "connected to broker for suscrbtion"
+       // document.getElementById("mqtt-topic").innerHTML = "connected to broker for suscrbtion"
   // Subscribe to the topic with a callback for the subscription
 
         client1.subscribe( sdrtopic , onSubscriptionSuccess);
