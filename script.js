@@ -964,14 +964,31 @@ form.addEventListener('submit', function(event)
 });
 
 
-loadtopicBtn.addEventListener('click', function() {
-  document.getElementById('drsw').value = localStorage.getItem('drsws');
-  document.getElementById('sosw').value = localStorage.getItem('sosws');
-  document.getElementById('entrsw').value = localStorage.getItem('entrsws');
-  document.getElementById('ffsw').value = localStorage.getItem('ffsws');
-  document.getElementById('dngsw').value = localStorage.getItem('dngsws');
-  document.getElementById('cysw').value = localStorage.getItem('cysws');
-  document.getElementById('lrsw').value = localStorage.getItem('lrsws');
-  document.getElementById('mrsw').value = localStorage.getItem('mrsws');
+loadtopicBtn.addEventListener('click', function() 
+{
+  //const url = "./cofig.json";
+  fetch('./config.json')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok " + response.statusText);
+    }
+    return response.json();
+  })
+  .then((config) => {
+    // Assign values to constants
+
+    document.getElementById('drsw').value = config.drsws;
+    document.getElementById('sosw').value = config.sosws;
+    document.getElementById('entrsw').value = config.entrsws;
+    document.getElementById('ffsw').value = config.ffsws;
+    document.getElementById('dngsw').value = config.dngsws;
+    document.getElementById('cysw').value = config.cysws;
+    document.getElementById('lrsw').value = config.lrsws;
+    document.getElementById('mrsw').value = config.mrsws;
+    const mq_broker = config.mqtt_broker;
+    document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
+  })
+  .catch((error) => console.error("Error fetching config:", error));
+
   
 });
