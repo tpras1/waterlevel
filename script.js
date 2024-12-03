@@ -1,3 +1,21 @@
+
+let cdrtopic ;
+let sdrtopic ;
+let csotopic ;
+let ssotopic ;
+let centrtopic ; 
+let sentrtopic ;
+let cfftopic ;
+let sfftopic ;
+let cdngtopic ;
+let sdngtopic ;
+let ccytopic  ;
+let scytopic ;
+let clrtopic ;
+let slrtopic ;
+let cmrtopic  ;
+let smrtopic ;
+loadParm();
 function showSection(sectionId) 
   {
       if (sessionStorage.getItem('loggedIn'))
@@ -564,10 +582,6 @@ function publish_louver(LID,LSTAT)
     });
     }
 
-
-
-
-
 function lghtindctr(IDS,STAT) 
         {
           const LTIMG = document.getElementById(IDS);
@@ -687,19 +701,22 @@ function show_lrswbrd(lvrid)
                       const swtopic= SW;
                                       if ( swtopic.startsWith ("D"))
                                       {
-                                        return localStorage.getItem('drsws');
+                                        //return localStorage.getItem('drsws');
+                                        return cdrtopic
                                         //return "pavithram/Ediys4245028/command";
                                       }
 
                                       if ( swtopic.startsWith ("S"))
                                       {
-                                        return localStorage.getItem('sosws');
+                                        //return localStorage.getItem('sosws');
+                                        return cdrtopic
                                           //return "pavithram/Ediys4245028/command";
                                       }
 
                                       if ( swtopic.startsWith ("E"))
                                       {
-                                        return localStorage.getItem('entrsws');
+                                        //return localStorage.getItem('entrsws');
+                                        return centrtopic
                                           //return "pavithram/Ediys4245028/command";
                                       }
                                         
@@ -723,25 +740,6 @@ function show_lrswbrd(lvrid)
                     const onstat = "on"+nprestat;
                     return onstat;
                   }
-
-
-
-      let cdrtopic = localStorage.getItem('drsws');
-      let sdrtopic = cdrtopic.replace("command", "status");
-      let csotopic = localStorage.getItem('sosws');
-      let ssotopic = csotopic.replace("command", "status");
-      let centrtopic = localStorage.getItem('entrsws');
-      let sentrtopic = centrtopic.replace("command", "status");
-      let cfftopic = localStorage.getItem('ffsws');
-      let sfftopic = cfftopic.replace("command", "status");
-      let cdngtopic = localStorage.getItem('dngsws');
-      let sdngtopic = cdngtopic.replace("command", "status");
-      let ccytopic  = localStorage.getItem('cysws');
-      let scytopic = ccytopic.replace("command", "status");
-      let clrtopic = localStorage.getItem('lrsws');
-      let slrtopic = clrtopic.replace("command", "status");
-      let cmrtopic  = localStorage.getItem('mrsws');
-      let smrtopic = cmrtopic.replace("command", "status");
 
 
 function onMessageReceived1(topic, message) 
@@ -942,29 +940,30 @@ const loadtopicBtn = document.getElementById('loadtopic');
 form.addEventListener('submit', function(event) 
 {
   event.preventDefault(); // Prevent form from refreshing the page
-  const drsw = document.getElementById('drsw').value;
-  localStorage.setItem('drsws', drsw);
-  const sosw = document.getElementById('sosw').value;
-  localStorage.setItem('sosws', sosw);
-  const entrsw = document.getElementById('entrsw').value;
-  localStorage.setItem('entrsws', entrsw);
-  const ffsw = document.getElementById('ffsw').value;
-  localStorage.setItem('ffsws', ffsw);
-  const dngsw = document.getElementById('dngsw').value;
-  localStorage.setItem('dngsws', dngsw);
-  const cysw = document.getElementById('cysw').value;
-  localStorage.setItem('cysws', cysw);
-  const lrsw = document.getElementById('lrsw').value;
-  localStorage.setItem('lrsws', lrsw);
-  const mrsw = document.getElementById('mrsw').value;
-  localStorage.setItem('mrsws', mrsw);
+  //const drsw = document.getElementById('drsw').value;
+  //localStorage.setItem('drsws', drsw);
+  //const sosw = document.getElementById('sosw').value;
+  //localStorage.setItem('sosws', sosw);
+  //const entrsw = document.getElementById('entrsw').value;
+  //localStorage.setItem('entrsws', entrsw);
+  //const ffsw = document.getElementById('ffsw').value;
+  //localStorage.setItem('ffsws', ffsw);
+  //const dngsw = document.getElementById('dngsw').value;
+  //localStorage.setItem('dngsws', dngsw);
+  //const cysw = document.getElementById('cysw').value;
+  //localStorage.setItem('cysws', cysw);
+  //const lrsw = document.getElementById('lrsw').value;
+  //localStorage.setItem('lrsws', lrsw);
+  //const mrsw = document.getElementById('mrsw').value;
+  //localStorage.setItem('mrsws', mrsw);
    // Save to local storage
   alert('Data saved to local storage!');
   form.reset(); // Clear the form
 });
 
-
-loadtopicBtn.addEventListener('click', function() 
+document.getElementById('loadtopic').addEventListener('click', () => loadParm())
+//loadtopicBtn.addEventListener('click', function() 
+function loadParm()
 {
   //const url = "./cofig.json";
   fetch('./config.json')
@@ -977,18 +976,36 @@ loadtopicBtn.addEventListener('click', function()
   .then((config) => {
     // Assign values to constants
 
-    document.getElementById('drsw').value = config.drsws;
-    document.getElementById('sosw').value = config.sosws;
-    document.getElementById('entrsw').value = config.entrsws;
-    document.getElementById('ffsw').value = config.ffsws;
-    document.getElementById('dngsw').value = config.dngsws;
-    document.getElementById('cysw').value = config.cysws;
-    document.getElementById('lrsw').value = config.lrsws;
-    document.getElementById('mrsw').value = config.mrsws;
+    cdrtopic = config.drsws;
+    csotopic = config.sosws;
+    centrtopic = config.entrsws;
+    cfftopic = config.ffsws;
+    cdngtopic = config.dngsws;
+    ccytopic  = config.cysws;
+    clrtopic = config.lrsws;
+    cmrtopic = config.mrsws;
     const mq_broker = config.mqtt_broker;
+    document.getElementById('drsw').value = cdrtopic;
+    document.getElementById('sosw').value = csotopic;
+    document.getElementById('entrsw').value = centrtopic;
+    document.getElementById('ffsw').value = cfftopic;
+    document.getElementById('dngsw').value =  cdngtopic;
+    document.getElementById('cysw').value = ccytopic ;
+    document.getElementById('lrsw').value = clrtopic;
+    document.getElementById('mrsw').value = cmrtopic;
+
+    sdrtopic = cdrtopic.replace("command", "status");
+    ssotopic = csotopic.replace("command", "status");
+    sentrtopic = centrtopic.replace("command", "status");
+    sfftopic = cfftopic.replace("command", "status");
+    sdngtopic = cdngtopic.replace("command", "status");
+    scytopic = ccytopic.replace("command", "status");
+    slrtopic = clrtopic.replace("command", "status");
+    smrtopic = cmrtopic.replace("command", "status");
+
     document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
   })
   .catch((error) => console.error("Error fetching config:", error));
 
   
-});
+}
