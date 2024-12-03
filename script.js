@@ -967,7 +967,8 @@ form.addEventListener('submit', function(event)
 loadtopicBtn.addEventListener('click', function() 
 {
   //const url = "./cofig.json";
-  fetch('./config.json')
+  fetch('https://tpras1.github.io/waterlevel/config.json')
+  //fetch('./config.json')
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
