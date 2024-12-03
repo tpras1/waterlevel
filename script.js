@@ -967,7 +967,7 @@ form.addEventListener('submit', function(event)
 loadtopicBtn.addEventListener('click', function() 
 {
   //const url = "./cofig.json";
-  fetch('https://tpras1.github.io/waterlevel/config.json')
+  fetch('https://github.com/tpras1/waterlevel/blob/main/config.json')
   //fetch('./config.json')
   .then((response) => {
     if (!response.ok) {
