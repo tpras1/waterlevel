@@ -965,8 +965,9 @@ document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 //loadtopicBtn.addEventListener('click', function() 
 function loadParm()
 {
-  //const url = "./cofig.json";
-  fetch('./config.json')
+  // const url = "./cofig.json";
+  fetch('https://tpras1.github.io/waterlevel/config.json')
+  //fetch('./config.json')
   .then((response) => {
     if (!response.ok) {
       throw new Error("Network response was not ok " + response.statusText);
