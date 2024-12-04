@@ -937,9 +937,77 @@ client1.on('message', onMessageReceived1);
 
 const form = document.getElementById('topicsetting');
 const loadtopicBtn = document.getElementById('loadtopic');
-form.addEventListener('submit', function(event) 
+form.addEventListener('submit', async(event)=>
 {
   event.preventDefault(); // Prevent form from refreshing the page
+  //document.getElementById("configForm").addEventListener("submit", async (event) => {
+   // event.preventDefault();
+  
+    //const mqttTopic = document.getElementById("mqttTopic").value;
+    //const brokerUrl = document.getElementById("brokerUrl").value;
+  const drswsc = document.getElementById('drsw').value;
+  const soswsc = document.getElementById('sosw').value;
+  const entrswc = document.getElementById('entrsw').value;
+  const ffswsc = document.getElementById('ffsw').value;
+  const dngswsc = document.getElementById('dngsw').value;
+  const cyswsc = document.getElementById('cysw').value;
+  const lrswsc = document.getElementById('lrsw').value;
+  const mrswsc = document.getElementById('mrsw').value;
+
+    const configData = {
+      drsws : drswsc,
+      sosws : soswsc,
+      entrsws : entrswc,
+      ffsws : ffswsc,
+      dngsws : dngswsc,
+      cysws : cyswsc,
+      lrsws : lrswsc,
+      mrsws : mrswsc,
+    };
+  
+    const token = "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"; // Replace with your GitHub token
+    const repoOwner = "tpras1"; // Replace with your GitHub username
+    const repoName = "waterlevel"; // Replace with your repository name
+    const filePath = "config.json"; // Path to save the file
+  
+    const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`;
+  
+    try {
+      // Get the current file's SHA (required for updates)
+      const getResponse = await fetch(apiUrl, {
+        headers: {
+          Authorization: `token ${token}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      });
+  
+      const fileSHA = getResponse.ok ? (await getResponse.json()).sha : null;
+  
+      // Prepare the request to create or update the file
+      const saveResponse = await fetch(apiUrl, {
+        method: "PUT",
+        headers: {
+          Authorization: `token ${token}`,
+          Accept: "application/vnd.github.v3+json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: "Update config.json via web form",
+          content: btoa(JSON.stringify(configData, null, 2)),
+          sha: fileSHA,
+        }),
+      });
+  
+      if (saveResponse.ok) {
+        alert("Configuration saved successfully!");
+      } else {
+        throw new Error("Failed to save configuration.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred while saving the configuration.");
+    }
+  //});
   //const drsw = document.getElementById('drsw').value;
   //localStorage.setItem('drsws', drsw);
   //const sosw = document.getElementById('sosw').value;
@@ -957,16 +1025,16 @@ form.addEventListener('submit', function(event)
   //const mrsw = document.getElementById('mrsw').value;
   //localStorage.setItem('mrsws', mrsw);
    // Save to local storage
-  alert('Data saved to local storage!');
   form.reset(); // Clear the form
 });
+
 
 document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 //loadtopicBtn.addEventListener('click', function() 
 function loadParm()
 {
   // const url = "./cofig.json";
-  fetch('https://tpras1.github.io/waterlevel/config.json')
+  fetch('https://tpras1.github.io/waterlevel/config.json?cacheBust=' + new Date().getTime())
   //fetch('./config.json')
   .then((response) => {
     if (!response.ok) {
