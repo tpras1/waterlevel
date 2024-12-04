@@ -1,10 +1,10 @@
 {
   "drsws": "pavithram/Ediys4245028/command",
   "sosws": "pavithram/Ediys4245028/command",
-  "entrsw": "undefined",
-  "ffswsc": "undefined",
-  "dngswsc": "undefined",
-  "cyswsc": "undefined",
-  "lrswsc": "undefined",
-  "mrswsc": "undefined"
+  "entrsw": "pavithram/Ediys4245028/command",
+  "ffswsc": "pavithram/Ediys4245028/command",
+  "dngswsc": "pavithram/Ediys4245028/command",
+  "cyswsc": "pavithram/Ediys4245028/command",
+  "lrswsc": "pavithram/Ediys4245028/command",
+  "mrswsc": "pavithram/Ediys4245028/command"
 }
