@@ -1,12 +1,10 @@
 {
-    "drsws": "pavithram/Ediys4245028/command",
-    "sosws":  "pavithram/Ediys4245028/command",
-    "entrsws": "pavithram/Ediysbfac27/command",
-    "ffsws": "pavithram/Ediys4245028/command",
-    "dngsws": "pavithram/Ediys4245028/command",
-    "cysws": "pavithram/Ediys4245028/command",
-    "lrsws": "pavithram/Ediys4245028/command",
-    "mrsws": "pavithram/Ediys4245028/command",
-    "mqtt_broker": "wss://broker.hivemq.com:8884/mqtt"
-  
+  "drsws": "pavithram/Ediys4245028/command",
+  "sosws": "pavithram/Ediys4245028/command",
+  "entrsw": "pavithram/Ediysbfac27/command",
+  "ffswsc": "pavithram/Ediys4245028/command",
+  "dngswsc": "pavithram/Ediys4245028/command",
+  "cyswsc": "pavithram/Ediys4245028/command",
+  "lrswsc": "pavithram/Ediys4245028/command",
+  "mrswsc": "pavithram/Ediys4245028/command"
 }
