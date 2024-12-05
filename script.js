@@ -977,6 +977,7 @@ form.addEventListener('submit', async(event)=>
       const getResponse = await fetch(apiUrl, {
         headers: {
           Authorization: `token ${token}`,
+          //Authorization: `token ghp_elzrNwpRzQIFaqkgAdaRBrZgDHSpfD3CvT`,
           Accept: "application/vnd.github.v3+json",
         },
       });
@@ -988,6 +989,7 @@ form.addEventListener('submit', async(event)=>
         method: "PUT",
         headers: {
           Authorization: `token ${token}`,
+          //Authorization: `token ghp_elzrNwpRzQIFaqkgAdaRBrZgDHSpfD3CvT`,
           Accept: "application/vnd.github.v3+json",
           "Content-Type": "application/json",
         },
