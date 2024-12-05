@@ -980,7 +980,7 @@ form.addEventListener('submit', async(event)=>
       mrsws : mrswsc,
     };
   
-    const token = "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"; // Replace with your GitHub token
+    
     const repoOwner = "tpras1"; // Replace with your GitHub username
     const repoName = "waterlevel"; // Replace with your repository name
     const filePath = "config.json"; // Path to save the file
@@ -992,7 +992,7 @@ form.addEventListener('submit', async(event)=>
       const getResponse = await fetch(apiUrl, {
         headers: {
           Authorization: `token ${token}`,
-          //Authorization: `token ghp_elzrNwpRzQIFaqkgAdaRBrZgDHSpfD3CvT`,
+         
           Accept: "application/vnd.github.v3+json",
         },
       });
@@ -1004,7 +1004,7 @@ form.addEventListener('submit', async(event)=>
         method: "PUT",
         headers: {
           Authorization: `token ${token}`,
-          //Authorization: `token ghp_elzrNwpRzQIFaqkgAdaRBrZgDHSpfD3CvT`,
+          
           Accept: "application/vnd.github.v3+json",
           "Content-Type": "application/json",
         },
