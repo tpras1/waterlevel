@@ -12,7 +12,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-
 let cdrtopic ;
 let sdrtopic ;
 let csotopic ;
@@ -968,7 +967,7 @@ function loadParm()
                   ccytopic  = config.cysws;
                   clrtopic = config.lrsws;
                   cmrtopic = config.mrsws;
-                  const mq_broker = config.mqtt_broker;
+                  //const mq_broker = config.mqtt_broker;
                   document.getElementById('drsw').value = cdrtopic;
                   document.getElementById('sosw').value = csotopic;
                   document.getElementById('entrsw').value = centrtopic;
@@ -987,7 +986,7 @@ function loadParm()
                   slrtopic = clrtopic.replace("command", "status");
                   smrtopic = cmrtopic.replace("command", "status");
               
-                  document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
+                 // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
 
                 } else {
                   console.log("No config found.");
@@ -1007,8 +1006,7 @@ function loadParm()
             //const brokerUrl = document.getElementById('brokerUrl').value;    
            // const config = { mqtt_topic: mqttTopic, broker_url: brokerUrl };
 
-            event.preventDefault();
-
+          
                   const drswsc = document.getElementById('drsw').value;
                   const soswsc = document.getElementById('sosw').value;
                   const entrswc = document.getElementById('entrsw').value;
@@ -1018,7 +1016,7 @@ function loadParm()
                   const lrswsc = document.getElementById('lrsw').value;
                   const mrswsc = document.getElementById('mrsw').value;
 
-                    const config = {
+                    const configD = {
                       drsws : drswsc,
                       sosws : soswsc,
                       entrsws : entrswc,
@@ -1027,14 +1025,14 @@ function loadParm()
                       cysws : cyswsc,
                       lrsws : lrswsc,
                       mrsws : mrswsc,
-                    };
-
-             saveConfig(config);                        
+                    }; 
+                    document.getElementById("mqtt-topic").innerHTML ="settingpressed";
+            saveConfig(configD);                        
           });
 
-            function saveConfig(config) 
+            function saveConfig(configD) 
             {
-              database.ref('config').set(config)
+              database.ref('config').set(configD)
                 .then(() => {
                   console.log("Config saved successfully!");
                   alert("Configuration saved successfully!");
