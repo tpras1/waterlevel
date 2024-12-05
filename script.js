@@ -1,3 +1,17 @@
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC8e-722jurrVxcYETKtF4wAetzAJno3YA",
+  authDomain: "iot-hom.firebaseapp.com",
+  databaseURL: "https://iot-hom-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "iot-hom",
+  storageBucket: "iot-hom.firebasestorage.app",
+  messagingSenderId: "745178338232",
+  appId: "1:745178338232:web:9a8009f242b90dd60f754d",
+  measurementId: "G-TKG9J34YM3"
+};
+
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
 let cdrtopic ;
 let sdrtopic ;
@@ -15,7 +29,9 @@ let clrtopic ;
 let slrtopic ;
 let cmrtopic  ;
 let smrtopic ;
-loadParm();
+//loadParm();
+
+
 function showSection(sectionId) 
   {
       if (sessionStorage.getItem('loggedIn'))
@@ -929,12 +945,11 @@ client1.on('connect', function () {
         client1.subscribe( slrtopic , onSubscriptionSuccess);
         client1.subscribe( smrtopic , onSubscriptionSuccess);
       });
-
 // When a message is received
 client1.on('message', onMessageReceived1);
 
 
-
+/*
 const form = document.getElementById('topicsetting');
 const loadtopicBtn = document.getElementById('loadtopic');
 form.addEventListener('submit', async(event)=>
@@ -1028,12 +1043,12 @@ form.addEventListener('submit', async(event)=>
   //localStorage.setItem('mrsws', mrsw);
    // Save to local storage
   form.reset(); // Clear the form
-});
+}); */
 
 
-document.getElementById('loadtopic').addEventListener('click', () => loadParm())
+//document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 //loadtopicBtn.addEventListener('click', function() 
-function loadParm()
+/*function loadParm()
 {
   // const url = "./cofig.json";
   fetch('https://tpras1.github.io/waterlevel/config.json?cacheBust=' + new Date().getTime())
@@ -1079,4 +1094,106 @@ function loadParm()
   .catch((error) => console.error("Error fetching config:", error));
 
   
-}
+} */
+  const form = document.getElementById('topicsetting');
+  const loadtopicBtn = document.getElementById('loadtopic');
+  document.getElementById('loadtopic').addEventListener('click', () => loadParm())
+function loadParm()
+            {
+              database.ref('config').get()
+              .then((snapshot) => {
+                if (snapshot.exists()) {
+                  const config = snapshot.val();
+                  console.log("Config loaded:", config);
+                  //document.getElementById('mqttTopic').value = config.mqtt_topic;
+                  //document.getElementById('brokerUrl').value = config.broker_url;
+                  cdrtopic = config.drsws;
+                  csotopic = config.sosws;
+                  centrtopic = config.entrsws;
+                  cfftopic = config.ffsws;
+                  cdngtopic = config.dngsws;
+                  ccytopic  = config.cysws;
+                  clrtopic = config.lrsws;
+                  cmrtopic = config.mrsws;
+                  const mq_broker = config.mqtt_broker;
+                  document.getElementById('drsw').value = cdrtopic;
+                  document.getElementById('sosw').value = csotopic;
+                  document.getElementById('entrsw').value = centrtopic;
+                  document.getElementById('ffsw').value = cfftopic;
+                  document.getElementById('dngsw').value =  cdngtopic;
+                  document.getElementById('cysw').value = ccytopic ;
+                  document.getElementById('lrsw').value = clrtopic;
+                  document.getElementById('mrsw').value = cmrtopic;
+              
+                  sdrtopic = cdrtopic.replace("command", "status");
+                  ssotopic = csotopic.replace("command", "status");
+                  sentrtopic = centrtopic.replace("command", "status");
+                  sfftopic = cfftopic.replace("command", "status");
+                  sdngtopic = cdngtopic.replace("command", "status");
+                  scytopic = ccytopic.replace("command", "status");
+                  slrtopic = clrtopic.replace("command", "status");
+                  smrtopic = cmrtopic.replace("command", "status");
+              
+                  document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
+
+                } else {
+                  console.log("No config found.");
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching config:", error);
+              });
+
+          }
+
+
+          document.getElementById('topicsetting').addEventListener('click', () =>   
+          // Event listener for Save button
+          {
+            //const mqttTopic = document.getElementById('mqttTopic').value;
+            //const brokerUrl = document.getElementById('brokerUrl').value;    
+           // const config = { mqtt_topic: mqttTopic, broker_url: brokerUrl };
+
+            event.preventDefault();
+
+                  const drswsc = document.getElementById('drsw').value;
+                  const soswsc = document.getElementById('sosw').value;
+                  const entrswc = document.getElementById('entrsw').value;
+                  const ffswsc = document.getElementById('ffsw').value;
+                  const dngswsc = document.getElementById('dngsw').value;
+                  const cyswsc = document.getElementById('cysw').value;
+                  const lrswsc = document.getElementById('lrsw').value;
+                  const mrswsc = document.getElementById('mrsw').value;
+
+                    const config = {
+                      drsws : drswsc,
+                      sosws : soswsc,
+                      entrsws : entrswc,
+                      ffsws : ffswsc,
+                      dngsws : dngswsc,
+                      cysws : cyswsc,
+                      lrsws : lrswsc,
+                      mrsws : mrswsc,
+                    };
+
+             saveConfig(config);                        
+          });
+
+            function saveConfig(config) 
+            {
+              database.ref('config').set(config)
+                .then(() => {
+                  console.log("Config saved successfully!");
+                  alert("Configuration saved successfully!");
+                })
+                .catch((error) => {
+                  console.error("Error saving config:", error);
+                  alert("An error occurred while saving the configuration.");
+                });
+                //form.reset(); 
+            }
+
+
+
+
+    
