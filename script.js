@@ -948,8 +948,6 @@ client1.on('connect', function () {
 // When a message is received
 client1.on('message', onMessageReceived1);
 
-
-
   //const form = document.getElementById('topicsetting');
   const loadtopicBtn = document.getElementById('loadtopic');
   document.getElementById('loadtopic').addEventListener('click', () => loadParm())
