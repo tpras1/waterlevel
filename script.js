@@ -1,4 +1,8 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+//import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+  
+
 const firebaseConfig = {
   apiKey: "AIzaSyC8e-722jurrVxcYETKtF4wAetzAJno3YA",
   authDomain: "iot-hom.firebaseapp.com",
@@ -9,8 +13,9 @@ const firebaseConfig = {
   appId: "1:745178338232:web:9a8009f242b90dd60f754d",
   measurementId: "G-TKG9J34YM3"
 };
-
+//const app =initializeApp(firebaseConfig);
 firebase.initializeApp(firebaseConfig);
+//intializeApp(firebaseConfig);
 const database = firebase.database();
 let cdrtopic ;
 let sdrtopic ;
@@ -28,7 +33,7 @@ let clrtopic ;
 let slrtopic ;
 let cmrtopic  ;
 let smrtopic ;
-//loadParm();
+loadParm();
 
 
 function showSection(sectionId) 
@@ -997,15 +1002,15 @@ function loadParm()
               });
 
           }
+          const form = document.getElementById('topicsetting');
 
-
-          document.getElementById('topicsetting').addEventListener('click', () =>   
+          form.addEventListener('submit', async(event)=>  
           // Event listener for Save button
           {
             //const mqttTopic = document.getElementById('mqttTopic').value;
             //const brokerUrl = document.getElementById('brokerUrl').value;    
            // const config = { mqtt_topic: mqttTopic, broker_url: brokerUrl };
-
+           event.preventDefault();
           
                   const drswsc = document.getElementById('drsw').value;
                   const soswsc = document.getElementById('sosw').value;
@@ -1027,7 +1032,8 @@ function loadParm()
                       mrsws : mrswsc,
                     }; 
                     document.getElementById("mqtt-topic").innerHTML ="settingpressed";
-            saveConfig(configD);                        
+            saveConfig(configD); 
+            form.reset();                    
           });
 
             function saveConfig(configD) 
@@ -1041,7 +1047,7 @@ function loadParm()
                   console.error("Error saving config:", error);
                   alert("An error occurred while saving the configuration.");
                 });
-                //form.reset(); 
+                
             }
 
 
