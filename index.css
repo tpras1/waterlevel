@@ -3122,7 +3122,7 @@ z-index: 160;
 display:inline-block;
 margin-top:8px;  
 width:300px;
-height:30px;
+height:29px;
 border-radius: 8px;
 background-color: rgb(116, 112, 112);
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -3133,6 +3133,22 @@ z-index: 160;
 font-size: 17px;
 color:rgb(96, 255, 207);
 }
+.setinginpb
+{
+display:inline-block;
+margin-top:8px;  
+width:300px;
+height:10px;
+border-radius: 8px;
+background-color: rgb(116, 112, 112);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+border-style: none;
+place-items: center;
+text-align: center;
+z-index: 160;
+font-size: 10px;
+color:rgb(96, 255, 207);
+}
 
 .settopic
 {
@@ -3140,9 +3156,9 @@ color:rgb(96, 255, 207);
   display:block;
   flex-direction: row;
   margin-top:70px;
-  margin-left:160px;    
-  Width:345px;
-  height:430px;
+  margin-left:145px;    
+  Width:375px;
+  height:810px;
   border-color: rgb(110, 107, 107);
   border-width: 1px;
   border-style: solid;

@@ -33,6 +33,27 @@ let clrtopic ;
 let slrtopic ;
 let cmrtopic  ;
 let smrtopic ;
+                let cdngltopic ;
+                let cpndtopic ; 
+                let cdngrtopic ;  
+                let centltopic ;   
+                let ckhntopic ;
+                let clvngtopic ; 
+                let cmbrtopic ;
+                let cbdrtopic ;
+                let cwatopic;
+                let cbroker ; 
+                let sdngltopic ;
+                let spndtopic ; 
+                let sdngrtopic  ;  
+                let sentltopic ;   
+                let skhntopic ;
+                let slvngtopic ; 
+                let smbrtopic ;
+                let sbdrtopic ;
+                let swatopic;
+                let sbroker ; 
+
 loadParm();
 
 
@@ -962,8 +983,6 @@ function loadParm()
                 if (snapshot.exists()) {
                   const config = snapshot.val();
                   console.log("Config loaded:", config);
-                  //document.getElementById('mqttTopic').value = config.mqtt_topic;
-                  //document.getElementById('brokerUrl').value = config.broker_url;
                   cdrtopic = config.drsws;
                   csotopic = config.sosws;
                   centrtopic = config.entrsws;
@@ -972,6 +991,17 @@ function loadParm()
                   ccytopic  = config.cysws;
                   clrtopic = config.lrsws;
                   cmrtopic = config.mrsws;
+                            cdngltopic = config.dnglsws;
+                            cpndtopic = config.pndsws;
+                            cdngrtopic = config.dngrsws;  
+                            centltopic = config.entlsws;   
+                            ckhntopic = config.khnsws;
+                            clvngtopic = config.lvngsws; 
+                            cmbrtopic = config.mbrsws;
+                            cbdrtopic = config.bdrsws;
+                            cwatopic = config.wasws;
+                            cbroker = config.brokers; 
+
                   //const mq_broker = config.mqtt_broker;
                   document.getElementById('drsw').value = cdrtopic;
                   document.getElementById('sosw').value = csotopic;
@@ -981,16 +1011,37 @@ function loadParm()
                   document.getElementById('cysw').value = ccytopic ;
                   document.getElementById('lrsw').value = clrtopic;
                   document.getElementById('mrsw').value = cmrtopic;
-              
+
+              document.getElementById('dnglsw').value = cdngltopic;
+              document.getElementById('pndsw').value = cpndtopic ;
+              document.getElementById('dngrsw').value = cdngrtopic;
+              document.getElementById('entlsw').value = centltopic;
+              document.getElementById('khnsw').value = ckhntopic;
+              document.getElementById('lvngsw').value = clvngtopic; 
+              document.getElementById('mbrsw').value = cmbrtopic;
+              document.getElementById('bdrsw').value = cbdrtopic ;
+              document.getElementById('wasw').value = cwatopic;
+              document.getElementById('broker').value = cbroker;
+
                   sdrtopic = cdrtopic.replace("command", "status");
                   ssotopic = csotopic.replace("command", "status");
                   sentrtopic = centrtopic.replace("command", "status");
                   sfftopic = cfftopic.replace("command", "status");
-                  sdngtopic = cdngtopic.replace("command", "status");
+                  sdngrtopic = cdngrtopic.replace("command", "status");
                   scytopic = ccytopic.replace("command", "status");
                   slrtopic = clrtopic.replace("command", "status");
                   smrtopic = cmrtopic.replace("command", "status");
-              
+
+                  sdngltopic = cdngltopic.replace("command", "status");
+                  spndtopic = cpndtopic.replace("command", "status");
+                  sdngrtopic = cdngrtopic.replace("command", "status");
+                  sentltopic =  centltopic.replace("command", "status");
+                  skhntopic = ckhntopic.replace("command", "status");
+                  slvngtopic = clvngtopic.replace("command", "status");
+                  smbrtopic = cmbrtopic.replace("command", "status");
+                  sbdrtopic= cbdrtopic.replace("command", "status");
+                  swatopic = cwatopic.replace("command", "status");
+                  sbroker= cbroker.replace("command", "status");
                  // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
 
                 } else {
@@ -1002,34 +1053,54 @@ function loadParm()
               });
 
           }
-          const form = document.getElementById('topicsetting');
 
+
+
+          const form = document.getElementById('topicsetting');
           form.addEventListener('submit', async(event)=>  
           // Event listener for Save button
           {
-            //const mqttTopic = document.getElementById('mqttTopic').value;
-            //const brokerUrl = document.getElementById('brokerUrl').value;    
-           // const config = { mqtt_topic: mqttTopic, broker_url: brokerUrl };
+
            event.preventDefault();
           
                   const drswsc = document.getElementById('drsw').value;
                   const soswsc = document.getElementById('sosw').value;
                   const entrswc = document.getElementById('entrsw').value;
                   const ffswsc = document.getElementById('ffsw').value;
-                  const dngswsc = document.getElementById('dngsw').value;
+                  const dngswc = document.getElementById('dngsw').value;
                   const cyswsc = document.getElementById('cysw').value;
                   const lrswsc = document.getElementById('lrsw').value;
                   const mrswsc = document.getElementById('mrsw').value;
+                  const dnglswc = document.getElementById('dnglsw').value;
+                  const pndswc = document.getElementById('pndsw').value;
+                  const dngrswc = document.getElementById('dngrsw').value;
+                  const entlswc = document.getElementById('entlsw').value;
+                  const khnswc = document.getElementById('khnsw').value;
+                  const lvngswc = document.getElementById('lvngsw').value;
+                  const mbrswc = document.getElementById('mbrsw').value;
+                  const bdrswc = document.getElementById('bdrsw').value;
+                  const waswc = document.getElementById('wasw').value;
+                  const brokerc = document.getElementById('broker').value;
 
                     const configD = {
                       drsws : drswsc,
                       sosws : soswsc,
                       entrsws : entrswc,
                       ffsws : ffswsc,
-                      dngsws : dngswsc,
+                      dngsws : dngswc,
                       cysws : cyswsc,
                       lrsws : lrswsc,
                       mrsws : mrswsc,
+                      dnglsws : dnglswc,
+                      pndsws : pndswc,
+                      dngrsws : dngrswc,
+                      entlsws : entlswc, 
+                      khnsws : khnswc,
+                      lvngsws : lvngswc, 
+                      mbrsws : mbrswc, 
+                      bdrsws : bdrswc, 
+                      wasws : waswc, 
+                      brokers : brokerc
                     }; 
                     document.getElementById("mqtt-topic").innerHTML ="settingpressed";
             saveConfig(configD); 
