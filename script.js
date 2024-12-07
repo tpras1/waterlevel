@@ -1,5 +1,7 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
+//const { or } = require("firebase/firestore/lite");
+
 //import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
   
 
@@ -53,9 +55,11 @@ let smrtopic ;
                 let sbdrtopic ;
                 let swatopic;
                 let sbroker ; 
+                let per ;
+                let parisho ;        
 
 loadParm();
-
+loadupayogi();
 
 function showSection(sectionId) 
   {
@@ -337,15 +341,12 @@ function toggleMotor()
 function login() 
   {
     // Hard-coded credentials
-    const correctUsername = "admin";
-    const correctPassword = "tpras2875";
-
     // Get values from input fields
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-
+  
     // Check if credentials are correct
-    if (username === correctUsername && password === correctPassword) 
+    if (username === per && password === parisho )
       {
         document.getElementById("errorMessage").textContent = "Login Successfull";
         sessionStorage.setItem('loggedIn', true);
@@ -359,7 +360,8 @@ function login()
 
     } 
     
-    else {
+    else 
+    {
         document.getElementById("errorMessage").textContent = "Invalid username or password";
     }
   }
@@ -1104,8 +1106,10 @@ function loadParm()
                     }; 
                     document.getElementById("mqtt-topic").innerHTML ="settingpressed";
             saveConfig(configD); 
+            //upayogi_raksha();
             form.reset();                    
           });
+
 
             function saveConfig(configD) 
             {
@@ -1122,6 +1126,49 @@ function loadParm()
             }
 
 
+function upayogi_raksha()
+{
+const upayogi=
+{
+peru:"thekki",
+check:"thekki2875"
+};
+saveConfig(upayogi)
+}           
 
+function saveConfig(upayogi) 
+            {
+              database.ref('upayogi').set(upayogi)
+                .then(() => {
+                  console.log("Config saved successfully!");
+                  alert("Configuration saved successfully!");
+                })
+                .catch((error) => {
+                  console.error("Error saving config:", error);
+                  alert("An error occurred while saving the configuration.");
+                });
+                
+            }
 
+function loadupayogi()
+            {
+              database.ref('upayogi').get()
+              .then((snapshot) => {
+                if (snapshot.exists()) {
+                  const upayogi = snapshot.val();
+                  console.log("upayogi loaded:", upayogi);
+                  parisho = upayogi.check;
+                  per = upayogi.peru;
+
+                 // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
+
+                } else {
+                  console.log("No upayogi found.");
+                }
+              })
+              .catch((error) => {
+                console.error("Error fetching upayogi:", error);
+              });
+
+          }
     
