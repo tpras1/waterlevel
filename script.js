@@ -463,11 +463,7 @@ function toggleSwitch(IDS,SW)
       }
     
 
-      //let lvrm = cmrtopic;
-      //let lvrc = ccytopic ;
-      //let lvrf = cfftopic ;
-      //let lvrd = cdngtopic;
-      //let lvrl = clrtopic ;
+  
 
 
 
@@ -672,31 +668,35 @@ function lghtindctr(IDS,STAT)
  /* fetchSWSTAT() ;*/
 
 
-function lvrstat(ids, stat) 
+function lvrstat(ids,stat,value) 
               {
                 const lvrimgo= document.getElementById(ids + "o"); 
                 const lvrimgc= document.getElementById(ids + "c");
                 const lvrimgs= document.getElementById(ids + "s");
-
-            if(stat=="opn")
+                document.getElementById("mqtt-topic").innerHTML = ids +":"+stat +value;
+            if(stat=== 0 && value ==="ON")
                 {
 
                   lvrimgo.src= "./assets/images/open.png";
                   lvrimgc.src=  "./assets/images/close_u.png";
                   lvrimgs.src=  "./assets/images/stp_u.png";
                 }
-            if(stat=="cls")
+            if (stat=== 2 && value ==="ON")
                   {
                     lvrimgo.src= "./assets/images/open_u.png";
                     lvrimgc.src=  "./assets/images/close.png";
                     lvrimgs.src=  "./assets/images/stp_u.png"; 
                   }
-            if(stat=="stp")
+            if(stat=== 1 && value ==="ON")
                   {
                     lvrimgo.src= "./assets/images/open_u.png";
                     lvrimgc.src=  "./assets/images/close_u.png";
                     lvrimgs.src=  "./assets/images/stp.png"; 
                   }
+             else 
+             {
+                 return; 
+             }    
 
                 }
 
@@ -770,7 +770,7 @@ function show_lrswbrd(lvrid)
                                       if ( swtopic.startsWith ("S"))
                                       {
                                         //return localStorage.getItem('sosws');
-                                        return cdrtopic
+                                        return csotopic
                                           //return "pavithram/Ediys4245028/command";
                                       }
 
@@ -807,6 +807,7 @@ function onMessageReceived1(topic, message)
     {
   console.log(`Message received on topic '${topic}': ${message.toString()}`);
 
+  document.getElementById("mqtt-topic").innerHTML = topic;
   if (topic === "SWSTATPAV")
           {
           
@@ -891,6 +892,7 @@ function onMessageReceived1(topic, message)
 
 
           }
+          
   if (topic === sentrtopic )
 
     {
@@ -924,25 +926,10 @@ function onMessageReceived1(topic, message)
                     console.log(`Processing Key: ${key}, Value: ${value}`);
                     document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
                            
-                    if (key === "switch0" && value=="ON")
-                                {
-                            const keym = "lvrffr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"opn");
-                              }
-
-                    if (key === "switch1" && value=="ON")
-                                {
-                            const keym = "lvrffr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"stp");
-                              }
-                    if (key === "switch2" && value=="ON")
-                                {
-                            const keym = "lvrffr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"cls");
-                              }         
+                    const stat1 = parseInt(key.slice(-1), 10);
+                    const key1 = "lvrffr";
+                    show_lrswbrd(key1);
+                    lvrstat(key1,stat1,value);    
                             
                   });
 
@@ -953,7 +940,7 @@ function onMessageReceived1(topic, message)
                     //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
                 } 
   
-    }
+    } 
 
     if (topic === sdngtopic )
 
@@ -964,27 +951,11 @@ function onMessageReceived1(topic, message)
                   Object.entries(data1).forEach(([key, value]) => {
                     console.log(`Processing Key: ${key}, Value: ${value}`);
                     document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
-                           
-                    if (key === "switch0" && value=="ON")
-                                {
-                            const keym = "lvrdnr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"opn");
-                              }
-
-                    if (key === "switch1" && value=="ON")
-                                {
-                            const keym = "lvrdnr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"stp");
-                              }
-                    if (key === "switch2" && value=="ON")
-                                {
-                            const keym = "lvrdnr" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"cls");
-                              }         
-                            
+                     
+                    const stat2 = parseInt(key.slice(-1), 10);
+                    const key2 = "lvrdnr";
+                    show_lrswbrd(key2);
+                    lvrstat(key2,stat2,value);
                   });
 
                 }
@@ -1005,25 +976,31 @@ function onMessageReceived1(topic, message)
                     console.log(`Processing Key: ${key}, Value: ${value}`);
                     document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
                            
-                    if (key === "switch0" && value=="ON")
+                    const stat3 = parseInt(key.slice(-1), 10);
+                    const key3 = "lvrctd";
+                    show_lrswbrd(key3);
+                    lvrstat(key3,stat3,value);
+                      
+                  /* 
+                 if (key === "switch0" && value==="ON")
                                 {
                             const keym = "lvrctd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"opn");
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"opn");
                               }
 
-                    if (key === "switch1" && value=="ON")
+                    if (key === "switch1" && value==="ON")
                                 {
-                            const keym = "lvrctd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"stp");
+                            const keym = "lvrctd";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"stp");
                               }
-                    if (key === "switch2" && value=="ON")
+                    if (key === "switch2" && value==="ON")
                                 {
-                            const keym = "lvrctd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"cls");
-                              }         
+                            const keym = "lvrctd";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"cls");
+                              }         */
                             
                   });
 
@@ -1046,25 +1023,31 @@ function onMessageReceived1(topic, message)
                     console.log(`Processing Key: ${key}, Value: ${value}`);
                     document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
                            
-                    if (key === "switch0" && value=="ON")
+                    const stat4 = parseInt(key.slice(-1), 10);
+                    const key4 = "lvrmbd";
+                    show_lrswbrd(key4);
+                    lvrstat(key4,stat4,value);
+                    
+                    
+                  /* if (key === "switch0" && value==="ON")
                                 {
-                            const keym = "lvrmbd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"opn");
+                            const keym = "lvrmbd";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"opn");
                               }
 
-                    if (key === "switch1" && value=="ON")
+                    if (key === "switch1" && value==="ON")
                                 {
-                            const keym = "lvrmbd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"stp");
+                            const keym = "lvrmbd";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"stp");
                               }
-                    if (key === "switch2" && value=="ON")
+                    if (key === "switch2" && value==="ON")
                                 {
-                            const keym = "lvrmbd" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"cls");
-                              }         
+                            const keym = "lvrmbd";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"cls");
+                              }    */     
                             
                   });
 
@@ -1087,25 +1070,30 @@ function onMessageReceived1(topic, message)
                     console.log(`Processing Key: ${key}, Value: ${value}`);
                     document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
                            
-                    if (key === "switch0" && value=="ON")
+                    const stat5 = parseInt(key.slice(-1), 10);
+                    const key5 = "lvrlrm";
+                    show_lrswbrd(key5);
+                    lvrstat(key5,stat5,value);
+                  /* 
+                    if (key === "switch0" && value==="ON")
                                 {
-                            const keym = "lvrlrm" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"opn");
+                            const keym = "lvrlrm";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"opn");
                               }
 
-                    if (key === "switch1" && value=="ON")
+                    if (key === "switch1" && value==="ON")
                                 {
-                            const keym = "lvrlrm" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"stp");
+                            const keym = "lvrlrm";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"stp");
                               }
-                    if (key === "switch2" && value=="ON")
+                    if (key === "switch2" && value==="ON")
                                 {
-                            const keym = "lvrlrm" ;
-                              show_ltswbrd(keym); 
-                              lghtindctr(keym,"cls");
-                              }         
+                            const keym = "lvrlrm";
+                              show_lrswbrd(keym); 
+                              lvrstat(keym,"cls");
+                              }      */   
                             
                   });
 
@@ -1211,7 +1199,7 @@ function loadParm()
                   ssotopic = csotopic.replace("command", "status");
                   sentrtopic = centrtopic.replace("command", "status");
                   sfftopic = cfftopic.replace("command", "status");
-                  sdngrtopic = cdngrtopic.replace("command", "status");
+                  sdngtopic = cdngtopic.replace("command", "status");
                   scytopic = ccytopic.replace("command", "status");
                   slrtopic = clrtopic.replace("command", "status");
                   smrtopic = cmrtopic.replace("command", "status");
@@ -1315,10 +1303,10 @@ const upayogi=
 peru:"thekki",
 check:"thekki2875"
 };
-saveConfig(upayogi)
+saveConfig1(upayogi)
 }           
 
-function saveConfig(upayogi) 
+function saveConfig1(upayogi) 
             {
               database.ref('upayogi').set(upayogi)
                 .then(() => {
