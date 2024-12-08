@@ -342,11 +342,16 @@ function login()
   {
     // Hard-coded credentials
     // Get values from input fields
+    const peru ="admin";
+    const parishod ="tpras123";
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
   
     // Check if credentials are correct
-    if (username === per && password === parisho )
+    //if (username === per && password === parisho )
+    if (username === peru && password === parishod )
+
+
       {
         document.getElementById("errorMessage").textContent = "Login Successfull";
         sessionStorage.setItem('loggedIn', true);
@@ -458,29 +463,37 @@ function toggleSwitch(IDS,SW)
       }
     
 
-      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
-      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
-      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('lvrmbdo', 'lvrmbds','lvrmbdc','lvrmbd'));
-      
-      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
-      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
-      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('lvrctdo', 'lvrctds','lvrctdc','lvrctd'));
-      
-      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
-      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
-      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('lvrffro', 'lvrffrs','lvrffrc','lvrffr'));
+      //let lvrm = cmrtopic;
+      //let lvrc = ccytopic ;
+      //let lvrf = cfftopic ;
+      //let lvrd = cdngtopic;
+      //let lvrl = clrtopic ;
 
-      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
-      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
-      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('lvrdnro', 'lvrdnrs','lvrdnrc','lvrdnr'));
 
-      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm'));
-      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm'));
-      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('lvrlrmo', 'lvrlrms','lvrlrmc','lvrlrm')); 
+
+      document.getElementById('openbtnM').addEventListener('click', () => toggleopen('lvrmbdo', 'lvrmbds','lvrmbdc',cmrtopic));
+      document.getElementById('stopbtnM').addEventListener('click', () => togglestp('lvrmbdo', 'lvrmbds','lvrmbdc',cmrtopic));
+      document.getElementById('closebtnM').addEventListener('click', () => toggleclose('lvrmbdo', 'lvrmbds','lvrmbdc',cmrtopic));
+      
+      document.getElementById('openbtnC').addEventListener('click', () => toggleopen('lvrctdo', 'lvrctds','lvrctdc',ccytopic));
+      document.getElementById('stopbtnC').addEventListener('click', () => togglestp('lvrctdo', 'lvrctds','lvrctdc',ccytopic));
+      document.getElementById('closebtnC').addEventListener('click', () => toggleclose('lvrctdo', 'lvrctds','lvrctdc',ccytopic));
+      
+      document.getElementById('openbtnF').addEventListener('click', () => toggleopen('lvrffro', 'lvrffrs','lvrffrc',cfftopic));
+      document.getElementById('stopbtnF').addEventListener('click', () => togglestp('lvrffro', 'lvrffrs','lvrffrc',cfftopic));
+      document.getElementById('closebtnF').addEventListener('click', () => toggleclose('lvrffro', 'lvrffrs','lvrffrc',cfftopic));
+
+      document.getElementById('openbtnD').addEventListener('click', () => toggleopen('lvrdnro', 'lvrdnrs','lvrdnrc',cdngtopic));
+      document.getElementById('stopbtnD').addEventListener('click', () => togglestp('lvrdnro', 'lvrdnrs','lvrdnrc',cdngtopic));
+      document.getElementById('closebtnD').addEventListener('click', () => toggleclose('lvrdnro', 'lvrdnrs','lvrdnrc',cdngtopic));
+
+      document.getElementById('openbtnL').addEventListener('click', () => toggleopen('lvrlrmo', 'lvrlrms','lvrlrmc',clrtopic));
+      document.getElementById('stopbtnL').addEventListener('click', () => togglestp('lvrlrmo', 'lvrlrms','lvrlrmc',clrtopic));
+      document.getElementById('closebtnL').addEventListener('click', () => toggleclose('lvrlrmo', 'lvrlrms','lvrlrmc',clrtopic)); 
       
       let isp = false;
       
-function toggleopen(OIMGID, SIMGID,CIMGID,AREA) 
+function toggleopen(OIMGID, SIMGID,CIMGID,area) 
       {
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
@@ -495,7 +508,9 @@ function toggleopen(OIMGID, SIMGID,CIMGID,AREA)
           } else {
               // Start ON state
               openImage.src = "./assets/images/open.png";
-              publish_louver(AREA,'OPN');
+              publish_sw_stat(area,"switch","off2");
+              publish_sw_stat(area,"switch","off1");
+              publish_sw_stat(area,"switch","on0");
               openImage.alt = "start ON";
               stopImage.src = "./assets/images/stp_u.png";
               stopImage.alt = "stop OFF";
@@ -505,7 +520,7 @@ function toggleopen(OIMGID, SIMGID,CIMGID,AREA)
           isp = !isp;
       }
       
-function togglestp(OIMGID, SIMGID,CIMGID,AREA) {
+function togglestp(OIMGID, SIMGID,CIMGID,area) {
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
@@ -513,7 +528,10 @@ function togglestp(OIMGID, SIMGID,CIMGID,AREA) {
           if (isp) {
               // Stop ON state
               stopImage.src = "./assets/images/stp.png";
-              publish_louver(AREA,'STP');
+              publish_sw_stat(area,"switch","off2");
+              publish_sw_stat(area,"switch","off0");
+              publish_sw_stat(area,"switch","on1");
+             
               stopImage.alt = "stop ON";
               openImage.src = "./assets/images/open_u.png";
               openImage.alt = "start OFF";
@@ -530,7 +548,7 @@ function togglestp(OIMGID, SIMGID,CIMGID,AREA) {
       }
       
 
-function toggleclose(OIMGID, SIMGID,CIMGID,AREA) 
+function toggleclose(OIMGID, SIMGID,CIMGID,area) 
       {
         const openImage = document.getElementById(OIMGID);
         const stopImage = document.getElementById(SIMGID);
@@ -546,7 +564,9 @@ function toggleclose(OIMGID, SIMGID,CIMGID,AREA)
         } else {
             // Stop OFF state
             openImage.src = "./assets/images/open_u.png";
-            publish_louver(AREA,'CLS');
+            publish_sw_stat(area,"switch","off1");
+            publish_sw_stat(area,"switch","off0");
+            publish_sw_stat(area,"switch","on2");
             openImage.alt = "start ON";
             stopImage.src = "./assets/images/stp_u.png";
             stopImage.alt = "stop OFF";
@@ -554,8 +574,6 @@ function toggleclose(OIMGID, SIMGID,CIMGID,AREA)
         }
         isp = !isp;
     }
-
-
 
 
 function publish_sw_stat(swtopic,SWID,STAT)
@@ -589,7 +607,7 @@ function publish_sw_stat(swtopic,SWID,STAT)
     });
     }
 
-function publish_louver(LID,LSTAT)
+function publish_louver(LID,LSTAT,lvr_topic)
     {
   
     /*const checkbox = document.getElementById('toggle1');*/
@@ -603,16 +621,16 @@ function publish_louver(LID,LSTAT)
 
 
     // Connect to the MQTT broker
-    const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
-
+    //const client = mqtt.connect('wss://test.mosquitto.org:8081/mqtt');
+    const client = mqtt.connect('wss://broker.hivemq.com:8884/mqtt');
     client.on('connect', function () {
       console.log('Connected to MQTT broker');
-      client.publish('SWPAV', JSON.stringify(data), function (err) {
+      client.publish(lvr_topic, JSON.stringify(data), function (err) {
         if (err) {
           document.getElementById("mqtt-topic").innerHTML = "Error publishing: " + err;
         } else {
           //document.getElementById("response").innerHTML = "Communication & Register Data published successfully! -Through VFDSETT";
-         document.getElementById("mqtt-topic").innerHTML = "Topic: SWPAV  Message:" + JSON.stringify(data);
+         document.getElementById("mqtt-topic").innerHTML = topic + JSON.stringify(data);
           client.end();
         }
       });
@@ -803,7 +821,7 @@ function onMessageReceived1(topic, message)
                       console.log(`Processing Key: ${key}, Value: ${value}`);
                       document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
                     
-                      if (key.startsWith("lt")) 
+                     /* if (key.startsWith("lt")) 
                         {
                         show_ltswbrd(key); 
                         lghtindctr(key, value);
@@ -813,7 +831,7 @@ function onMessageReceived1(topic, message)
                         {
                           show_lrswbrd(key);
                           lvrstat(key, value);     
-                        }     
+                        }     */
                     });
                   }
         catch (e) 
@@ -923,7 +941,170 @@ function onMessageReceived1(topic, message)
                                 {
                             const keym = "lvrffr" ;
                               show_ltswbrd(keym); 
+                              lghtindctr(keym,"cls");
+                              }         
+                            
+                  });
+
+                }
+                catch (e) 
+                {
+                    console.error("Error parsing JSON message:", e);
+                    //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                } 
+  
+    }
+
+    if (topic === sdngtopic )
+
+      {
+          try
+                {
+                  var data1 = JSON.parse(message.toString());   
+                  Object.entries(data1).forEach(([key, value]) => {
+                    console.log(`Processing Key: ${key}, Value: ${value}`);
+                    document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                           
+                    if (key === "switch0" && value=="ON")
+                                {
+                            const keym = "lvrdnr" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"opn");
+                              }
+
+                    if (key === "switch1" && value=="ON")
+                                {
+                            const keym = "lvrdnr" ;
+                              show_ltswbrd(keym); 
                               lghtindctr(keym,"stp");
+                              }
+                    if (key === "switch2" && value=="ON")
+                                {
+                            const keym = "lvrdnr" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"cls");
+                              }         
+                            
+                  });
+
+                }
+                catch (e) 
+                {
+                    console.error("Error parsing JSON message:", e);
+                    //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                } 
+  
+    }
+    if (topic === scytopic )
+
+      {
+          try
+                {
+                  var data1 = JSON.parse(message.toString());   
+                  Object.entries(data1).forEach(([key, value]) => {
+                    console.log(`Processing Key: ${key}, Value: ${value}`);
+                    document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                           
+                    if (key === "switch0" && value=="ON")
+                                {
+                            const keym = "lvrctd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"opn");
+                              }
+
+                    if (key === "switch1" && value=="ON")
+                                {
+                            const keym = "lvrctd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"stp");
+                              }
+                    if (key === "switch2" && value=="ON")
+                                {
+                            const keym = "lvrctd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"cls");
+                              }         
+                            
+                  });
+
+                }
+                catch (e) 
+                {
+                    console.error("Error parsing JSON message:", e);
+                    //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                } 
+  
+    }
+
+    if (topic === smrtopic )
+
+      {
+          try
+                {
+                  var data1 = JSON.parse(message.toString());   
+                  Object.entries(data1).forEach(([key, value]) => {
+                    console.log(`Processing Key: ${key}, Value: ${value}`);
+                    document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                           
+                    if (key === "switch0" && value=="ON")
+                                {
+                            const keym = "lvrmbd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"opn");
+                              }
+
+                    if (key === "switch1" && value=="ON")
+                                {
+                            const keym = "lvrmbd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"stp");
+                              }
+                    if (key === "switch2" && value=="ON")
+                                {
+                            const keym = "lvrmbd" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"cls");
+                              }         
+                            
+                  });
+
+                }
+                catch (e) 
+                {
+                    console.error("Error parsing JSON message:", e);
+                    //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+                } 
+  
+    }
+
+    if (topic === slrtopic  )
+
+      {
+          try
+                {
+                  var data1 = JSON.parse(message.toString());   
+                  Object.entries(data1).forEach(([key, value]) => {
+                    console.log(`Processing Key: ${key}, Value: ${value}`);
+                    document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+                           
+                    if (key === "switch0" && value=="ON")
+                                {
+                            const keym = "lvrlrm" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"opn");
+                              }
+
+                    if (key === "switch1" && value=="ON")
+                                {
+                            const keym = "lvrlrm" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"stp");
+                              }
+                    if (key === "switch2" && value=="ON")
+                                {
+                            const keym = "lvrlrm" ;
+                              show_ltswbrd(keym); 
+                              lghtindctr(keym,"cls");
                               }         
                             
                   });
@@ -971,6 +1152,7 @@ client1.on('connect', function () {
         client1.subscribe( scytopic , onSubscriptionSuccess);
         client1.subscribe( slrtopic , onSubscriptionSuccess);
         client1.subscribe( smrtopic , onSubscriptionSuccess);
+        
       });
 // When a message is received
 client1.on('message', onMessageReceived1);
@@ -1106,7 +1288,7 @@ function loadParm()
                     }; 
                     document.getElementById("mqtt-topic").innerHTML ="settingpressed";
             saveConfig(configD); 
-            //upayogi_raksha();
+            upayogi_raksha();
             form.reset();                    
           });
 

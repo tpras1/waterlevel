@@ -2800,10 +2800,10 @@ border-color: rgb(250, 248, 248);
 .DR_Area
 {
   position:absolute;
-top:410px;
+top:405px;
 margin-left:490px;
 /* background-color: red;*/
-background-image: url("./assets/images/wifi_switch.png");
+background-image: url("./assets/images/switch_wifi_b_r.png");
 background-repeat: no-repeat;
 background-size: 50px 50px;
 height:50px;
@@ -2819,10 +2819,10 @@ opacity:0.9;
 .SO_Area
 {
 position:absolute;
-top:600px;
+top:595px;
 margin-left:490px;
 
-background-image: url("./assets/images/wifi_switch.png");
+background-image: url("./assets/images/switch_wifi_b_l.png");
 background-repeat: no-repeat;
 background-size: 50px 50px;
 height: 50px;
@@ -2839,8 +2839,8 @@ opacity:0.9;
 {
   position:absolute;
 top:540px;
-margin-left:420px;
-background-image: url("./assets/images/wifi_switch.png");
+margin-left:413px;
+background-image: url("./assets/images/switch_wifi_b_r.png");
 background-repeat: no-repeat;
 background-size: 50px 50px;
 height: 50px;
@@ -2857,16 +2857,16 @@ opacity:0.9;
 .CENTRL_Courtyard
 {
   position:absolute;
-top:265px;
-margin-left:298px;
-background-color:rgb(79, 248, 155);
-background-image: url("./assets/images/wifi_switch_louver.png");
+top:260px;
+margin-left:288px;
+/*background-color:rgb(79, 248, 155);*/
+background-image: url("./assets/images/sw_lr_b_l.png");
 background-repeat: no-repeat;
-background-size: 50px 50px;
+background-size: 45px 45px;
 height: 50px;
 width:45px;
 z-index:75;
-opacity:0.9;
+/*opacity:0.9;*/
 }
 .CENTRL_Courtyard:hover
 {
@@ -2876,12 +2876,12 @@ opacity:0.9;
 .FRST_Floor_L
 {
   position:absolute;
-top:690px;
-margin-left:154px;
-background-color:#1aa3ff;
-background-image: url("./assets/images/wifi_switch_louver.png");
+top:695px;
+margin-left:140px;
+/*background-color:#1aa3ff;*/
+background-image: url("./assets/images/sw_lr_b_l.png");
 background-repeat: no-repeat;
-background-size: 50px 50px;
+background-size: 45px 45px;
 height: 50px;
 width:45px;
 transform: rotate(180deg );
@@ -2896,17 +2896,17 @@ opacity:0.9;
 .PORTICO_C
 {
   position:absolute;
-top:325px;
-margin-left:155px;
-background-color: rgb(128, 3, 114);
-background-image: url("./assets/images/wifi_switch_louver.png");
+top:345px;
+margin-left:148px;
+/*background-color: rgb(128, 3, 114);*/
+background-image: url("./assets/images/sw_lr_b_l.png");
 background-repeat: no-repeat;
-background-size: 50px 50px;
-height: 50px;
+background-size: 45px 45px;
+height: 45px;
 width:45px;
 transform: rotate(270deg );
 z-index:75;
-opacity:0.4;
+/*opacity:0.4;*/
 }
 .PORTICO_C:hover
 {
@@ -2916,16 +2916,17 @@ opacity:0.4;
 .LIVING_C
 {
   position:absolute;
-top:75px;
-margin-left:305px;
-background-color: rgb(196, 65, 0);
-background-image: url("./assets/images/wifi_switch_louver.png");
+top:65px;
+margin-left:295px;
+/*background-color: rgb(196, 65, 0);*/
+background-image: url("./assets/images/sw_lr_b_l.png");
 background-repeat: no-repeat;
-background-size: 50px 50px;
-height: 50px;
+background-size: 45px 45px;
+height: 45px;
 width:45px;
 z-index:75;
-opacity:0.9;
+transform: rotate(270deg );
+/*opacity:0.9;*/
 }
 .LIVING_C:hover
 {
@@ -2935,14 +2936,14 @@ opacity:0.9;
 .MBD_C
 {
   position:absolute;
-top:265px;
-margin-left:746px;
-background-color: rgb(159, 138, 3);
-background-image: url("./assets/images/wifi_switch_mbd.png");
+top:240px;
+margin-left:755px;
+/*background-color: rgb(159, 138, 3);*/
+background-image: url("./assets/images/sw_lr_b_l.png");
 background-repeat: no-repeat;
-background-size: 50px 50px;
-transform: rotate(180deg );
-height: 50px;
+background-size: 45px 45px;
+transform: rotate(90deg );
+height: 45px;
 width:45px;
 z-index:75;
 z-index:76;
@@ -3075,7 +3076,7 @@ margin-left:305px;
 #attn_MBD
 {
 position: absolute;
-top:265px;
+top:245px;
 margin-left:748px;
 }
 
@@ -3084,7 +3085,8 @@ margin-left:748px;
   width: 40px; /* Circle size */
   height: 40px;
   border-radius: 50%;
-  background: #00ffb7; /* Initial circle color */
+  background: #edf1ff;
+  /*background: #00ffb7; *//* Initial circle color */
   animation: pulse 2s infinite; /* Apply animation */
 }
 
@@ -3092,7 +3094,7 @@ margin-left:748px;
 @keyframes pulse {
   0% {
       transform: scale(1);
-      opacity: 1;
+      opacity: .5;
   }
   100% {
       transform: scale(2.5); /* Increase circle size */
