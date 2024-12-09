@@ -725,8 +725,27 @@ function show_ltswbrd(swid)
                   case "so":
                     showSwitch('SIT-OUT');
                     break;
-                  default: 
+                  case "dngl":
+                    showSwitch('DNG-L');
+                    break;
+                  case "dngr":
+                    showSwitch('DNG-R');
                       break;
+                  case "pnd":
+                    showSwitch('PND');
+                        break;
+                  case "entl":
+                    showSwitch('ENTL');
+                        break;
+                  case "khn":
+                    showSwitch('KHN');
+                        break;
+                  case "lvng":
+                    showSwitch('LVNG');
+                        break;
+                  default: 
+                    break;
+
                 }
         }
 function show_lrswbrd(lvrid)
@@ -760,27 +779,64 @@ function show_lrswbrd(lvrid)
             
                     {
                       const swtopic= SW;
-                                      if ( swtopic.startsWith ("D"))
+                                      if ( swtopic.startsWith ("DR"))
                                       {
                                         //return localStorage.getItem('drsws');
                                         return cdrtopic
                                         //return "pavithram/Ediys4245028/command";
                                       }
 
-                                      if ( swtopic.startsWith ("S"))
+                                      if ( swtopic.startsWith ("SO"))
                                       {
                                         //return localStorage.getItem('sosws');
                                         return csotopic
                                           //return "pavithram/Ediys4245028/command";
                                       }
 
-                                      if ( swtopic.startsWith ("E"))
+                                      if ( swtopic.startsWith ("ENTR"))
                                       {
                                         //return localStorage.getItem('entrsws');
                                         return centrtopic
-                                          //return "pavithram/Ediys4245028/command";
+                                        //return "pavithram/Ediys4245028/command";
                                       }
-                                        
+                                      if ( swtopic.startsWith ("DNGL"))
+                                        {
+                                        //return localStorage.getItem('entrsws');
+                                        return cdngltopic
+                                         //return "pavithram/Ediys4245028/command";
+                                        } 
+                                      if ( swtopic.startsWith ("DNGR"))
+                                        {
+                                        //return localStorage.getItem('entrsws');
+                                        return cdngrtopic
+                                          //return "pavithram/Ediys4245028/command";
+                                        } 
+                                      if ( swtopic.startsWith ("PND"))
+                                        {
+                                        //return localStorage.getItem('entrsws');
+                                        return cpndtopic
+                                          //return "pavithram/Ediys4245028/command";
+                                        } 
+                                      if ( swtopic.startsWith ("ENTL"))
+                                        {
+                                          //return localStorage.getItem('entrsws');
+                                        return centltopic
+                                            //return "pavithram/Ediys4245028/command";
+                                        } 
+                                      if ( swtopic.startsWith ("KHN"))
+                                        {
+                                          //return localStorage.getItem('entrsws');
+                                        return ckhntopic 
+                                            //return "pavithram/Ediys4245028/command";
+                                        } 
+                                      if ( swtopic.startsWith ("LVNG"))
+                                        {
+                                          //return localStorage.getItem('entrsws');
+                                        return clvngtopic 
+                                            //return "pavithram/Ediys4245028/command";
+                                        } 
+                                    
+
                     }
                     
 
@@ -892,8 +948,170 @@ function onMessageReceived1(topic, message)
 
 
           }
-          
-  if (topic === sentrtopic )
+/*-----------------------------------------------------------------------DNG*/
+
+if (topic === sdngltopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const ddngl= parseInt(key.slice(-1), 10);
+                      
+                        const pdngl = ddngl + 1;
+                        const keym = "ltdngl"+ pdngl; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            }     
+
+
+  }
+/*-----------------------------------------------------------------------------DNGL*/          
+/*-----------------------------------------------------------------------------DNGR*/ 
+if (topic === sdngrtopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const ddngr= parseInt(key.slice(-1), 10);
+                      
+                        const pdngr = ddngr + 1;
+                        const keym = "ltdngr"+ pdngr; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+  }       
+/*-----------------------------------------------------------------------------DNGR*/ 
+
+if (topic === spndtopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dpnd= parseInt(key.slice(-1), 10);
+                      
+                        const ppnd = dpnd + 1;
+                        const keym = "ltpnd"+ ppnd; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+  } 
+/*-----------------------------------------------------------------------pnd-----*/
+if (topic === sentltopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dentl= parseInt(key.slice(-1), 10);
+                      
+                        const pentl = dentl + 1;
+                        const keym = "ltentl"+ pentl; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+  } 
+
+/*------------------------------------------------------------------------entl----*/
+if (topic === skhntopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dkhn= parseInt(key.slice(-1), 10);
+                      
+                        const pkhn = dkhn + 1;
+                        const keym = "ltkhn"+ pkhn; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+  } 
+/*-------------------------------------------------------------------------khn*/
+if (topic === slvngtopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dlvng= parseInt(key.slice(-1), 10);
+                      
+                        const plvng = dlvng + 1;
+                        const keym = "ltlvng"+ plvng; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+  } 
+/*-----------------------------------------------------------------------lvng--*/
+if (topic === sentrtopic )
 
     {
         try
@@ -1140,7 +1358,12 @@ client1.on('connect', function () {
         client1.subscribe( scytopic , onSubscriptionSuccess);
         client1.subscribe( slrtopic , onSubscriptionSuccess);
         client1.subscribe( smrtopic , onSubscriptionSuccess);
-        
+        client1.subscribe( sdngltopic , onSubscriptionSuccess);
+        client1.subscribe( sdngrtopic , onSubscriptionSuccess);
+        client1.subscribe( spndtopic , onSubscriptionSuccess);
+        client1.subscribe( sentltopic , onSubscriptionSuccess);
+        client1.subscribe( skhntopic , onSubscriptionSuccess);
+        client1.subscribe( slvngtopic , onSubscriptionSuccess);
       });
 // When a message is received
 client1.on('message', onMessageReceived1);

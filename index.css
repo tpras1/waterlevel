@@ -2283,7 +2283,1081 @@ z-index: 101;
         margin-top:15px;
           }
 
-          .entrswitch
+/* ------------------------------------------------------------  DNGL*/                                              
+
+.dnglswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.dnglsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.dnglsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.dnglswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.dnglsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.dnglsw2:hover
+{
+cursor: pointer;
+}
+.dnglswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.dnglsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .dnglsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .dnglswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .dnglsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .dnglsw4:hover
+  {
+  cursor: pointer;
+  }
+  .dnglswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .dnglsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .dnglsw5:hover
+    {
+    cursor: pointer;
+    }
+    .dnglswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .dnglsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .dnglsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .dnglswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .DNGLl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .DNGLl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .DNGLl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .DNGLl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .DNGLl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .DNGLl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*--------------------------------------------------*/
+/*------------------------------------------------DNGR*/
+.dngrswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.dngrsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.dngrsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.dngrswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.dngrsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.dngrsw2:hover
+{
+cursor: pointer;
+}
+.dngrswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.dngrsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .dngrsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .dngrswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .dngrsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .dngrsw4:hover
+  {
+  cursor: pointer;
+  }
+  .dngrswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .dngrsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .dngrsw5:hover
+    {
+    cursor: pointer;
+    }
+    .dngrswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .dngrsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .dngrsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .dngrswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .DNGRl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .DNGRl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .DNGRl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .DNGRl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .DNGRl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .DNGRl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*------------------------------------------------DNGR*/
+/*-------------------------------------------------PND*/
+.pndswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.pndsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.pndsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.pndswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.pndsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.pndsw2:hover
+{
+cursor: pointer;
+}
+.pndswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.pndsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .pndsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .pndswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .pndsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .pndsw4:hover
+  {
+  cursor: pointer;
+  }
+  .pndswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .pndsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .pndsw5:hover
+    {
+    cursor: pointer;
+    }
+    .pndswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .pndsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .pndsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .pndswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .PNDl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .PNDl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .PNDl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .PNDl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .PNDl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .PNDl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*-----------------------------------------------------PND*/
+/*-----------------------------------------------------ENTL*/
+.entlswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.entlsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.entlsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.entlswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.entlsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.entlsw2:hover
+{
+cursor: pointer;
+}
+.entlswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.entlsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .entlsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .entlswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .entlsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .entlsw4:hover
+  {
+  cursor: pointer;
+  }
+  .entlswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .entlsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .entlsw5:hover
+    {
+    cursor: pointer;
+    }
+    .entlswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .entlsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .entlsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .entlswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .ENTLl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .ENTLl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .ENTLl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .ENTLl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .ENTLl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .ENTLl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*-----------------------------------------------------ENTL*/
+.khnswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.khnsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.khnsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.khnswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.khnsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.khnsw2:hover
+{
+cursor: pointer;
+}
+.khnswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.khnsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .khnsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .khnswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .khnsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .khnsw4:hover
+  {
+  cursor: pointer;
+  }
+  .khnswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .khnsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .khnsw5:hover
+    {
+    cursor: pointer;
+    }
+    .khnswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .khnsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .khnsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .khnswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .KHNl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .KHNl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .KHNl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .KHNl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .KHNl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .KHNl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+
+/*-------------------------------------------------------KHN*/
+.lvngswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.lvngsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.lvngsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.lvngswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.lvngsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.lvngsw2:hover
+{
+cursor: pointer;
+}
+.lvngswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.lvngsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .lvngsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .lvngswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .lvngsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .lvngsw4:hover
+  {
+  cursor: pointer;
+  }
+  .lvngswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .lvngsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .lvngsw5:hover
+    {
+    cursor: pointer;
+    }
+    .lvngswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .lvngsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .lvngsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .lvngswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .LVNGl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .LVNGl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .LVNGl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .LVNGl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .LVNGl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .LVNGl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*---------------------------------------------------------lvng*/
+        .entrswitch
           {
             margin-top:100px;
             margin-left:210px;  
@@ -2835,6 +3909,130 @@ opacity:0.9;
 
  cursor: pointer; 
 }
+
+/*---------------------------------DNGL */
+.DNGL_Area
+{
+position:absolute;
+top:290px;
+margin-left:154px;
+background-image: url("./assets/images/switch_wifi_t_l.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(180deg );
+}
+.DNGL_Area:hover
+{
+
+ cursor: pointer; 
+}
+
+/*-------------------------------DNGL*/
+
+.DNGR_Area
+{
+position:absolute;
+top:320px;
+margin-left:435px;
+background-image: url("./assets/images/switch_wifi_t_l.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(270deg );
+}
+.DNGR_Area:hover
+{
+
+ cursor: pointer; 
+}
+/*-----------------------------------DNGR*/
+.ENTL_Area
+{
+position:absolute;
+top:520px;
+margin-left:435px;
+background-image: url("./assets/images/switch_wifi_b_l.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(90deg );
+}
+.ENTL_Area:hover
+{
+
+ cursor: pointer; 
+}
+/*-----------------------------------pnd--*/
+.KHN_Area
+{
+position:absolute;
+top:600px;
+margin-left:155px;
+background-image: url("./assets/images/switch_wifi_t_r.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(90deg );
+}
+.KHN_Area:hover
+{
+
+ cursor: pointer; 
+}
+/*-----------------------------------khn */
+.LVNG_Area
+{
+position:absolute;
+top:150px;
+margin-left:435px;
+background-image: url("./assets/images/switch_wifi_b_r.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(90deg );
+}
+.LVNG_Area:hover
+{
+
+ cursor: pointer;
+}
+/*---------------------------------------lvng*/
+.PND_Area
+{
+position:absolute;
+top:260px;
+margin-left:235px;
+background-image: url("./assets/images/switch_wifi_t_r.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(90deg );
+}
+.PND_Area:hover
+{
+
+ cursor: pointer; 
+}
+/*-------------------------------------entl---*/
 .ENTR_Area
 {
   position:absolute;
