@@ -3357,7 +3357,185 @@ margin-right: 5px;
       margin-top:15px;
         }
 /*---------------------------------------------------------lvng*/
-        .entrswitch
+.mbrswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.mbrsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.mbrsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.mbrswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.mbrsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.mbrsw2:hover
+{
+cursor: pointer;
+}
+.mbrswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.mbrsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .mbrsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .mbrswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .mbrsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .mbrsw4:hover
+  {
+  cursor: pointer;
+  }
+  .mbrswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .mbrsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .mbrsw5:hover
+    {
+    cursor: pointer;
+    }
+    .mbrswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .mbrsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .mbrsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .mbrswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .MBRl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .MBRl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .MBRl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .MBRl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .MBRl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .MBRl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+/*-----------------------------------------------------------mbr*/
+.entrswitch
           {
             margin-top:100px;
             margin-left:210px;  
@@ -4013,6 +4191,27 @@ transform: rotate(90deg );
  cursor: pointer;
 }
 /*---------------------------------------lvng*/
+.MBR_Area
+{
+position:absolute;
+top:270px;
+margin-left:560px;
+background-image: url("./assets/images/switch_wifi_t_l.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(0deg );
+}
+.MBR_Area:hover
+{
+
+ cursor: pointer;
+}
+
+/*---------------------------------------mbr*/
 .PND_Area
 {
 position:absolute;

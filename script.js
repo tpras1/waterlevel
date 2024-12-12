@@ -743,6 +743,9 @@ function show_ltswbrd(swid)
                   case "lvng":
                     showSwitch('LVNG');
                         break;
+                  case "mbr":
+                    showSwitch('MBR');
+                        break;
                   default: 
                     break;
 
@@ -835,8 +838,11 @@ function show_lrswbrd(lvrid)
                                         return clvngtopic 
                                             //return "pavithram/Ediys4245028/command";
                                         } 
-                                    
-
+                                        if ( swtopic.startsWith ("MBR"))
+                                          {
+                                            //return localStorage.getItem('entrsws');
+                                          return cmbrtopic 
+                                          }
                     }
                     
 
@@ -1111,6 +1117,33 @@ if (topic === slvngtopic )
             } 
   } 
 /*-----------------------------------------------------------------------lvng--*/
+if (topic === smbrtopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dmbr= parseInt(key.slice(-1), 10);
+                      
+                        const pmbr = dmbr + 1;
+                        const keym = "ltmbr"+ pmbr; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+
+  }
+/*-----------------------------------------------------------------------mbr--*/
 if (topic === sentrtopic )
 
     {
@@ -1364,6 +1397,7 @@ client1.on('connect', function () {
         client1.subscribe( sentltopic , onSubscriptionSuccess);
         client1.subscribe( skhntopic , onSubscriptionSuccess);
         client1.subscribe( slvngtopic , onSubscriptionSuccess);
+        client1.subscribe( smbrtopic , onSubscriptionSuccess);
       });
 // When a message is received
 client1.on('message', onMessageReceived1);
