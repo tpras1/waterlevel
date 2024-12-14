@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script> <script type="text/javascript"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
    <!-- <div class="main-container"> -->
@@ -661,6 +661,63 @@
   </div>
 
 <!--------------------------------------------------------------------------------------MDR-->
+<div id="CHART" class="Switch">
+  <div id="chr_sw" class="chrswitch">
+        <H2>Master Bed Room</H2>
+        <canvas id="myChart" width="340" height="180"></canvas>
+
+ </div>
+ </div>       
+<!--------------------------------------------------------------------------------------MDR-->
+<div id="BDR" class="Switch">
+  <div id="bdr_sw" class="bdrswitch">
+        <H2>Bed Room Switch Board</H2>
+        <div class="bdrsw1" onclick="toggleSwitch('ltbdr1s','BDRSW1')">        
+        <img id="ltbdr1s" class="bdrswimg1" src="./assets/images/sw_off.png" alt="swoff" width="50" height="75">
+        <div class="BDRl1" >
+          SOL1
+        <img id="ltbdr1" src="./assets/images/light_off.png" alt="swoff" width="15" height="25">
+          </div>
+      </div>
+        <div class="bdrsw2" onclick="toggleSwitch('ltbdr2s','BDRSW2')">     
+          <img id="ltbdr2s" class="bdrswimg2" src="./assets/images/sw_off.png" alt="swon" width="50" height="75">
+          <div class="BDRl2">
+            SOL2
+            <img id="ltbdr2" src="./assets/images/light_off.png" alt="swon" width="15" height="25">
+            </div>
+        </div>
+          <div class="bdrsw3" onclick="toggleSwitch('ltbdr3s','BDRSW3')">        
+          <img id="ltbdr3s" class="bdrswimg3" src="./assets/images/sw_off.png" alt="swoff" width="50" height="75">
+          <div class="BDRl3">
+            SOL3
+          <img id="ltbdr3" src="./assets/images/light_off.png" alt="swoff" width="15" height="25">
+        </div>
+        </div>
+      <div class="bdrsw4" onclick="toggleSwitch('ltbdr4s','BDRSW4')">     
+        <img id="ltbdr4s" class="bdrswimg4" src="./assets/images/sw_off.png" alt="swon" width="50" height="75">
+        <div class="BDRl4">
+          SOL4
+          <img id="ltbdr4" src="./assets/images/light_off.png" alt="swon" width="15" height="25">
+          </div> 
+      </div>
+        <div class="bdrsw5" onclick="toggleSwitch('ltbdr5s','BDRSW5')"> 
+        <img id="ltbdr5s" class="bdrswimg5" src="./assets/images/sw_off.png" alt="swoff" width="50" height="75">
+        <div class="BDRl5">
+          SOL5
+          <img id="ltbdr5" src="./assets/images/light_off.png" alt="swon" width="15" height="25">
+          </div> 
+      </div>
+    <div class="bdrsw6" onclick="toggleSwitch('ltbdr6s','BDRSW6')"> 
+      <img id="ltbdr6s" class="bdrswimg6" src="./assets/images/sw_off.png" alt="swon" width="50" height="75">
+      <div class="BDRl6">
+        SOL6
+        <img id="ltbdr6" src="./assets/images/light_off.png" alt="swon" width="15" height="25">
+        </div> 
+          </div>
+          </div>
+  </div>
+
+<!-----------------------------------------------------------------------------------------BDR-->
 <div id="Entrance-Right" class="Switch">
     <div id="entr_sw" class="entrswitch">
     <H2>Entrance Right Switch Board</H2>
@@ -885,6 +942,12 @@
   
 </div>
 <div id="MBR-Area" class="MBR_Area" onclick="showSwitch('MBR')">
+  
+</div>
+<div id="BDR-Area" class="BDR_Area" onclick="showSwitch('BDR')">
+  
+</div>
+<div id="CHRT-Area" class="CHRT_Area" onclick="showSwitch('CHART')">
   
 </div>
 <div id="ENTR-Area" class="ENTR_Area" onclick="showSwitch('Entrance-Right')">

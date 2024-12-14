@@ -746,6 +746,9 @@ function show_ltswbrd(swid)
                   case "mbr":
                     showSwitch('MBR');
                         break;
+                  case "bdr":
+                    showSwitch('BDR');
+                        break;
                   default: 
                     break;
 
@@ -843,6 +846,12 @@ function show_lrswbrd(lvrid)
                                             //return localStorage.getItem('entrsws');
                                           return cmbrtopic 
                                           }
+                                        if ( swtopic.startsWith ("BDR"))
+                                          {
+                                            //return localStorage.getItem('entrsws');
+                                          return cbdrtopic 
+                                          }
+
                     }
                     
 
@@ -1144,6 +1153,35 @@ if (topic === smbrtopic )
 
   }
 /*-----------------------------------------------------------------------mbr--*/
+if (topic === sbdrtopic )
+
+  {
+      try
+            {
+              var data1 = JSON.parse(message.toString());   
+              Object.entries(data1).forEach(([key, value]) => {
+                console.log(`Processing Key: ${key}, Value: ${value}`);
+
+                document.getElementById("mqtt-topic").innerHTML += `Key: ${key}, Value: ${value}<br>`;
+
+                        const dbdr= parseInt(key.slice(-1), 10);
+                      
+                        const pbdr = dbdr + 1;
+                        const keym = "ltbdr"+ pbdr; 
+                          show_ltswbrd(keym); 
+                          lghtindctr(keym, value);
+              });
+            }
+      catch (e) 
+            {
+                console.error("Error parsing JSON message:", e);
+                //document.getElementById("response").innerHTML = "Error parsing JSON message" + e ;
+            } 
+
+  }
+
+
+/*-----------------------------------------------------------------------mbr--*/
 if (topic === sentrtopic )
 
     {
@@ -1398,6 +1436,7 @@ client1.on('connect', function () {
         client1.subscribe( skhntopic , onSubscriptionSuccess);
         client1.subscribe( slvngtopic , onSubscriptionSuccess);
         client1.subscribe( smbrtopic , onSubscriptionSuccess);
+        client1.subscribe( sbdrtopic , onSubscriptionSuccess);
       });
 // When a message is received
 client1.on('message', onMessageReceived1);
@@ -1531,16 +1570,16 @@ function loadParm()
                       wasws : waswc, 
                       brokers : brokerc
                     }; 
-                    document.getElementById("mqtt-topic").innerHTML ="settingpressed";
-            saveConfig(configD); 
+            document.getElementById("mqtt-topic").innerHTML ="settingpressed";
+            saveConfig('config',configD); 
             upayogi_raksha();
             form.reset();                    
           });
 
 
-            function saveConfig(configD) 
+            function saveConfig(config,configD) 
             {
-              database.ref('config').set(configD)
+              database.ref(config).set(configD)
                 .then(() => {
                   console.log("Config saved successfully!");
                   alert("Configuration saved successfully!");
@@ -1598,4 +1637,55 @@ function loadupayogi()
               });
 
           }
-    
+ //---------------------------------chart------------------   
+
+  const ctx = document.getElementById('myChart').getContext('2d');
+          const myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: [9,10,11,12,13,14,15], // Add timestamps here
+                  datasets: [{
+                      label: 'Voltage (V)',
+                      data: [],
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1
+                  }, {
+                      label: 'Current (A)',
+                      data: [],
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      borderWidth: 1
+                  }]
+              }
+          });   
+
+    database.ref('/sensor_data').on('value', snapshot => {
+            const data = snapshot.val();
+            myChart.data.labels.push(new Date().toLocaleTimeString());
+            myChart.data.datasets[0].data.push(data.voltage);
+            myChart.data.datasets[1].data.push(data.current);
+            myChart.update();
+        });
+
+//------------------------------------------------chart------   
+//randonvolt_current(); commented for test
+
+function sendDataToFirebase(voltage,current) 
+{
+  const va = {
+            volt:voltage,
+            amp:current
+            } ;
+
+            saveConfig('/sensor_data',va);
+
+ /* const path = "/sensor_data";
+  Firebase.setFloat(firebaseData, path + "/voltage", voltage);
+  Firebase.setFloat(firebaseData, path + "/current", current); */
+}
+
+function randonvolt_current()
+{
+  const vlt= Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+  const cur= Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+  sendDataToFirebase(vlt,cur);
+}

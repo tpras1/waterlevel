@@ -3535,6 +3535,209 @@ margin-right: 5px;
       margin-top:15px;
         }
 /*-----------------------------------------------------------mbr*/
+.bdrswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width: 340px;
+  height:180px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(115, 113, 113);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+.bdrsw1{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  margin-left:20px;
+/* box-shadow: 0 1px 15px 0 grey;*/
+}
+.bdrsw1:hover
+  {
+  cursor: pointer;
+  }
+
+
+.bdrswimg1
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.bdrsw2{
+  Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+ /* box-shadow: 0 1px 15px 0 grey;*/
+}
+.bdrsw2:hover
+{
+cursor: pointer;
+}
+.bdrswimg2
+{
+box-shadow: 0 1px 15px 0 grey;
+z-index:75;
+}
+.bdrsw3{
+  Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .bdrsw3:hover
+  {
+  cursor: pointer;
+  }
+
+  .bdrswimg3
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .bdrsw4{
+    Display :flex;
+flex-direction: column;
+align-items: center;
+float:left;
+margin-right: 5px;
+/*box-shadow: 0 1px 15px 0 grey;*/
+  }
+  .bdrsw4:hover
+  {
+  cursor: pointer;
+  }
+  .bdrswimg4
+  {
+  box-shadow: 0 1px 15px 0 grey;
+  z-index:75;
+  }
+  .bdrsw5{
+    Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    }
+    .bdrsw5:hover
+    {
+    cursor: pointer;
+    }
+    .bdrswimg5
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+    .bdrsw6{
+      Display :flex;
+  flex-direction: column;
+  align-items: center;
+  float:left;
+  /*box-shadow: 0 1px 15px 0 grey;*/
+    } 
+    .bdrsw6:hover
+    {
+    cursor: pointer;
+    }
+
+
+    .bdrswimg6
+    {
+    box-shadow: 0 1px 15px 0 grey;
+    z-index:75;
+    }
+
+
+    
+    .BDRl1{
+      Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+    /*margin-left:5px;*/
+    margin-top:15px;
+    
+    /*margin-top:15px;*/
+      }
+      .BDRl2{
+        Display :flex;
+        flex-direction: column;
+        align-items: center;
+        float:left;
+       
+        margin-top:15px;
+      }
+      .BDRl3{
+        Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+      
+      margin-top:15px;
+        }
+        .BDRl4{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .BDRl5{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+        .BDRl6{
+          Display :flex;
+      flex-direction: column;
+      align-items: center;
+      float:left;
+     
+      margin-top:15px;
+        }
+
+/*---------------------------------------------------------------bdr*/
+.chrswitch
+{
+  margin-top:100px;
+  margin-left:160px;   
+  color:grey;
+  font-size: 10px;
+  font-family:Arial, Helvetica, sans-serif;
+  Width:340px;
+  height:230px;
+  color:#74ffb5;
+  /*background-color:rgb(255, 255, 255);*/
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(250, 248, 248);
+  border-width: .5px;
+  border-style: solid;
+  /*background-color: #e4e6ea;*/
+  text-align:center; 
+  box-shadow: 0 1px 15px 0 rgb(118, 109, 109);
+  border-radius: 10px;
+}
+/*---------------------------------------------------------------bdr*/
+
+
+
 .entrswitch
           {
             margin-top:100px;
@@ -4212,6 +4415,48 @@ transform: rotate(0deg );
 }
 
 /*---------------------------------------mbr*/
+.BDR_Area
+{
+position:absolute;
+top:240px;
+margin-left:153px;
+background-image: url("./assets/images/switch_wifi_t_r.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(0deg );
+}
+.BDR_Area:hover
+{
+
+ cursor: pointer;
+}
+
+/*---------------------------------------mbr*/
+.CHRT_Area
+{
+position:absolute;
+top:300px;
+margin-left:300px;
+background-image: url("./assets/images/switch_wifi_t_r.png");
+background-repeat: no-repeat;
+background-size: 50px 50px;
+height: 50px;
+width:50px;
+z-index: 100;
+opacity:0.9;
+transform: rotate(0deg );
+}
+.CHRT_Area:hover
+{
+
+ cursor: pointer;
+}
+
+/*--------------------------*/
 .PND_Area
 {
 position:absolute;
