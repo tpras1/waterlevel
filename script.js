@@ -852,7 +852,7 @@ function show_lrswbrd(lvrid)
 function onMessageReceived1(topic, message) 
     {
   console.log(`Message received on topic '${topic}': ${message.toString()}`);
-
+loadparm();
   document.getElementById("mqtt-topic").innerHTML = topic;
   if (topic === "SWSTATPAV")
           {
