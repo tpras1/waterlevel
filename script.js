@@ -1460,5 +1460,5 @@ client1.on('message', onMessageReceived1);
         sbroker= cbroker.replace("command", "status");
        // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
   }
-
+loadparm();
   
