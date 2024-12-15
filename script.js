@@ -1,66 +1,42 @@
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-//const { or } = require("firebase/firestore/lite");
+        let cdrtopic;
+        let sdrtopic  ;
+        let csotopic  ;
+        let ssotopic   ;
+        let centrtopic ;
+        let sentrtopic ;
+        let cfftopic ;
+        let sfftopic ;
+        let cdngtopic ;
+        let sdngtopic;
+        let ccytopic  ;
+        let scytopic ;
+        let clrtopic ;
+        let slrtopic ;
+        let cmrtopic ;
+        let smrtopic ;
+        let cdngltopic  ;                           
+        let cpndtopic ;
+        let cdngrtopic ; 
+        let centltopic  ;
+        let ckhntopic ;
+        let clvngtopic ;
+        let cmbrtopic ;
+        let cbdrtopic;
+        let cwatopic ;
+        let cbroker ;
+        let sdngltopic ;
+        let spndtopic ;
+        let sdngrtopic ; 
+        let sentltopic;
+        let skhntopic ;
+        let slvngtopic ;
+        let smbrtopic ;
+        let sbdrtopic ;
+        let sbroker ;
 
-//import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-  
-
-const firebaseConfig = {
-  apiKey: "AIzaSyC8e-722jurrVxcYETKtF4wAetzAJno3YA",
-  authDomain: "iot-hom.firebaseapp.com",
-  databaseURL: "https://iot-hom-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "iot-hom",
-  storageBucket: "iot-hom.firebasestorage.app",
-  messagingSenderId: "745178338232",
-  appId: "1:745178338232:web:9a8009f242b90dd60f754d",
-  measurementId: "G-TKG9J34YM3"
-};
-//const app =initializeApp(firebaseConfig);
-firebase.initializeApp(firebaseConfig);
-//intializeApp(firebaseConfig);
-const database = firebase.database();
-let cdrtopic ;
-let sdrtopic ;
-let csotopic ;
-let ssotopic ;
-let centrtopic ; 
-let sentrtopic ;
-let cfftopic ;
-let sfftopic ;
-let cdngtopic ;
-let sdngtopic ;
-let ccytopic  ;
-let scytopic ;
-let clrtopic ;
-let slrtopic ;
-let cmrtopic  ;
-let smrtopic ;
-                let cdngltopic ;
-                let cpndtopic ; 
-                let cdngrtopic ;  
-                let centltopic ;   
-                let ckhntopic ;
-                let clvngtopic ; 
-                let cmbrtopic ;
-                let cbdrtopic ;
-                let cwatopic;
-                let cbroker ; 
-                let sdngltopic ;
-                let spndtopic ; 
-                let sdngrtopic  ;  
-                let sentltopic ;   
-                let skhntopic ;
-                let slvngtopic ; 
-                let smbrtopic ;
-                let sbdrtopic ;
-                let swatopic;
-                let sbroker ; 
-                let per ;
-                let parisho ;        
-
-loadParm();
-loadupayogi();
-
+                
+   //loadparm();
 function showSection(sectionId) 
   {
       if (sessionStorage.getItem('loggedIn'))
@@ -75,14 +51,7 @@ function showSection(sectionId)
               }
 
   }
-function removesection()
-    {
-      var sections = document.getElementsByClassName('section');
-      for (var i = 0; i < sections.length; i++) 
-        {
-          sections[i].classList.remove('active');
-    }
-    }
+
 
 function showSwitch(switchID) 
         {
@@ -173,22 +142,8 @@ function onMessageReceived(topic, message)
            document.getElementById("tank_height").value= jsonData.tank_h;
 
 
-          //document.getElementById("mqttBroker").value = jsonData.mqttbrokere;
-          //document.getElementById("mqttopic").value = jsonData.mqtttopice;
-          //document.getElementById("baudrate").value = jsonData.baudratee;
-          //document.getElementById("bit").value = jsonData.bite;
-          //document.getElementById("parity").value = jsonData.paritye;
-          //document.getElementById("apn").value = jsonData.apne;
-          //document.getElementById("slaveid").value= jsonData.slaveide;
-          //document.getElementById("command").value = jsonData.commande;
-          //document.getElementById("startaddr").value = jsonData.startaddre;
-          //document.getElementById("noreg").value = jsonData.norege;
-          //document.getElementById("writedata").value = jsonData.writedatae;
-          //document.getElementById("mqttport").value = jsonData.mqttporte;
 
   }
-
-
 
    catch (e) 
   {
@@ -517,6 +472,7 @@ function toggleopen(OIMGID, SIMGID,CIMGID,area)
       }
       
 function togglestp(OIMGID, SIMGID,CIMGID,area) {
+  loadparm();
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
@@ -1400,11 +1356,13 @@ if (topic === sentrtopic )
 
 
 // Callback function after a successful subscription
+
 function onSubscriptionSuccess(err) 
         {
           if (!err) 
             {
               console.log("Successfully subscribed to topic");
+              loadparm();
           } 
           else 
           {
@@ -1441,251 +1399,47 @@ client1.on('connect', function () {
 // When a message is received
 client1.on('message', onMessageReceived1);
 
-  //const form = document.getElementById('topicsetting');
-  const loadtopicBtn = document.getElementById('loadtopic');
-  document.getElementById('loadtopic').addEventListener('click', () => loadParm())
-function loadParm()
-            {
-              database.ref('config').get()
-              .then((snapshot) => {
-                if (snapshot.exists()) {
-                  const config = snapshot.val();
-                  console.log("Config loaded:", config);
-                  cdrtopic = config.drsws;
-                  csotopic = config.sosws;
-                  centrtopic = config.entrsws;
-                  cfftopic = config.ffsws;
-                  cdngtopic = config.dngsws;
-                  ccytopic  = config.cysws;
-                  clrtopic = config.lrsws;
-                  cmrtopic = config.mrsws;
-                            cdngltopic = config.dnglsws;
-                            cpndtopic = config.pndsws;
-                            cdngrtopic = config.dngrsws;  
-                            centltopic = config.entlsws;   
-                            ckhntopic = config.khnsws;
-                            clvngtopic = config.lvngsws; 
-                            cmbrtopic = config.mbrsws;
-                            cbdrtopic = config.bdrsws;
-                            cwatopic = config.wasws;
-                            cbroker = config.brokers; 
 
-                  //const mq_broker = config.mqtt_broker;
-                  document.getElementById('drsw').value = cdrtopic;
-                  document.getElementById('sosw').value = csotopic;
-                  document.getElementById('entrsw').value = centrtopic;
-                  document.getElementById('ffsw').value = cfftopic;
-                  document.getElementById('dngsw').value =  cdngtopic;
-                  document.getElementById('cysw').value = ccytopic ;
-                  document.getElementById('lrsw').value = clrtopic;
-                  document.getElementById('mrsw').value = cmrtopic;
+  function loadparm()
+  {
+        cdrtopic = document.getElementById('drsw').value ;
+        csotopic  = document.getElementById('sosw').value ;
+        centrtopic = document.getElementById('entrsw').value ;
+        cfftopic =   document.getElementById('ffsw').value ;
+        cdngtopic = document.getElementById('dngsw').value ;
+        ccytopic =  document.getElementById('cysw').value ;
+        clrtopic=  document.getElementById('lrsw').value;
+        cmrtopic =  document.getElementById('mrsw').value ;
+        cdngltopic = document.getElementById('dnglsw').value ;
+        cpndtopic = document.getElementById('pndsw').value  ;
+        cdngrtopic = document.getElementById('dngrsw').value ;
+        centltopic = document.getElementById('entlsw').value ;
+        ckhntopic= document.getElementById('khnsw').value ;
+        clvngtopic = document.getElementById('lvngsw').value ; 
+        cmbrtopic = document.getElementById('mbrsw').value ;
+        cbdrtopic= document.getElementById('bdrsw').value ;
+        cwatopic= document.getElementById('wasw').value ;
+        cbroker = document.getElementById('broker').value ;
 
-              document.getElementById('dnglsw').value = cdngltopic;
-              document.getElementById('pndsw').value = cpndtopic ;
-              document.getElementById('dngrsw').value = cdngrtopic;
-              document.getElementById('entlsw').value = centltopic;
-              document.getElementById('khnsw').value = ckhntopic;
-              document.getElementById('lvngsw').value = clvngtopic; 
-              document.getElementById('mbrsw').value = cmbrtopic;
-              document.getElementById('bdrsw').value = cbdrtopic ;
-              document.getElementById('wasw').value = cwatopic;
-              document.getElementById('broker').value = cbroker;
+        sdrtopic = cdrtopic.replace("command", "status");
+        ssotopic = csotopic.replace("command", "status");
+        sentrtopic = centrtopic.replace("command", "status");
+        sfftopic = cfftopic.replace("command", "status");
+        sdngtopic = cdngtopic.replace("command", "status");
+        scytopic = ccytopic.replace("command", "status");
+        slrtopic = clrtopic.replace("command", "status");
+        smrtopic = cmrtopic.replace("command", "status");
+        sdngltopic = cdngltopic.replace("command", "status");
+        spndtopic = cpndtopic.replace("command", "status");
+        sdngrtopic = cdngrtopic.replace("command", "status");
+        sentltopic =  centltopic.replace("command", "status");
+        skhntopic = ckhntopic.replace("command", "status");
+        slvngtopic = clvngtopic.replace("command", "status");
+        smbrtopic = cmbrtopic.replace("command", "status");
+        sbdrtopic= cbdrtopic.replace("command", "status");
+        //swatopic = cwatopic.replace("command", "status");
+        sbroker= cbroker.replace("command", "status");
+       // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
+  }
 
-                  sdrtopic = cdrtopic.replace("command", "status");
-                  ssotopic = csotopic.replace("command", "status");
-                  sentrtopic = centrtopic.replace("command", "status");
-                  sfftopic = cfftopic.replace("command", "status");
-                  sdngtopic = cdngtopic.replace("command", "status");
-                  scytopic = ccytopic.replace("command", "status");
-                  slrtopic = clrtopic.replace("command", "status");
-                  smrtopic = cmrtopic.replace("command", "status");
-
-                  sdngltopic = cdngltopic.replace("command", "status");
-                  spndtopic = cpndtopic.replace("command", "status");
-                  sdngrtopic = cdngrtopic.replace("command", "status");
-                  sentltopic =  centltopic.replace("command", "status");
-                  skhntopic = ckhntopic.replace("command", "status");
-                  slvngtopic = clvngtopic.replace("command", "status");
-                  smbrtopic = cmbrtopic.replace("command", "status");
-                  sbdrtopic= cbdrtopic.replace("command", "status");
-                  swatopic = cwatopic.replace("command", "status");
-                  sbroker= cbroker.replace("command", "status");
-                 // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
-
-                } else {
-                  console.log("No config found.");
-                }
-              })
-              .catch((error) => {
-                console.error("Error fetching config:", error);
-              });
-
-          }
-
-
-
-          const form = document.getElementById('topicsetting');
-          form.addEventListener('submit', async(event)=>  
-          // Event listener for Save button
-          {
-
-           event.preventDefault();
-          
-                  const drswsc = document.getElementById('drsw').value;
-                  const soswsc = document.getElementById('sosw').value;
-                  const entrswc = document.getElementById('entrsw').value;
-                  const ffswsc = document.getElementById('ffsw').value;
-                  const dngswc = document.getElementById('dngsw').value;
-                  const cyswsc = document.getElementById('cysw').value;
-                  const lrswsc = document.getElementById('lrsw').value;
-                  const mrswsc = document.getElementById('mrsw').value;
-                  const dnglswc = document.getElementById('dnglsw').value;
-                  const pndswc = document.getElementById('pndsw').value;
-                  const dngrswc = document.getElementById('dngrsw').value;
-                  const entlswc = document.getElementById('entlsw').value;
-                  const khnswc = document.getElementById('khnsw').value;
-                  const lvngswc = document.getElementById('lvngsw').value;
-                  const mbrswc = document.getElementById('mbrsw').value;
-                  const bdrswc = document.getElementById('bdrsw').value;
-                  const waswc = document.getElementById('wasw').value;
-                  const brokerc = document.getElementById('broker').value;
-
-                    const configD = {
-                      drsws : drswsc,
-                      sosws : soswsc,
-                      entrsws : entrswc,
-                      ffsws : ffswsc,
-                      dngsws : dngswc,
-                      cysws : cyswsc,
-                      lrsws : lrswsc,
-                      mrsws : mrswsc,
-                      dnglsws : dnglswc,
-                      pndsws : pndswc,
-                      dngrsws : dngrswc,
-                      entlsws : entlswc, 
-                      khnsws : khnswc,
-                      lvngsws : lvngswc, 
-                      mbrsws : mbrswc, 
-                      bdrsws : bdrswc, 
-                      wasws : waswc, 
-                      brokers : brokerc
-                    }; 
-            document.getElementById("mqtt-topic").innerHTML ="settingpressed";
-            saveConfig('config',configD); 
-            upayogi_raksha();
-            form.reset();                    
-          });
-
-
-            function saveConfig(config,configD) 
-            {
-              database.ref(config).set(configD)
-                .then(() => {
-                  console.log("Config saved successfully!");
-                  alert("Configuration saved successfully!");
-                })
-                .catch((error) => {
-                  console.error("Error saving config:", error);
-                  alert("An error occurred while saving the configuration.");
-                });
-                
-            }
-
-
-function upayogi_raksha()
-{
-const upayogi=
-{
-peru:"thekki",
-check:"thekki2875"
-};
-saveConfig1(upayogi)
-}           
-
-function saveConfig1(upayogi) 
-            {
-              database.ref('upayogi').set(upayogi)
-                .then(() => {
-                  console.log("Config saved successfully!");
-                  alert("Configuration saved successfully!");
-                })
-                .catch((error) => {
-                  console.error("Error saving config:", error);
-                  alert("An error occurred while saving the configuration.");
-                });
-                
-            }
-
-function loadupayogi()
-            {
-              database.ref('upayogi').get()
-              .then((snapshot) => {
-                if (snapshot.exists()) {
-                  const upayogi = snapshot.val();
-                  console.log("upayogi loaded:", upayogi);
-                  parisho = upayogi.check;
-                  per = upayogi.peru;
-
-                 // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
-
-                } else {
-                  console.log("No upayogi found.");
-                }
-              })
-              .catch((error) => {
-                console.error("Error fetching upayogi:", error);
-              });
-
-          }
- //---------------------------------chart------------------   
-
-  const ctx = document.getElementById('myChart').getContext('2d');
-          const myChart = new Chart(ctx, {
-              type: 'line',
-              data: {
-                  labels: [9,10,11,12,13,14,15], // Add timestamps here
-                  datasets: [{
-                      label: 'Voltage (V)',
-                      data: [],
-                      borderColor: 'rgba(255, 99, 132, 1)',
-                      borderWidth: 1
-                  }, {
-                      label: 'Current (A)',
-                      data: [],
-                      borderColor: 'rgba(54, 162, 235, 1)',
-                      borderWidth: 1
-                  }]
-              }
-          });   
-
-    database.ref('/sensor_data').on('value', snapshot => {
-            const data = snapshot.val();
-            myChart.data.labels.push(new Date().toLocaleTimeString());
-            myChart.data.datasets[0].data.push(data.voltage);
-            myChart.data.datasets[1].data.push(data.current);
-            myChart.update();
-        });
-
-//------------------------------------------------chart------   
-//randonvolt_current(); commented for test
-
-function sendDataToFirebase(voltage,current) 
-{
-  const va = {
-            volt:voltage,
-            amp:current
-            } ;
-
-            saveConfig('/sensor_data',va);
-
- /* const path = "/sensor_data";
-  Firebase.setFloat(firebaseData, path + "/voltage", voltage);
-  Firebase.setFloat(firebaseData, path + "/current", current); */
-}
-
-function randonvolt_current()
-{
-  const vlt= Math.floor(Math.random() * (100 - 1 + 1)) + 1;
-  const cur= Math.floor(Math.random() * (50 - 1 + 1)) + 1;
-  sendDataToFirebase(vlt,cur);
-}
+  

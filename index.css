@@ -4436,6 +4436,7 @@ transform: rotate(0deg );
 }
 
 /*---------------------------------------mbr*/
+/*
 .CHRT_Area
 {
 position:absolute;
@@ -4454,7 +4455,7 @@ transform: rotate(0deg );
 {
 
  cursor: pointer;
-}
+} */
 
 /*--------------------------*/
 .PND_Area
@@ -4743,7 +4744,7 @@ margin-left:748px;
       opacity: 0; /* Fade out */
   }
 }
-
+/*
 .setng
 {
 position:relative;
@@ -4760,7 +4761,7 @@ z-index: 160;
   box-shadow: 0 1px 15px 0 rgb(255, 255, 255);
   border-radius: 50px;
 
-}
+} */
 .setinginp
 {
 display:inline-block;
@@ -4813,7 +4814,7 @@ color:rgb(96, 255, 207);
   border-radius: 15px;
   /*color:#6fffb2;*/
   font-size: 12px;
-  z-index: 160;
+  z-index: 165;
 } 
 .topicsave
 {
@@ -4869,14 +4870,37 @@ font-size: 12px;
   .attnimg
   {
     position:relative;
-    top:12px;
-    background-color: #fc93aa;
+  
+    top:10px;
+    /*background-color: #fc93aa;*/
   }
   .attnimg1
   {
     position:relative;
-    top:20px;
-  
-    background-color: #4ee9b3
+    right:8px;
+    top:15px;
 
+  z-index: 160;
+    /*background-color: #4ee9b3*/
+
+  }
+  .attnimg1:hover
+  {
+
+cursor: pointer;
+
+  }
+  .attnimg2
+  {
+    position:relative;
+    
+    top:20px;
+    
+    z-index: 160;
+    /*background-color: #4ee9b3*/
+
+  }
+  .attnimg2:hover
+  {
+    cursor: pointer;
   }
