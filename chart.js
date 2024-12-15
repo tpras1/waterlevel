@@ -8,13 +8,13 @@ const chart = new Chart(ctx, {
         labels: [], // Timestamps
         datasets: [
             {
-                label: "Voltage (V)",
+                label: "Temprature (C)",
                 data: [],
                 borderColor: "rgba(75, 192, 192, 1)",
                 backgroundColor: "rgba(75, 192, 192, 0.2)"
             },
             {
-                label: "Current (A)",
+                label: "Humadity (A)",
                 data: [],
                 borderColor: "rgba(255, 99, 132, 1)",
                 backgroundColor: "rgba(255, 99, 132, 0.2)"
@@ -26,8 +26,8 @@ const chart = new Chart(ctx, {
 
 // Write random data to Firebase
 setInterval(() => {
-    const voltage = (200 + Math.random() *80).toFixed(1);
-    const current = (30 + Math.random() * 10).toFixed(1);
+    const voltage = (30 + Math.random() *20).toFixed(1);
+    const current = (10 + Math.random() * 10).toFixed(1);
     const stamp = new Date().toLocaleString('sv-SE');
     const timestamp = stamp.slice(11, 20);
     writeData({ voltage, current, timestamp });
