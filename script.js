@@ -62,7 +62,26 @@ function showSwitch(switchID)
             document.getElementById(switchID).classList.add('active');
         }
 
-    
+document.getElementById('exitLoadtopic').addEventListener('click', () => removeSetting())
+
+function removeSetting()
+    {
+  
+        document.getElementById('setting').classList.remove('active');
+
+    }
+
+function removeSwitch()
+{
+  {
+    var sections = document.getElementsByClassName('Switch');
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].classList.remove('active');
+  }
+  }
+
+}
+
 function removesection()
     {
       var sections = document.getElementsByClassName('section');

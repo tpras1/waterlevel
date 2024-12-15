@@ -149,4 +149,5 @@ function loadParm()
             //form.reset();                    
           });
   loadParm();
+  document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 
