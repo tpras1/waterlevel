@@ -382,6 +382,7 @@ window.onload = function()
 
 function toggleSwitch(IDS,SW) 
         {
+         
           const SwitchImage = document.getElementById(IDS);
           if (SwitchImage !== tv1s && SwitchImage !== snd1s)
           {
@@ -465,7 +466,8 @@ function toggleSwitch(IDS,SW)
       
 function toggleopen(OIMGID, SIMGID,CIMGID,area) 
       {
-          const openImage = document.getElementById(OIMGID);
+      
+        const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
 
@@ -491,7 +493,7 @@ function toggleopen(OIMGID, SIMGID,CIMGID,area)
       }
       
 function togglestp(OIMGID, SIMGID,CIMGID,area) {
-  loadparm();
+  
           const openImage = document.getElementById(OIMGID);
           const stopImage = document.getElementById(SIMGID);
           const closeImage = document.getElementById(CIMGID);
@@ -521,6 +523,7 @@ function togglestp(OIMGID, SIMGID,CIMGID,area) {
 
 function toggleclose(OIMGID, SIMGID,CIMGID,area) 
       {
+       
         const openImage = document.getElementById(OIMGID);
         const stopImage = document.getElementById(SIMGID);
         const closeImage = document.getElementById(CIMGID);
@@ -549,7 +552,7 @@ function toggleclose(OIMGID, SIMGID,CIMGID,area)
 
 function publish_sw_stat(swtopic,SWID,STAT)
     {
- 
+      loadparm();
     // Prepare the JSON data
     var data = {}
       data[SWID]= STAT;      
@@ -580,7 +583,7 @@ function publish_sw_stat(swtopic,SWID,STAT)
 
 function publish_louver(LID,LSTAT,lvr_topic)
     {
-  
+      loadparm();
     /*const checkbox = document.getElementById('toggle1');*/
     /*const toggle = STAT*/
   
@@ -852,7 +855,7 @@ function show_lrswbrd(lvrid)
 function onMessageReceived1(topic, message) 
     {
   console.log(`Message received on topic '${topic}': ${message.toString()}`);
-loadparm();
+
   document.getElementById("mqtt-topic").innerHTML = topic;
   if (topic === "SWSTATPAV")
           {
@@ -1381,7 +1384,7 @@ function onSubscriptionSuccess(err)
           if (!err) 
             {
               console.log("Successfully subscribed to topic");
-              loadparm();
+              
           } 
           else 
           {
@@ -1397,7 +1400,7 @@ client1.on('connect', function () {
         console.log("Connected to broker");
        // document.getElementById("mqtt-topic").innerHTML = "connected to broker for suscrbtion"
   // Subscribe to the topic with a callback for the subscription
-
+  loadparm();
         client1.subscribe( sdrtopic , onSubscriptionSuccess);
         client1.subscribe( ssotopic , onSubscriptionSuccess);
         client1.subscribe( sentrtopic , onSubscriptionSuccess);
