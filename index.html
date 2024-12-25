@@ -12,9 +12,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script> <script type="text/javascript"></script> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <scrpt type= "module" src="./firebase.js"></scrpt>
+    <script type ="module" src="./auth.js"></script>
     <script type ="module" src="./parmtr.js"></script>
     <script type="module" src="./chart.js"></script>
-   
+    
   </head>
   <body>
    <!-- <div class="main-container"> -->
@@ -27,7 +28,8 @@
             <h2>Login</h2>
             <input type="text" id="username" class="input-field" placeholder="Username">
             <input type="password" id="password" class="input-field" placeholder="Password">
-            <button class="login-btn" onclick="login()">Login</button>
+            <button id="login-btn"class="login-btn"> Login</button>
+            <button id="sign-up" class ="sign-up">Sign up</button>
             <div id="errorMessage" class="error-message"></div>
         </div>
         </div>
@@ -1014,6 +1016,7 @@
     
     
     <script src="script.js"></script>
+    <script type ="module" src="./auth.js"></script>
    <!--- <scrpt type= "module" src="./firebase.js"></scrpt>
     <script type="module" src="./chart.js"></script>
     <script type ="module" src="./parmtr.js"></script> -->

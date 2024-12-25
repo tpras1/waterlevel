@@ -1882,6 +1882,23 @@ z-index:18;
   margin-top: 10px;
   font-size: 14px;
 }
+.sign-up {
+  width: 100%;
+  padding: 10px;
+  /*background-color: #4CAF50;*/
+  background-color: #1aa3ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+.sign-up :hover {
+  background-color: #45a049;
+}
+
 #login1
 {
     display: flex;

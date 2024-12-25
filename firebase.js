@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,6 +20,8 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 const sensorDataRef = ref(database, "sensorData");
 const config = ref(database, "config");
+const auth = getAuth(app);
+export {auth,signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged};
 
 // Function to write data to Firebase
 export function writeData(data) 

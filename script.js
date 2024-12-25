@@ -311,7 +311,7 @@ function toggleMotor()
   }
 
 
-
+/*
 function login() 
   {
     // Hard-coded credentials
@@ -336,7 +336,6 @@ function login()
         element1.style.display = 'none';
         const element2 = document.getElementById('logouttab');
         element2.style.display = 'block';
-
     } 
     
     else 
@@ -344,7 +343,7 @@ function login()
         document.getElementById("errorMessage").textContent = "Invalid username or password";
     }
   }
-
+*/
 
 
 function logout() 
