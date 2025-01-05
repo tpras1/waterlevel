@@ -1400,6 +1400,7 @@ client1.on('connect', function () {
         console.log("Connected to broker");
        // document.getElementById("mqtt-topic").innerHTML = "connected to broker for suscrbtion"
   // Subscribe to the topic with a callback for the subscription
+  
   loadparm();
         client1.subscribe( sdrtopic , onSubscriptionSuccess);
         client1.subscribe( ssotopic , onSubscriptionSuccess);

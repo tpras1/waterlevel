@@ -38,7 +38,7 @@ import { writeParm, readParam } from "./firebase.js";
 loadParm();
 const loadtopicBtn = document.getElementById('loadtopic');
 document.getElementById('loadtopic').addEventListener('click', () => loadParm())
-function loadParm()
+export function loadParm()
             {
 
                 readParam((config) => {
