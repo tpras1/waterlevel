@@ -1,22 +1,22 @@
 import { writeParm, readParam } from "./firebase.js";
-                  var cdrtopic;
-                  var csotopic ;
-                  var centrtopic ;
-                  var cfftopic ;
-                  var cdngtopic;
-                  var ccytopic;
-                  var clrtopic;
-                  var cmrtopic;
-                  var cdngltopic;
-                  var cpndtopic ;
-                  var cdngrtopic;  
-                  var centltopic;   
-                  var ckhntopic;
-                  var clvngtopic; 
-                  var cmbrtopic;
-                  var cbdrtopic;
-                  var cwatopic;
-                  var cbroker; 
+                  let cdrtopic;
+                  let csotopic ;
+                  let centrtopic ;
+                  let cfftopic ;
+                  let cdngtopic;
+                  let ccytopic;
+                  let clrtopic;
+                  let cmrtopic;
+                  let cdngltopic;
+                  let cpndtopic ;
+                  let cdngrtopic;  
+                  let centltopic;   
+                  let ckhntopic;
+                  let clvngtopic; 
+                  let cmbrtopic;
+                  let cbdrtopic;
+                  let cwatopic;
+                  let cbroker; 
                   var sdrtopic;
                   var ssotopic;
                   var sentrtopic ;
@@ -34,12 +34,14 @@ import { writeParm, readParam } from "./firebase.js";
                    var smbrtopic ;
                    var sbdrtopic ;
                    var sbroker ; 
+                   let testtopic1;
 
 loadParm();
 const loadtopicBtn = document.getElementById('loadtopic');
 document.getElementById('loadtopic').addEventListener('click', () => loadParm())
-export function loadParm()
+/*function loadParm()
             {
+    let isValid = false;        
 
                 readParam((config) => {
                     if (config) {
@@ -47,7 +49,7 @@ export function loadParm()
               .then((snapshot) => {
                 if (snapshot.exists()) {
                   const config = snapshot.val();*/
-                
+              /*
                   console.log("Config loaded:", config);
                   cdrtopic = config.drsws;
                   csotopic = config.sosws;
@@ -67,6 +69,7 @@ export function loadParm()
                             cbdrtopic = config.bdrsws;
                             cwatopic = config.wasws;
                             cbroker = config.brokers; 
+                            testtopic1 = config.testtopic;
 
                   //const mq_broker = config.mqtt_broker;
                   document.getElementById('drsw').value = cdrtopic;
@@ -97,8 +100,68 @@ export function loadParm()
             /* .catch((error) => {
                 console.error("Error fetching config:", error);
               });*/
-              alert("parmtr.js loaded");
-          }
+             
+          /*  alert("parmtr.js loaded:")
+
+          } */
+  function loadParm() {
+            let isValid = false;
+        
+            // Helper function to check if all elements have been assigned values
+            function validateConfig() {
+                const elements = [
+                    'drsw', 'sosw', 'entrsw', 'ffsw', 'dngsw', 'cysw', 'lrsw', 'mrsw',
+                    'dnglsw', 'pndsw', 'dngrsw', 'entlsw', 'khnsw', 'lvngsw', 'mbrsw',
+                    'bdrsw', 'wasw', 'broker'
+                ];
+                return elements.every(id => document.getElementById(id).value !== '');
+            }
+        
+            // Read parameters and attempt assignment
+            function attemptAssignment(retries = 10, delay = 1000) {
+                readParam((config) => {
+                    if (config) {
+                        console.log("Config loaded:", config);
+        
+                        // Assign values to variables and HTML elements
+                        const configMap = {
+                            drsw: config.drsws, sosw: config.sosws, entrsw: config.entrsws,
+                            ffsw: config.ffsws, dngsw: config.dngsws, cysw: config.cysws,
+                            lrsw: config.lrsws, mrsw: config.mrsws, dnglsw: config.dnglsws,
+                            pndsw: config.pndsws, dngrsw: config.dngrsws, entlsw: config.entlsws,
+                            khnsw: config.khnsws, lvngsw: config.lvngsws, mbrsw: config.mbrsws,
+                            bdrsw: config.bdrsws, wasw: config.wasws, broker: config.brokers
+                        };
+        
+                        for (const [id, value] of Object.entries(configMap)) {
+                            document.getElementById(id).value = value || '';
+                        }
+        
+                        // Check if all elements are assigned
+                        if (validateConfig()) {
+                            console.log("All values assigned successfully.");
+                            isValid = true;
+                        } else if (retries > 0) {
+                            console.log(`Retrying assignment... (${retries} retries left)`);
+                            setTimeout(() => attemptAssignment(retries - 1, delay), delay);
+                        } else {
+                            console.error("Failed to assign all values within the retry limit.");
+                            alert("Some configuration values could not be assigned.");
+                        }
+                    } else {
+                        console.error("No configuration found.");
+                        alert("No config found.");
+                    }
+                });
+            }
+        
+            // Start the assignment process
+            attemptAssignment();
+        }
+        
+
+
+
 
           const form = document.getElementById('topicsetting');
           form.addEventListener('submit', async(event)=>  
@@ -124,7 +187,7 @@ export function loadParm()
                   const bdrswc = document.getElementById('bdrsw').value;
                   const waswc = document.getElementById('wasw').value;
                   const brokerc = document.getElementById('broker').value;
-
+                  const testtopic = "iothome";
                     const configD = {
                       drsws : drswsc,
                       sosws : soswsc,
@@ -143,7 +206,8 @@ export function loadParm()
                       mbrsws : mbrswc, 
                       bdrsws : bdrswc, 
                       wasws : waswc, 
-                      brokers : brokerc
+                      brokers : brokerc,
+                      testtopic : testtopic
                     }; 
             document.getElementById("mqtt-topic").innerHTML ="settingpressed";
             writeParm(configD); 

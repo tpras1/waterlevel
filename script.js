@@ -1,4 +1,4 @@
-alert("script.js loading");
+
         let cdrtopic;
         let sdrtopic  ;
         let csotopic  ;
@@ -1389,6 +1389,7 @@ function onSubscriptionSuccess(err)
           else 
           {
               console.error("Error subscribing to topic:", err);
+              
           }
         }
 
@@ -1425,9 +1426,8 @@ client1.on('message', onMessageReceived1);
 
   function loadparm()
   {
-let isValid = false;
 
-  do {
+  /*do {*/
         cdrtopic = document.getElementById('drsw').value ;
         csotopic  = document.getElementById('sosw').value ;
         centrtopic = document.getElementById('entrsw').value ;
@@ -1446,12 +1446,12 @@ let isValid = false;
         cbdrtopic= document.getElementById('bdrsw').value ;
         cwatopic= document.getElementById('wasw').value ;
         cbroker = document.getElementById('broker').value ;
-        if (cdrtopic && csotopic && centrtopic) {
+     /*   if (cdrtopic && csotopic && centrtopic) {
           isValid = true; // Valid values found, exit the loop
         } else {
           alert("Please enter valid topic values!"); // Prompt user to correct
         }
-      } while (!isValid);
+      } while (!isValid); */
         sdrtopic = cdrtopic.replace("command", "status");
         ssotopic = csotopic.replace("command", "status");
         sentrtopic = centrtopic.replace("command", "status");
