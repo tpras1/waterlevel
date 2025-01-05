@@ -91,12 +91,13 @@ function loadParm()
 
                 } else {
                   console.log("No config found.");
+                  alert("no config found")
                 }
               })
-              .catch((error) => {
+            /* .catch((error) => {
                 console.error("Error fetching config:", error);
-              });
-
+              });*/
+              alert("parmtr.js loaded");
           }
 
           const form = document.getElementById('topicsetting');
@@ -148,6 +149,7 @@ function loadParm()
             writeParm(configD); 
             //form.reset();                    
           });
+
   //loadParm();
   //document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 
