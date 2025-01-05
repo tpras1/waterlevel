@@ -1,4 +1,4 @@
-
+alert("script.js loading");
         let cdrtopic;
         let sdrtopic  ;
         let csotopic  ;
