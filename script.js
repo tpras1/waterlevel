@@ -1423,6 +1423,9 @@ client1.on('message', onMessageReceived1);
 
   function loadparm()
   {
+let isValid = false;
+
+  do {
         cdrtopic = document.getElementById('drsw').value ;
         csotopic  = document.getElementById('sosw').value ;
         centrtopic = document.getElementById('entrsw').value ;
@@ -1441,7 +1444,12 @@ client1.on('message', onMessageReceived1);
         cbdrtopic= document.getElementById('bdrsw').value ;
         cwatopic= document.getElementById('wasw').value ;
         cbroker = document.getElementById('broker').value ;
-
+        if (cdrtopic && csotopic && centrtopic) {
+          isValid = true; // Valid values found, exit the loop
+        } else {
+          alert("Please enter valid topic values!"); // Prompt user to correct
+        }
+      } while (!isValid);
         sdrtopic = cdrtopic.replace("command", "status");
         ssotopic = csotopic.replace("command", "status");
         sentrtopic = centrtopic.replace("command", "status");
@@ -1462,5 +1470,5 @@ client1.on('message', onMessageReceived1);
         sbroker= cbroker.replace("command", "status");
        // document.getElementById("mqtt-topic").innerHTML ="Broker:"+mq_broker;
   }
-loadparm();
+
   

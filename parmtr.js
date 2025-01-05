@@ -35,7 +35,7 @@ import { writeParm, readParam } from "./firebase.js";
                    var sbdrtopic ;
                    var sbroker ; 
 
-//loadParm();
+loadParm();
 const loadtopicBtn = document.getElementById('loadtopic');
 document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 function loadParm()
@@ -148,6 +148,6 @@ function loadParm()
             writeParm(configD); 
             //form.reset();                    
           });
-  loadParm();
-  document.getElementById('loadtopic').addEventListener('click', () => loadParm())
+  //loadParm();
+  //document.getElementById('loadtopic').addEventListener('click', () => loadParm())
 
